@@ -1,0 +1,368 @@
+introduction
+    p.
+        These are notes for Jennifer Balakrishnan's course MA841 at BU, Fall 2019.
+
+    p.
+        The course webpage is #[url(href="http://math.bu.edu/people/jbala/841.html")/].
+
+section#sec-p-adic-rat-pts
+    title Rational points on curves
+
+    aside: p Lecture 1 5/9/2019
+    p
+        |Main Question: How do we determine #[m X(\QQ)] for #[m X] smooth projective of genus #[m \ge 2]?
+        | What computational tools are involved?
+    p
+        | Topics:
+        ol
+            li: p
+                | Chabauty-Coleman method
+            li: p
+                | Coleman integration (#[m p]-adic integration)
+            li: p
+                | #[m p]-adic heights
+            li: p
+                | quadratic Chabauty
+
+    p
+        | Evaluation (if you need a grade), TeX 3-4 classes worth of lecture notes.
+    p
+        | Detailed list of topics:
+        ul
+            li Chabauty-Coleman
+            li Explicit Coleman integration
+            li #[m p]-adic cohomology, based point counting (Kedlaya + Tuitman)
+            li Iterated Coleman integration
+            li Chabauty-Coleman in practice + other tools
+            li Étale descent
+            li Covering collections
+            li Elliptic curve Chabauty
+            li #[m p]-adic heights on elliptic curves
+            li #[m p]-adic heights on Jacobians on curves
+            li Local heights
+            li Quadratic Chabauty for integral points on affine hyperelliptic curves
+            li Kim's nonabelian Chabauty program
+            li Nekovář's p-adic height
+            li Quadratic Chabauty for #[m \QQ]-points on curves
+            li Quadratic Chabauty in practice
+
+    p
+        |References for first two weeks:
+        ul
+            li
+                | McCallum-Poonen
+            li Stoll: #[url(href="http://www.mathe2.uni-bayreuth.de/stoll/teaching/ArithHypKurven-SS2014/Skript-ArithHypCurves-pub-screen.pdf") Arithmetic of Hyperelliptic Curves]
+            li
+                | Kedlaya: #[m p]-adic cohomology from theory to practice (notes from 2007 AWS)
+            li Besser: #[url(href="https://www.math.bgu.ac.il/~bessera/Heidelberg-lecture") Heidelberg lectures on Coleman integration]
+    p
+        | For computations
+        ul
+            li Sage
+            li MAGMA
+
+section#sec-chab-coleman
+    title The Chabauty-Coleman method
+
+
+    subsection#subsec-triangles
+        title A question about triangles
+
+        p
+            | Does there exist a rational right triangle and  a rational isosceles triangle with with same perimeter and same area?
+            | (rational means all side lengths are rational)
+
+        p
+            | Suppose there does exist such a pair, then introducing parameters, #[m k,t] for the right triangle, and #[m l,u] for the isosceles we can rescale to
+            me k,t,u \in \QQ
+            me 0 \lt t, u \lt 1,\, k \gt 0
+            | an equate areas and perimeters.
+            | Areas:
+            me \frac 12(2kt)(k)(1-t^2) = \frac 12(4u)(1-u^2)
+            me \implies k^2 t^2(1-t^2) = 2u (1-u^2)
+            | . Perimeters:
+            me k(1-t^2) + k(1+t^2) + 2kt = 1 + u^2 + 1 + u^2 + 4u
+            me \implies k+ kt = 1 + 2u + u^2 = (1+u)^2
+            | so letting #[m x=1 +u], after some algebra we have #[m 1 \lt x \lt 2] in #[m \QQ] s.t.
+            me 2xk^2 + (-3x^3 -2x^2 + 6x - 4)k + x^5 = 0
+            | this is a quadratic in #[m k], and the discriminant is a square in #[m \QQ].
+            |so
+            me X\colon  y^2 = (-3x^3 - 2*x^2 + 6x - 4)^2 - 4(2x)x^5
+            me = x^{6} + 12 x^{5} - 32 x^{4} + 52 x^{2} - 48 x + 16
+            | so this is a genus 2 hyperelliptic curve. We need the #[m \QQ]-points of this.
+        paragraphs
+            title Facts:
+            p
+                | #[m \Jac(X)]  has Mordell-Weil rank 1.
+                | The Chabauty-Coleman bound on the size of #[m X(\QQ)] for this curve gives #[m \#X(\QQ) \le 10].
+                | But we find points
+                md
+                    mrow \left\{ \left(0 : -4 : 1\right), \infty_{\pm} , \left(0 : 4 : 1\right), \left(1 : -1 : 1\right), \left(1 : 1 : 1\right),\left(\frac{12}{11} : -\frac{868}{1331} : 1\right),\right.
+                    mrow \left. \left(\frac{12}{11} : \frac{868}{1331} : 1\right), \left(2 : -8 : 1\right), \left(2 : 8 : 1\right)\right\}
+                | so this set is #[m X(\QQ)].
+        p
+            | Back in the original problem we specified #[m x \lt 1 \lt 2], so there is a unique such pair of triangles:
+        theorem
+            title Hirakawa-Matsumura '18
+            statement: p
+                | Up to similitude there exists a unique pair of a rational right triangle and a rational isosceles triangle that have the same perimeters and areas.
+                | The unique pair consists of a right triangle with sides
+                me (377, 135, 352)
+                | and the isosceles triangle with sides
+                me (366, 366, 132)
+                | .
+    subsection
+        title Why care about #[m X(\QQ)] for #[m X] of genus 2?
+
+        p
+            | Curves of genus 0: have no #[m \QQ]-points or infinitely many, they satisfy a local to global principle so there exists an algorithm to determine the #[m \QQ]-points in finite time.
+
+        p
+            | Curves of genus 1: If we have 1 smooth rational point then we have an elliptic curve, Mordell's theorem implies that #[m E(\QQ)] is a finitely generated abelian group,
+            me E(\QQ) \simeq \ZZ^r \oplus T
+            | where the possible torsion parts #[m T] have been determined by Mazur's theorem.
+            | To understand #[m T], and the distribution of #[m T] there is work of Harron and Snowden, this often comes down to understanding rational points on #[m X_1(N)].
+        p
+            | Upshot: to understand #[m E(\QQ)] we want to understand #[m r]:
+        p
+            | Q1: is there an algorithm to compute #[m  r]?
+        p
+            | Q2: what values of                   #[m  r] can occur?
+        p
+            | Q3: what is the distribution of      #[m  r]?
+        p
+            | A1: #[m n]-descent, the obstacle is #[m \Sha], proving finiteness, it is conjectured that #[m r =  \ord_{s=1}L(E,s)] (BSD).
+        p
+            | A2: record due to Noam Elkies an example of #[m E] with #[m r \ge 28].
+        p
+            | A3: minimalist conjecture: 50% of all curves have rank 0, 50% rank 1.
+
+        theorem#thm-bhargava-shankar
+            title Bhargava-Shankar
+            statement
+                p
+                    |The average rank is #[m \lt 1].
+
+        p
+            | Baur Bektemirov, Barry Mazur, William Stein, and Mark Watkins, Average ranks of elliptic curves: tension between data and conjecture, Bull. Amer. Math. Soc. (N.S.) 44 (2007), no. 2, 233–254. MR 2009e:11107 gave average rank graphs, which kept increasing.
+        p
+            | Sarnak said there would #[q obviously be a turn around].
+        p
+            | Jennifer S. Balakrishnan, Wei Ho, Nathan Kaplan, Simon Spicer, William Stein, and James Weigandt, Databases of elliptic curves ordered by height and distributions of Selmer groups and ranks, LMS J. Comput. Math. 19 (2016), supp. A, pp. 351-370. MR 3540965
+
+
+
+    subsection
+        title Coleman's bound
+        aside: p Lecture 2 10/9/2019
+        p
+            | Goal today: prove Coleman's refinement of Chabauty's theorem.
+
+        theorem
+            title Coleman 1985
+            statement: p
+                | Let #[m X/\QQ] be a curve of genus #[m g \ge 2].
+                | Suppose the Mordell-Weil rank of #[m J(\QQ)] is less than #[m g].
+                | Then if #[m p \gt 2g] is a good prime for #[m X] we have
+                me \#X(\QQ) \le \#X_{\FF_p} (\FF_p) + 2g - 2
+                |.
+
+        definition#def-differentials
+            title Differentials
+            statement
+                p
+                    | Let #[m X] be a  curve over a field #[m k].
+                    | The space of #[term differentials] on #[m X] over #[m k] is a 1-dimensional #[m k(X)]-vector space #[m \Omega ^1_X(k)].
+                p
+                    | There is a nontrivial #[m k]-linear derivation
+                    me \diff \colon  k(X) \to \Omega ^1_X(k)
+                    | i.e. #[m \diff] is #[m k]-linear and satisfies the Leibniz rule
+                    me \diff(fg) = g \diff f + f \cdot \diff g
+                    | for all #[m f,g\in k(X)] and there is some #[m f \in k(X)] s.t. #[m \diff f \ne 0].
+                p
+                    | A general differential can be written as #[m \omega  = f \diff g] where #[m g\in K(X)] with #[m \diff g \ne 0].
+                    | If we fix #[m g] this representation is unique.
+                    | If #[m \omega ,\omega ' \in \Omega ^1_X(k)] with #[m \omega ' \ne0] then there's a unique #[m f\in K(X)] s.t. #[m \omega = f\omega '].
+                    | We may write #[m \omega /\omega ' = f].
+
+        definition#def-differentials-first-second
+            title Differentials of the first second and third kinds
+            statement
+                p
+                    | Let #[m 0\ne \omega  \in \Omega ^1_X(k)] and #[m P\in X(k)].
+                    | Let #[m t\in k(X)] be  a uniformizer at #[m P].
+                    | Then #[m v_P(\omega ) = v_P(\omega /\diff t)] is the valuation of #[m  \omega ] at #[m P].
+                    | This valuation is nonzero for only finitely many points #[m P \in X(\overline k)].
+                    | The divisor
+                    me \div(\omega ) = \sum_{P\in X(\overline k)}v_P(\omega ) P \in \Div_X(k)
+                    | is the divisor of #[m \omega].
+                p
+                    | If #[m v_P(\omega )\ge] then #[m \omega ] is regular at #[m P] and #[m \omega ] is said to be regular if it is regular at all points #[m P\in X(\overline K)].
+                p
+                    | Also called differentials of the #[term first kind].
+                p
+                    | A differential of the #[term second kind] has residue zero at all points #[m P\in X(\overline K)].
+                p
+                    | A differential of the #[term third kind] has at most a simple pole at all points #[m P\in X(\overline K)] (and integer residues there in some references).
+
+        p
+            | Since the quotient of any two non-zero differentials is  a function
+            me \omega_1 = f_1 \diff g
+            me \omega_2 = f_2 \diff g
+            | so
+            me \frac{\omega _1}{\omega _2}  = \frac{f_1}{f_2}
+            | .
+            | The difference  of any two divisors of differentials is a principal divisor.
+            me \divisor\left(\frac{\omega _1}{\omega _2}\right)  = \divisor \left(\frac{f_1}{f_2}\right)
+            me = \divisor \omega _1 - \divisor \omega _2
+            |.
+        p
+            | So the divisors of differentials form one linear equivalence class of divisors, the canonical class.
+
+        paragraphs
+            title Recall
+            p
+                | Let #[m X/k] be a curve and #[m D\in \Div_X(k)]. The Riemann-Roch space of #[m D] is the #[m k]-vector space
+                me L(D) = \left\{\phi \in k(X)^\times : \divisor \phi  + D \ge 0\right\} \cup \{0\}
+                | where we write #[m D \ge D'] if #[m v_P(D) \ge v_P(D')] for all #[m P].
+
+        theorem
+            title Riemann-Roch
+            statement
+                p
+                    | Let #[m X/k] be a curve of genus #[m g] then there is a divisor #[m W \in \Div_X(k)] s.t. for every #[m D\in \Div_X(k)] w we have #[m \dim_k L(D)] is finite and
+                    me \dim_k L(D)  = \deg D - g +1 \dim_l L(W -D)
+                    | .
+                p
+                    | In particular, #[m \dim_k L(W) = g], #[m \deg W = 2g-2].
+                p
+                    | The canonical class is exactly the class of the divisor #[m W] in Riemann-Roch.
+                p
+                    | The #[m k]-vector space of regular differentials has #[m \dim L(W)  = g], and is denoted as #[m H^0(X, \Omega ^1_X)].
+        example
+            statement: p
+                | Let #[m X\colon  y^2 = f(x)] be a hyperelliptic curve of genus #[m g] over #[m k].
+                | Then #[m H^0(X, \Omega ^1_X)] has basis
+                me \left\{ \frac{\diff x}{2y}, \ldots, \frac{x^{g-1}\diff x}{2y} \right\}
+                | so every regular differential can be written uniquely as
+                me \frac{p(x) \diff x}{2y}
+                | with a polynomial #[m p] of degree #[m \le g-1].
+        p
+            | We want to integrate differentials in some #[m p]-adic sense,
+            | Q: What does a #[m p]-adic line integral look like?
+
+        theorem
+            statement: p
+                | Let #[m X/\QQ_p] be a curve with good reduction then there is a #[m p]-adic integral
+                me \int_P^Q \omega  \in \overline \QQ_p
+                | defined for each pair of points #[m P,Q\in X(\overline \QQ_p)] and regular differential #[m \omega \in H^0(X, \Omega _X^1(\overline \QQ_p))] that satisfies the following properties:
+                ol
+                    li
+                        | The integral is #[m \overline \QQ_p] linear in #[m \omega ]
+                    li
+                        | If #[m P,Q] both reduce to the same point #[m \bar P \in X_{\FF_p}(\FF_p)] then the integral can be evaluated by writing
+                        me \omega  = \omega (t) \diff t
+                        | with #[m t] a uniformizer at #[m P] reducing to  a uniformizer at #[m \bar P] and #[m \omega ] a power series.
+                        | Then integrating formally  obtaining a power series #[m l] s.t.
+                        me \diff l(t) = w(t) \diff t
+                        |and #[m l(0) = 0] and finally evaluating
+                        me l(t(Q))
+                        | which converges.
+                        | This implies that #[m \int_P^P \omega  = 0].
+                    li
+                        me \int_P^Q \omega  + \int_{P'}^{Q'} \omega  =  \int_P^{Q'} \omega   + \int_{P'}^Q \omega 
+                        | so it makes sense to define:
+                        me \int_D \omega
+                        | for
+                        me \sum_{j=1}^n Q_j  - P_j \in \Div^0_X(\overline \QQ_p)
+                        | as
+                        me \int_D \omega  = \sum_{j=1}^n \int_{P_j}^{Q_j} \omega 
+                    li
+                        | If #[m D] is principal then #[m \int_D \omega  = 0].
+                    li
+                        | The integral commutes with the action of #[m \absgal{\QQ_p}].
+                    li
+                        | Fix #[m P_0 \in X(\overline \QQ_p)].
+                        | If #[m 0\ne \omega  \in H^0(X, \Omega ^1_X)],
+                        | then the set of points #[m P \in X(\overline \QQ_p)] reducing to a fixed point #[m P_0 \in X_{\FF_p}(\overline \FF_p)].
+                        | and s.t.
+                        me \int_{P_0}^P \omega  = 0
+                        | is finite.
+
+        remark
+            p
+                | The statement that the curve has good reduction is not necessary but simplifies the statement of 2.
+
+        remark
+            p
+                | This    integral is the Coleman integral #[xref(ref="bib-coleman-torsion")/], other works on #[m p]-adic integration include Berkovich #[xref(ref="bib-berkovich")/].
+                | Also there is work of Zarhin, Colmez, Vologodsky, Besser, ...
+
+        remark
+            p
+                | Theory of Coleman integration of forms the second or third kind developed by Coleman-de Shalit #[xref(ref="bib-coleman-de-shalit")/].
+                | (additivity in endpoints, linearity, change of variables, FTC).
+
+        corollary
+            statement: p
+                | Given the hypotheses of the previous theorem
+                me P_0 \in X(\QQ_p)
+                | and #[m J] the Jacobian of #[m X] let
+                me \iota  \colon X \to J
+                | be the embedding
+                me P \mapsto [P - P_0]
+                | there is a map
+                me J(\QQ_p) \times H^0(X, \Omega _X^1) \to \QQ_p
+                me (P,\omega ) \mapsto \pair P \omega 
+                | that is additive in #[m P] and #[m \QQ_p] linear in #[m \omega ] which is given by
+                me \pair{[D]}\omega  = \int_D \omega 
+                | in particular for
+                me P\in X(\QQ_p)
+                | we have
+                me \pair{\iota (P)}\omega  = \int_{P_0}^P \omega 
+                | .
+        remark
+            p
+                | If #[m P \in J(\QQ_p)] has finite order, then
+                me \pair P\omega =0,\,\forall \omega \in H^0(X, \Omega _X^1)
+                | to see this, if #[m nP= 0] then
+                me \pair P\omega  = \frac1n\pair{nP}\omega  = \frac1n0 = 0
+                |.
+                | One can show that torsion points are the only points with this property.
+                | On the other hand, if #[m \omega ] has the property that  #[m \pair P\omega  = 0] for all #[m P \in J(\QQ_p)] then #[m \omega =0].
+
+
+        corollary
+            statement: p
+                | Let #[m X/\QQ] be a curve of genus #[m g] with Mordell-Weil rank less than #[m g]. Then #[m \# X(\QQ)] is finite.
+                | Note we don't need #[m g \ge 2], in #[m g=1] this applies to rank 0.
+            proof
+                p
+                    | Pick a prime of good reduction for #[m X] let
+                    me  V = \{ \omega  \in H^0(X, \Omega _X^1) : \forall P \in J(\QQ) : \pair P\omega  = 0\}
+                    | by additivity in the first argument this condition is equivalent to requiring that #[m \pair{P_j}\omega  = 0] for a basis #[m \{P_j\}_{j=1}^r] of the free part of #[m J(\QQ)] so it leads to at most #[m r] linear constraints, so #[m \dim V \ge g - r \gt 0].
+                    |So there is some #[m 0 \ne \omega  \in V] pick #[m P_0 \in X(\QQ)], if #[m X(\QQ) = \emptyset] we are done.
+                    | To define #[m \iota \colon X \hookrightarrow J].
+                    | Since #[m \iota (P) \in J(\QQ)] for all #[m P\in X(\QQ)] so it follows that #[m \int_{P_0}^P\omega =0] for all #[m P\in X(\QQ)].
+                    | By the theorem the number of such #[m P] is finite in each residue disk of #[m X(\QQ)].
+                    | Since the number of residue classes is  #[m \# X(\FF_p)] is finite.
+                    | The total number of points in #[m X(\QQ)] is finite also.
+                p
+                    | To get an actual bound we have to bound the number of zeroes of
+                    me \int_{P_0}^z \omega 
+                    | as a #[m p]-aidc power series.
+                    | We can think of #[m X(\QQ_p)] set theoretically as a finite union of residue disks.
+                    | Within each residue disk
+                    me \int_{P_0}^z \omega 
+                    | has finitely many #[m p]-adic zeroes.
+
+
+        aside: p Lecture 3 10/9/2019
+        p
+            | We want  to give  a more refined version of this result which uses results about zeroes of #[m p]-adic power series.
+        theorem
+            statement: p
+                | Let
+                me 0 \ne l(t) = \sum_{n=0}^\infty a_nt^n\in \QQ_p[[t]]
+                | such that #[m a_n \to 0] as #[m n \to \infty ] in the #[m p]-adic topology.
+                | Let

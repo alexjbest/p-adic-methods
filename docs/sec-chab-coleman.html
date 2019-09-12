@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PAR The Chabauty-Coleman method</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Ajax.config.path["Contrib"] = "//cdn.rawgit.com/mathjax/MathJax-third-party-extensions/22087770";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/xyjax/xypic.js", "AMSmath.js", "AMSsymbols.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.12/pretext.js"></script><script src="https://pretextbook.org/js/0.12/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/toc.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://alexjbest.github.io/css/pretext.css">
+<link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
+<script>var logged_in = false;
+var role = 'student';
+var guest_access = true;
+var login_required = false;
+var js_version = 0.12;
+</script>
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{xypic}\require{newpxtext}\require{newpxmath}\require{cancel}\require{pgfplots}
+
+\newenvironment{smallermatrix}[1]
+{\arraycolsep=0.5pt\def\arraystretch{0.5}\tiny
+\array{#1}}
+{\endarray}
+
+\def\coloneqq{\mathrel{\mathop:}\mathrel{\mkern-1.2mu}=}
+\def\eqqcolon{=\mathrel{\mkern-1.2mu}\mathrel{\mathop:}}
+
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\newcommand{\ideal}[1]{\mathfrak{#1}}
+\newcommand{\lie}[1]{\operatorname{\mathfrak{#1}}}
+\newcommand{\sheaf}[1]{\operatorname{\mathcal{#1}}}
+\DeclareMathOperator{\Lie}{Lie}
+
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\cinf}{C^\infty}
+\newcommand{\inv}{^{-1}}
+\newcommand{\units}{^{\times}}
+
+\newcommand{\legendre}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\pair}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lb}{[}
+\newcommand{\rb}{]}
+\newcommand{\powerseries}[2]{#1[[#2]]}
+
+
+\newcommand{\partder}[2][]{\frac{\partial #1}{\partial #2}}
+
+
+\providecommand\mapsfrom{\mathrel{\reflectbox{\ensuremath{\mapsto}}}}
+\DeclareMathOperator{\Sha}{III}
+
+
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\ZZ}{\mathbf{Z}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\ints}{\mathcal{O}}
+\newcommand{\adeles}{\mathbf{A}}
+
+\newcommand{\alg}{\mathrm{alg}}
+
+\newcommand{\subgroup}{\mathrel{\subseteq}}
+
+\newcommand{\cat}[1]{\mathcal{#1}}
+\newcommand{\catname}[1]{{\mathrm\textbf{#1}}}
+\newcommand{\Rings}{\mathrm{Rings}}
+
+\newcommand{\Ar}{\mathrm{Ar}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\crys}{\mathrm{crys}}
+\newcommand{\cris}{\mathrm{cris}}
+\newcommand{\et}{\mathrm{\acute{e}t}}
+\newcommand{\rig}{\mathrm{rig}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\Pet}{\mathrm{Pet}}
+
+\newcommand{\pinf}{{1/p^\infty}}
+
+\newcommand{\colim}{\operatornamewithlimits{\underset{\longrightarrow}{colim}}}
+\newcommand{\acts}{\circlearrowright}
+\newcommand\rightrightrightarrows{
+    \mathrel{\substack{\textstyle\rightarrow\\[-0.6ex]
+        \textstyle\rightarrow \\[-0.6ex]
+        \textstyle\rightarrow}}
+}
+
+\newcommand{\ab}{\mathrm{ab}}
+\newcommand{\alm}{\mathrm{a}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\alt}{\mathrm{alt}}
+\newcommand{\cyc}{\mathrm{cyc}}
+\newcommand{\divisible}{\mathrm{div}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\un}{\mathrm{un}}
+\newcommand{\nr}{\mathrm{nr}}
+\newcommand{\ns}{\mathrm{ns}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\pre}{\mathrm{pre}}
+\newcommand{\reg}{\mathrm{reg}}
+\newcommand{\spec}{\mathrm{spec}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\sep}{\mathrm{sep}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\tors}{\mathrm{tors}}
+\newcommand{\transpose}{\mathrm{T}}
+
+
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Ass}{Ass}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Hom}{Hom}
+\newcommand{\sheafHom}{\mathscr{Hom}}
+\DeclareMathOperator{\Nat}{Nat}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\Syl}{Syl}
+\DeclareMathOperator{\Tgt}{Tgt}
+\DeclareMathOperator{\sprep}{sp}
+\DeclareMathOperator{\vol}{Vol}
+
+\DeclareMathOperator{\divisor}{div}
+\DeclareMathOperator{\divisors}{Div}
+\DeclareMathOperator{\Div}{Div} 
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Princ}{Princ}
+\DeclareMathOperator{\Cycles}{Cycles}
+\DeclareMathOperator{\supp}{supp}
+
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\gr}{gr}
+\DeclareMathOperator{\Fil}{Fil}
+
+
+\DeclareMathOperator{\polylog}{\mathcal{L}}
+
+\DeclareMathOperator{\disc}{disc}
+
+\DeclareMathOperator{\Tan}{Tan}
+\DeclareMathOperator{\Cotan}{Cotan}
+\DeclareMathOperator{\Sing}{Sing}
+
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\redu}{red}
+\DeclareMathOperator{\Reg}{Reg}
+\DeclareMathOperator{\Rep}{Rep}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\characteristic}{char}
+\DeclareMathOperator{\orient}{or}
+\DeclareMathOperator{\leadterm}{lt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\Spv}{Spv}
+\DeclareMathOperator{\Spa}{Spa}
+\DeclareMathOperator{\Spm}{Spm}
+\DeclareMathOperator{\specialisation}{sp}
+\DeclareMathOperator{\Max}{Max}
+\newcommand{\Gal}[2]{\operatorname{Gal}(#1/#2)}
+\newcommand{\absgal}[1]{\operatorname{Gal}(\overline{#1}/#1)}
+\newcommand{\sepgal}[1]{\operatorname{Gal}(#1^\sep/#1)}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Res}{Res}
+
+
+\DeclareMathOperator{\power}{\mathcal{P}}
+\DeclareMathOperator{\aff}{\mathbf{A}}
+\DeclareMathOperator{\PP}{\mathbf{P}}
+\DeclareMathOperator{\norm}{Norm}
+\DeclareMathOperator{\trace}{Tr}
+\DeclareMathOperator{\Fr}{Fr}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\vf}{\mathcal{V}}
+\DeclareMathOperator{\krulldim}{krulldim}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Prob}{Prob}
+
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\specialorthogonal}{SO}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\USp}{USp}
+\DeclareMathOperator{\orth}{O}
+\DeclareMathOperator{\unitary}{U}
+\DeclareMathOperator{\specialunitary}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+
+\DeclareMathOperator{\Aff}{Aff}
+
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="p-adic-methods.html"><span class="title">\(p\)-adic methods for rational points on curves:</span> <span class="subtitle">MA841 at BU Fall 2019</span></a></h1>
+<p class="byline">Jennifer Balakrishnan</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-p-adic-rat-pts.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="p-adic-methods.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-3.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-p-adic-rat-pts.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="p-adic-methods.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link"><a href="sec-p-adic-rat-pts.html" data-scroll="sec-p-adic-rat-pts"><span class="codenumber">1</span> <span class="title">Rational points on curves</span></a></li>
+<li class="link active">
+<a href="sec-chab-coleman.html" data-scroll="sec-chab-coleman"><span class="codenumber">2</span> <span class="title">The Chabauty-Coleman method</span></a><ul>
+<li><a href="sec-chab-coleman.html#subsec-triangles" data-scroll="subsec-triangles">A question about triangles</a></li>
+<li><a href="sec-chab-coleman.html#subsection-2" data-scroll="subsection-2">Why care about \(X(\QQ)\) for \(X\) of genus 2?</a></li>
+<li><a href="sec-chab-coleman.html#subsection-3" data-scroll="subsection-3">Coleman's bound</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="section-3.html" data-scroll="section-3"><span class="codenumber">3</span> <span class="title">Backmatter</span></a><ul><li><a href="section-3.html#references-1" data-scroll="references-1">References</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="https://github.com/alexjbest/p-adic-methods/issues" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-chab-coleman"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2</span> <span class="title">The Chabauty-Coleman method</span>
+</h2>
+<a href="sec-chab-coleman.html" class="permalink">¶</a><section class="subsection" id="subsec-triangles"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1</span> <span class="title">A question about triangles</span>
+</h3>
+<a href="sec-chab-coleman.html#subsec-triangles" class="permalink">¶</a><p id="p-14">Does there exist a rational right triangle and  a rational isosceles triangle with with same perimeter and same area? (rational means all side lengths are rational)</p>
+<p id="p-15">Suppose there does exist such a pair, then introducing parameters, \(k,t\) for the right triangle, and \(l,u\) for the isosceles we can rescale to</p>
+<div class="displaymath">
+\begin{equation*}
+k,t,u \in \QQ
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0 \lt t, u \lt 1,\, k \gt 0
+\end{equation*}
+</div>
+<p>an equate areas and perimeters. Areas:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac 12(2kt)(k)(1-t^2) = \frac 12(4u)(1-u^2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies k^2 t^2(1-t^2) = 2u (1-u^2)\text{.}
+\end{equation*}
+</div>
+<p>Perimeters:</p>
+<div class="displaymath">
+\begin{equation*}
+k(1-t^2) + k(1+t^2) + 2kt = 1 + u^2 + 1 + u^2 + 4u
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies k+ kt = 1 + 2u + u^2 = (1+u)^2
+\end{equation*}
+</div>
+<p>so letting \(x=1 +u\text{,}\) after some algebra we have \(1 \lt x \lt 2\) in \(\QQ\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+2xk^2 + (-3x^3 -2x^2 + 6x - 4)k + x^5 = 0
+\end{equation*}
+</div>
+<p>this is a quadratic in \(k\text{,}\) and the discriminant is a square in \(\QQ\text{.}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+X\colon  y^2 = (-3x^3 - 2*x^2 + 6x - 4)^2 - 4(2x)x^5
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= x^{6} + 12 x^{5} - 32 x^{4} + 52 x^{2} - 48 x + 16
+\end{equation*}
+</div>
+<p>so this is a genus 2 hyperelliptic curve. We need the \(\QQ\)-points of this.</p>
+<article class="paragraphs" id="paragraphs-1"><h5 class="heading"><span class="title">Facts:.</span></h5>
+<p id="p-16">\(\Jac(X)\)  has Mordell-Weil rank 1. The Chabauty-Coleman bound on the size of \(X(\QQ)\) for this curve gives \(\#X(\QQ) \le 10\text{.}\) But we find points</p>
+<div class="displaymath">
+\begin{gather*}
+\left\{ \left(0 : -4 : 1\right), \infty_{\pm} , \left(0 : 4 : 1\right), \left(1 : -1 : 1\right), \left(1 : 1 : 1\right),\left(\frac{12}{11} : -\frac{868}{1331} : 1\right),\right.\\
+\left. \left(\frac{12}{11} : \frac{868}{1331} : 1\right), \left(2 : -8 : 1\right), \left(2 : 8 : 1\right)\right\}
+\end{gather*}
+</div>
+<p>so this set is \(X(\QQ)\text{.}\)</p></article><p id="p-17">Back in the original problem we specified \(x \lt 1 \lt 2\text{,}\) so there is a unique such pair of triangles:</p>
+<article class="theorem-like" id="theorem-1"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.1</span>. <span class="title">Hirakawa-Matsumura '18.</span>
+</h6>
+<p id="p-18">Up to similitude there exists a unique pair of a rational right triangle and a rational isosceles triangle that have the same perimeters and areas. The unique pair consists of a right triangle with sides</p>
+<div class="displaymath">
+\begin{equation*}
+(377, 135, 352)
+\end{equation*}
+</div>
+<p>and the isosceles triangle with sides</p>
+<div class="displaymath">
+\begin{equation*}
+(366, 366, 132)\text{.}
+\end{equation*}
+</div></article></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.2</span> <span class="title">Why care about \(X(\QQ)\) for \(X\) of genus 2?</span>
+</h3>
+<p id="p-19">Curves of genus 0: have no \(\QQ\)-points or infinitely many, they satisfy a local to global principle so there exists an algorithm to determine the \(\QQ\)-points in finite time.</p>
+<p id="p-20">Curves of genus 1: If we have 1 smooth rational point then we have an elliptic curve, Mordell's theorem implies that \(E(\QQ)\) is a finitely generated abelian group,</p>
+<div class="displaymath">
+\begin{equation*}
+E(\QQ) \simeq \ZZ^r \oplus T
+\end{equation*}
+</div>
+<p>where the possible torsion parts \(T\) have been determined by Mazur's theorem. To understand \(T\text{,}\) and the distribution of \(T\) there is work of Harron and Snowden, this often comes down to understanding rational points on \(X_1(N)\text{.}\)</p>
+<p id="p-21">Upshot: to understand \(E(\QQ)\) we want to understand \(r\text{:}\)</p>
+<p id="p-22">Q1: is there an algorithm to compute \(r\text{?}\)</p>
+<p id="p-23">Q2: what values of                   \(r\) can occur?</p>
+<p id="p-24">Q3: what is the distribution of      \(r\text{?}\)</p>
+<p id="p-25">A1: \(n\)-descent, the obstacle is \(\Sha\text{,}\) proving finiteness, it is conjectured that \(r =  \ord_{s=1}L(E,s)\) (BSD).</p>
+<p id="p-26">A2: record due to Noam Elkies an example of \(E\) with \(r \ge 28\text{.}\)</p>
+<p id="p-27">A3: minimalist conjecture: 50% of all curves have rank 0, 50% rank 1.</p>
+<article class="theorem-like" id="thm-bhargava-shankar"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.2</span>. <span class="title">Bhargava-Shankar.</span>
+</h6>
+<p id="p-28">The average rank is \(\lt 1\text{.}\)</p></article><p id="p-29">Baur Bektemirov, Barry Mazur, William Stein, and Mark Watkins, Average ranks of elliptic curves: tension between data and conjecture, Bull. Amer. Math. Soc. (N.S.) 44 (2007), no. 2, 233–254. MR 2009e:11107 gave average rank graphs, which kept increasing.</p>
+<p id="p-30">Sarnak said there would “obviously be a turn around”.</p>
+<p id="p-31">Jennifer S. Balakrishnan, Wei Ho, Nathan Kaplan, Simon Spicer, William Stein, and James Weigandt, Databases of elliptic curves ordered by height and distributions of Selmer groups and ranks, LMS J. Comput. Math. 19 (2016), supp. A, pp. 351-370. MR 3540965</p></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3</span> <span class="title">Coleman's bound</span>
+</h3>
+<aside class="aside-like" id="aside-2"><p id="p-32">Lecture 2 10/9/2019</p></aside><p id="p-33">Goal today: prove Coleman's refinement of Chabauty's theorem.</p>
+<article class="theorem-like" id="theorem-3"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.3</span>. <span class="title">Coleman 1985.</span>
+</h6>
+<p id="p-34">Let \(X/\QQ\) be a curve of genus \(g \ge 2\text{.}\) Suppose the Mordell-Weil rank of \(J(\QQ)\) is less than \(g\text{.}\) Then if \(p \gt 2g\) is a good prime for \(X\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\#X(\QQ) \le \#X_{\FF_p} (\FF_p) + 2g - 2\text{.}
+\end{equation*}
+</div></article><article class="definition-like" id="def-differentials"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.4</span>. <span class="title">Differentials.</span>
+</h6>
+<p id="p-35">Let \(X\) be a  curve over a field \(k\text{.}\) The space of <dfn class="terminology">differentials</dfn> on \(X\) over \(k\) is a 1-dimensional \(k(X)\)-vector space \(\Omega ^1_X(k)\text{.}\)</p>
+<p id="p-36">There is a nontrivial \(k\)-linear derivation</p>
+<div class="displaymath">
+\begin{equation*}
+\diff \colon  k(X) \to \Omega ^1_X(k)
+\end{equation*}
+</div>
+<p>i.e. \(\diff\) is \(k\)-linear and satisfies the Leibniz rule</p>
+<div class="displaymath">
+\begin{equation*}
+\diff(fg) = g \diff f + f \cdot \diff g
+\end{equation*}
+</div>
+<p>for all \(f,g\in k(X)\) and there is some \(f \in k(X)\) s.t. \(\diff f \ne 0\text{.}\)</p>
+<p id="p-37">A general differential can be written as \(\omega  = f \diff g\) where \(g\in K(X)\) with \(\diff g \ne 0\text{.}\) If we fix \(g\) this representation is unique. If \(\omega ,\omega ' \in \Omega ^1_X(k)\) with \(\omega ' \ne0\) then there's a unique \(f\in K(X)\) s.t. \(\omega = f\omega '\text{.}\) We may write \(\omega /\omega ' = f\text{.}\)</p></article><article class="definition-like" id="def-differentials-first-second"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.5</span>. <span class="title">Differentials of the first second and third kinds.</span>
+</h6>
+<p id="p-38">Let \(0\ne \omega  \in \Omega ^1_X(k)\) and \(P\in X(k)\text{.}\) Let \(t\in k(X)\) be  a uniformizer at \(P\text{.}\) Then \(v_P(\omega ) = v_P(\omega /\diff t)\) is the valuation of \(\omega \) at \(P\text{.}\) This valuation is nonzero for only finitely many points \(P \in X(\overline k)\text{.}\) The divisor</p>
+<div class="displaymath">
+\begin{equation*}
+\div(\omega ) = \sum_{P\in X(\overline k)}v_P(\omega ) P \in \Div_X(k)
+\end{equation*}
+</div>
+<p>is the divisor of \(\omega\text{.}\)</p>
+<p id="p-39">If \(v_P(\omega )\ge\) then \(\omega \) is regular at \(P\) and \(\omega \) is said to be regular if it is regular at all points \(P\in X(\overline K)\text{.}\)</p>
+<p id="p-40">Also called differentials of the <dfn class="terminology">first kind</dfn>.</p>
+<p id="p-41">A differential of the <dfn class="terminology">second kind</dfn> has residue zero at all points \(P\in X(\overline K)\text{.}\)</p>
+<p id="p-42">A differential of the <dfn class="terminology">third kind</dfn> has at most a simple pole at all points \(P\in X(\overline K)\) (and integer residues there in some references).</p></article><p id="p-43">Since the quotient of any two non-zero differentials is  a function</p>
+<div class="displaymath">
+\begin{equation*}
+\omega_1 = f_1 \diff g
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\omega_2 = f_2 \diff g
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\omega _1}{\omega _2}  = \frac{f_1}{f_2}\text{.}
+\end{equation*}
+</div>
+<p>The difference  of any two divisors of differentials is a principal divisor.</p>
+<div class="displaymath">
+\begin{equation*}
+\divisor\left(\frac{\omega _1}{\omega _2}\right)  = \divisor \left(\frac{f_1}{f_2}\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \divisor \omega _1 - \divisor \omega _2\text{.}
+\end{equation*}
+</div>
+<p id="p-44">So the divisors of differentials form one linear equivalence class of divisors, the canonical class.</p>
+<article class="paragraphs" id="paragraphs-2"><h5 class="heading"><span class="title">Recall.</span></h5>
+<p id="p-45">Let \(X/k\) be a curve and \(D\in \Div_X(k)\text{.}\) The Riemann-Roch space of \(D\) is the \(k\)-vector space</p>
+<div class="displaymath">
+\begin{equation*}
+L(D) = \left\{\phi \in k(X)^\times : \divisor \phi  + D \ge 0\right\} \cup \{0\}
+\end{equation*}
+</div>
+<p>where we write \(D \ge D'\) if \(v_P(D) \ge v_P(D')\) for all \(P\text{.}\)</p></article><article class="theorem-like" id="theorem-4"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.6</span>. <span class="title">Riemann-Roch.</span>
+</h6>
+<p id="p-46">Let \(X/k\) be a curve of genus \(g\) then there is a divisor \(W \in \Div_X(k)\) s.t. for every \(D\in \Div_X(k)\) w we have \(\dim_k L(D)\) is finite and</p>
+<div class="displaymath">
+\begin{equation*}
+\dim_k L(D)  = \deg D - g +1 \dim_l L(W -D)\text{.}
+\end{equation*}
+</div>
+<p id="p-47">In particular, \(\dim_k L(W) = g\text{,}\) \(\deg W = 2g-2\text{.}\)</p>
+<p id="p-48">The canonical class is exactly the class of the divisor \(W\) in Riemann-Roch.</p>
+<p id="p-49">The \(k\)-vector space of regular differentials has \(\dim L(W)  = g\text{,}\) and is denoted as \(H^0(X, \Omega ^1_X)\text{.}\)</p></article><article class="example-like" id="example-1"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.7</span>.</h6>
+<p id="p-50">Let \(X\colon  y^2 = f(x)\) be a hyperelliptic curve of genus \(g\) over \(k\text{.}\) Then \(H^0(X, \Omega ^1_X)\) has basis</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{ \frac{\diff x}{2y}, \ldots, \frac{x^{g-1}\diff x}{2y} \right\}
+\end{equation*}
+</div>
+<p>so every regular differential can be written uniquely as</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{p(x) \diff x}{2y}
+\end{equation*}
+</div>
+<p>with a polynomial \(p\) of degree \(\le g-1\text{.}\)</p></article><p id="p-51">We want to integrate differentials in some \(p\)-adic sense, Q: What does a \(p\)-adic line integral look like?</p>
+<article class="theorem-like" id="theorem-5"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.8</span>.</h6>
+<p id="p-52">Let \(X/\QQ_p\) be a curve with good reduction then there is a \(p\)-adic integral</p>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \omega  \in \overline \QQ_p
+\end{equation*}
+</div>
+<p>defined for each pair of points \(P,Q\in X(\overline \QQ_p)\) and regular differential \(\omega \in H^0(X, \Omega _X^1(\overline \QQ_p))\) that satisfies the following properties:</p>
+<ol class="decimal">
+<li id="li-27">The integral is \(\overline \QQ_p\) linear in \(\omega \)</li>
+<li id="li-28">If \(P,Q\) both reduce to the same point \(\bar P \in X_{\FF_p}(\FF_p)\) then the integral can be evaluated by writing<div class="displaymath">
+\begin{equation*}
+\omega  = \omega (t) \diff t
+\end{equation*}
+</div>with \(t\) a uniformizer at \(P\) reducing to  a uniformizer at \(\bar P\) and \(\omega \) a power series. Then integrating formally  obtaining a power series \(l\) s.t.<div class="displaymath">
+\begin{equation*}
+\diff l(t) = w(t) \diff t
+\end{equation*}
+</div>and \(l(0) = 0\) and finally evaluating<div class="displaymath">
+\begin{equation*}
+l(t(Q))
+\end{equation*}
+</div>which converges. This implies that \(\int_P^P \omega  = 0\text{.}\)</li>
+<li id="li-29">
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \omega  + \int_{P'}^{Q'} \omega  =  \int_P^{Q'} \omega   + \int_{P'}^Q \omega 
+\end{equation*}
+</div>so it makes sense to define:<div class="displaymath">
+\begin{equation*}
+\int_D \omega
+\end{equation*}
+</div>for<div class="displaymath">
+\begin{equation*}
+\sum_{j=1}^n Q_j  - P_j \in \Div^0_X(\overline \QQ_p)
+\end{equation*}
+</div>as<div class="displaymath">
+\begin{equation*}
+\int_D \omega  = \sum_{j=1}^n \int_{P_j}^{Q_j} \omega 
+\end{equation*}
+</div>
+</li>
+<li id="li-30">If \(D\) is principal then \(\int_D \omega  = 0\text{.}\)</li>
+<li id="li-31">The integral commutes with the action of \(\absgal{\QQ_p}\text{.}\)</li>
+<li id="li-32">Fix \(P_0 \in X(\overline \QQ_p)\text{.}\) If \(0\ne \omega  \in H^0(X, \Omega ^1_X)\text{,}\) then the set of points \(P \in X(\overline \QQ_p)\) reducing to a fixed point \(P_0 \in X_{\FF_p}(\overline \FF_p)\text{.}\) and s.t.<div class="displaymath">
+\begin{equation*}
+\int_{P_0}^P \omega  = 0
+\end{equation*}
+</div>is finite.</li>
+</ol></article><article class="remark-like" id="remark-1"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.9</span>.</h6>
+<p id="p-53">The statement that the curve has good reduction is not necessary but simplifies the statement of 2.</p></article><article class="remark-like" id="remark-2"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.10</span>.</h6>
+<p id="p-54">This    integral is the Coleman integral <a data-knowl="./knowl/bib-coleman-torsion.html" title="Bibliographic Entry 3.29: Torsion points on curves and p-adic abelian integrals.">[3.29]</a>, other works on \(p\)-adic integration include Berkovich <a data-knowl="./knowl/bib-berkovich.html" title="Bibliographic Entry 3.12: Integration of One-forms on P-adic Analytic Spaces">[3.12]</a>. Also there is work of Zarhin, Colmez, Vologodsky, Besser, ...</p></article><article class="remark-like" id="remark-3"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.11</span>.</h6>
+<p id="p-55">Theory of Coleman integration of forms the second or third kind developed by Coleman-de Shalit <a data-knowl="./knowl/bib-coleman-de-shalit.html" title="Bibliographic Entry 3.31: \(p\)-adic regulators on curves and special values of \(p\)-adic \(L\)-functions">[3.31]</a>. (additivity in endpoints, linearity, change of variables, FTC).</p></article><article class="theorem-like" id="corollary-1"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">2.12</span>.</h6>
+<p id="p-56">Given the hypotheses of the previous theorem</p>
+<div class="displaymath">
+\begin{equation*}
+P_0 \in X(\QQ_p)
+\end{equation*}
+</div>
+<p>and \(J\) the Jacobian of \(X\) let</p>
+<div class="displaymath">
+\begin{equation*}
+\iota  \colon X \to J
+\end{equation*}
+</div>
+<p>be the embedding</p>
+<div class="displaymath">
+\begin{equation*}
+P \mapsto [P - P_0]
+\end{equation*}
+</div>
+<p>there is a map</p>
+<div class="displaymath">
+\begin{equation*}
+J(\QQ_p) \times H^0(X, \Omega _X^1) \to \QQ_p
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(P,\omega ) \mapsto \pair P \omega 
+\end{equation*}
+</div>
+<p>that is additive in \(P\) and \(\QQ_p\) linear in \(\omega \) which is given by</p>
+<div class="displaymath">
+\begin{equation*}
+\pair{[D]}\omega  = \int_D \omega 
+\end{equation*}
+</div>
+<p>in particular for</p>
+<div class="displaymath">
+\begin{equation*}
+P\in X(\QQ_p)
+\end{equation*}
+</div>
+<p>we have</p>
+<div class="displaymath">
+\begin{equation*}
+\pair{\iota (P)}\omega  = \int_{P_0}^P \omega \text{.}
+\end{equation*}
+</div></article><article class="remark-like" id="remark-4"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.13</span>.</h6>
+<p id="p-57">If \(P \in J(\QQ_p)\) has finite order, then</p>
+<div class="displaymath">
+\begin{equation*}
+\pair P\omega =0,\,\forall \omega \in H^0(X, \Omega _X^1)
+\end{equation*}
+</div>
+<p>to see this, if \(nP= 0\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\pair P\omega  = \frac1n\pair{nP}\omega  = \frac1n0 = 0\text{.}
+\end{equation*}
+</div>
+<p>One can show that torsion points are the only points with this property. On the other hand, if \(\omega \) has the property that  \(\pair P\omega  = 0\) for all \(P \in J(\QQ_p)\) then \(\omega =0\text{.}\)</p></article><article class="theorem-like" id="corollary-2"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">2.14</span>.</h6>
+<p id="p-58">Let \(X/\QQ\) be a curve of genus \(g\) with Mordell-Weil rank less than \(g\text{.}\) Then \(\# X(\QQ)\) is finite. Note we don't need \(g \ge 2\text{,}\) in \(g=1\) this applies to rank 0.</p></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-1" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-59">Pick a prime of good reduction for \(X\) let</p>
+<div class="displaymath">
+\begin{equation*}
+V = \{ \omega  \in H^0(X, \Omega _X^1) : \forall P \in J(\QQ) : \pair P\omega  = 0\}
+\end{equation*}
+</div>
+<p>by additivity in the first argument this condition is equivalent to requiring that \(\pair{P_j}\omega  = 0\) for a basis \(\{P_j\}_{j=1}^r\) of the free part of \(J(\QQ)\) so it leads to at most \(r\) linear constraints, so \(\dim V \ge g - r \gt 0\text{.}\) So there is some \(0 \ne \omega  \in V\) pick \(P_0 \in X(\QQ)\text{,}\) if \(X(\QQ) = \emptyset\) we are done. To define \(\iota \colon X \hookrightarrow J\text{.}\) Since \(\iota (P) \in J(\QQ)\) for all \(P\in X(\QQ)\) so it follows that \(\int_{P_0}^P\omega =0\) for all \(P\in X(\QQ)\text{.}\) By the theorem the number of such \(P\) is finite in each residue disk of \(X(\QQ)\text{.}\) Since the number of residue classes is  \(\# X(\FF_p)\) is finite. The total number of points in \(X(\QQ)\) is finite also.</p>
+<p id="p-60">To get an actual bound we have to bound the number of zeroes of</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{P_0}^z \omega 
+\end{equation*}
+</div>
+<p>as a \(p\)-aidc power series. We can think of \(X(\QQ_p)\) set theoretically as a finite union of residue disks. Within each residue disk</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{P_0}^z \omega 
+\end{equation*}
+</div>
+<p>has finitely many \(p\)-adic zeroes.</p></article></div>
+<aside class="aside-like" id="aside-3"><p id="p-61">Lecture 3 10/9/2019</p></aside><p id="p-62">We want  to give  a more refined version of this result which uses results about zeroes of \(p\)-adic power series.</p>
+<article class="theorem-like" id="theorem-6"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.15</span>.</h6>
+<p id="p-63">Let</p>
+<div class="displaymath">
+\begin{equation*}
+0 \ne l(t) = \sum_{n=0}^\infty a_nt^n\in \QQ_p[[t]]
+\end{equation*}
+</div>
+<p>such that \(a_n \to 0\) as \(n \to \infty \) in the \(p\)-adic topology. Let</p></article></section></section></div></main>
+</div>
+<!--Start: Google Classic code-->
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-48250536-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--End: Google Classic code-->
+<div class="login-link"><span id="loginlogout" class="login">login</span></div>
+<script src="https://pretextbook.org/js/0.12/login.js"></script>
+</body>
+</html>
