@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>We assume \(P_0\in X(\QQ)\text{,}\) now arguing as in the proof of today's first corollary there is a non-zero differential \(\omega  \in H^0(X, \Omega ^1_{X/\QQ_p})\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{P_0}^P \omega  = 0
+\end{equation*}
+</div>
+<p>for all \(P\in X(\QQ)\text{.}\) Now consider a point \(\bar Q \in \overline X(\FF_p)\) and lift it to \(Q\) in \(X(\QQ_p)\text{,}\) we can pick a  uniformizer \(t\in \QQ_p(X)\units\) s.t at \(Q\) \(t\) reduces to a uniformizer \(\bar t \in \FF_p(\overline X)\units \) at \(\bar Q\text{.}\) We rescale \(\omega \) s.t. its reduction \(\bar \omega \) is defined an non-zero. Then \(\bar \omega  \in H^0(X, \Omega ^1_{X/\FF_p})\text{.}\) Recall that \(\divisor(\bar \omega)\) is effective and has degree \(2g-2\text{.}\) Let \(\nu (\bar Q)\) denote the valuation at \(\bar Q\) of \(\bar \omega \text{.}\) \(\nu (\bar Q) = \nu _{\bar Q}(\bar \omega )\text{.}\) We write \(\omega (t) = w(t) \diff t\) with</p>
+<div class="displaymath">
+\begin{equation*}
+w(t) \in \ZZ_p[[t]]
+\end{equation*}
+</div>
+<p>the coefficients are in \(\ZZ_p\) since \(\bar \omega \) is defined. Then</p>
+<div class="displaymath">
+\begin{equation*}
+\bar \omega  = \bar w(t) \diff \bar t
+\end{equation*}
+</div>
+<p>\(\bar w(\bar t) = \bar t^{\nu (\bar Q)}(u_0 + u_1 \bar t + \cdots)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{P_0}^P \omega  =l(t(P))
+\end{equation*}
+</div>
+<p>for \(P \in X(\QQ_p)\) such that \(\bar p = \bar q\) and apply previous lemma. Now summing over residue disks we get</p>
+<div class="displaymath">
+\begin{equation*}
+\#X(\QQ) \le \#\left\{ P\in X(\QQ_p) : \int_{P_0}^P \omega =0\right\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\le \sum_{\bar Q \in \bar X(\FF_p)} \left(\nu (\bar Q)  + 1\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\sum_{\bar Q \in \bar X(\FF_p)} \nu (\bar Q)  + \sum_{\bar Q \in \bar X(\FF_p)}1
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\le \deg(\divisor \omega ) + \# \bar X(\FF_p)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= 2g - 2 + \# \bar X(\FF_p)\text{.}
+\end{equation*}
+</div></article></body>
+</html>

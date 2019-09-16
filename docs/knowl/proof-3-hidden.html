@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>Let</p>
+<div class="displaymath">
+\begin{equation*}
+w(t) = w_0 + w_1t + \cdots
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+l(t) = l_0 + l_1t + \cdots
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+l_{n+1}  = \frac{w_n}{n+1} \in \frac{1}{n+1}\ZZ_p
+\end{equation*}
+</div>
+<p>since \(v_p(n+1) = O(\log n)\) the assumption that</p>
+<div class="displaymath">
+\begin{equation*}
+w_n \in \ZZ_p
+\end{equation*}
+</div>
+<p>implies that \(v_p(l_n) = v_p(w_n/(n+1))\ge - c\log n\) for some constant \(c\text{.}\) If \(\tau  \in p \ZZ_p\) so \(v_p(\tau ) \ge 1\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+v_p(l_n\tau ^n) \ge n - c\log n  \to \infty 
+\end{equation*}
+</div>
+<p>as \(n \to \infty \text{,}\) hence \(l(\tau )\) converges. Now consider \(l(pt) = l_0 + pl_1t + p^2 l_2 t^2 + \cdots\text{.}\) The claim is that in the notation of the previous theorem we have \(N \le \nu +1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+v_p(p^{\nu  + 1} l_{\nu +1}) = \nu  + 1 + v_p(l_{\nu +1})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \nu +1 + v_p\left(\frac{w_\nu }{\nu +1}\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \nu  + 1+  v_p(w_\nu ) - v_p(\nu  + 1) \le \nu  + 1
+\end{equation*}
+</div>
+<p>as by assumption \(\bar w(t) \in \FF_p\lb \lb t\rb \rb \) has the form \(ut^\nu +\cdots\) so that \(v_p(w_\nu ) =0\text{.}\)</p>
+<p>For \(n \gt \nu \text{,}\) OOPS again?????</p>
+<div class="displaymath">
+\begin{equation*}
+v_p(p^{n+1} l_{n+1}) = n+1 + v_p(l_{n+1})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= n + 1+ v_p(w_n) - v_p(n+1)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\ge n+1 - v_p(n+1)
+\end{equation*}
+</div>
+<p>since</p>
+<div class="displaymath">
+\begin{equation*}
+v_p(w_n) \ge 0
+\end{equation*}
+</div>
+<p>for \(n \gt \nu \text{.}\) So it suffices to show that</p>
+<div class="displaymath">
+\begin{equation*}
+n -  v_p(n+1) \gt \nu ]
+\end{equation*}
+</div>
+<p>This is clear for \(v_p(n+1) = 0\text{.}\) Otherwise suppose \(e = v_p(n+1)\) then \(p^e|(n+1)\text{.}\) So \(n+1 \ge p^3 \gt \nu + e+ 1\text{,}\) where the second inequality can be shown by induction. For \(e = 1\) this is our hypothesis that \(p \gt \nu  + 2\text{,}\) then use \(p^{e+1}\ge p^e + 1\text{.}\) The previous corollary now gives the result.</p></article></body>
+</html>
