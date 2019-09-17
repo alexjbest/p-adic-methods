@@ -87,7 +87,7 @@ section#sec-chab-coleman
             me 2xk^2 + (-3x^3 -2x^2 + 6x - 4)k + x^5 = 0
             | this is a quadratic in #[m k], and the discriminant is a square in #[m \QQ].
             |so
-            me X\colon  y^2 = (-3x^3 - 2*x^2 + 6x - 4)^2 - 4(2x)x^5
+            me X\colon  y^2 = (-3x^3 - 2x^2 + 6x - 4)^2 - 4(2x)x^5
             me = x^{6} + 12 x^{5} - 32 x^{4} + 52 x^{2} - 48 x + 16
             | so this is a genus 2 hyperelliptic curve. We need the #[m \QQ]-points of this.
         paragraphs
@@ -520,3 +520,152 @@ section#sec-chab-coleman
                 me \#X(\QQ) \le \#\mathcal X_{sm}(\FF_p) + 2r
                 | where #[m \overline {\mathcal X}(\FF_p)] is the set of smooth points in the special fiber of minimal roper regular model of #[m X] over #[m \ZZ_p].
                 | #[xref(ref="bib-katz-zureick-clifford")/].
+        aside: p Lecture 4 17/9/2019
+
+        p
+            | A few results applying Chabauty-Coleman to prove uniform bounds:
+        theorem
+            title Stoll '13
+            statement: p
+                | If #[m X/\QQ] is hyperelliptic of genus #[m g] with Jacobian of Mordell-Weil rank #[m r \le g -3], then
+                me \#X(\QQ) \le 8rg + 33(g-1) + 1
+                | #[xref(ref="bib-stoll-uniform")/].
+
+        theorem
+            title Katz-Rabinoff-Zuerieck-Brown '19
+            statement: p
+                | If #[m X/\QQ] curves of genus #[m g] with #[m r\le g-3].
+                me \#X(\QQ) \le 84 g^2 - 98 g + 28
+                | .
+                | Ref KRZB and expository paper.
+
+        p
+            | Suppose #[m X/\QQ] is genus 3, hyperelliptic curve of rank 0, Stoll's bound gives #[m \#X(\QQ) \le 67].
+            | Is there a curve meeting this bound?
+            | Or even #[m \#X(\QQ) =10]?
+        p
+            | In the LMFDB we find in #[m g=2], #[m r=0] the record seems to be #[m \#X(\QQ) = 8].
+            | For #[url(href="http://lmfdb.org/Genus2Curve/Q/1116.a.214272.1")/] we have #[m \#X(\QQ) = 8].
+            me J(\QQ) \simeq \ZZ/39
+            | with simple Jacobian (first found by Elkies).
+
+        p
+            | It is possible to use constructions of Howe, Leprevost, Poonen, Elkies, others to construct Jacobians with even larger torsion (and possibly curves of low rank with many rational points?
+            | Earlier we talked about computing annihilating differentials in the Chabauty-Coleman method. Here is a concrete example, to motivate a discussion of explicit Coleman integration.
+        example
+            statement: p
+                | Consider
+                me X\colon y^2 = x^5 - 4x^3 + 3x + 1
+                | #[url(href="http://lmfdb.org/Genus2Curve/Q/3920.b.62720.1")/].
+                me J(\QQ) \simeq \ZZ\oplus \ZZ/2
+                | .
+                me N = 3920 = 2^4 \cdot 5 \cdot 7^2
+                | . And
+                me X(\QQ) \supseteq\{\infty , (0,\pm1), (1,\pm1), (-1,\pm 1)\}
+                me \#X_{\FF_{11}}(\FF_{11}) = 13
+                me \#X_{\FF_{13}}(\FF_{13}) = 14
+                | so the Chabauty-Coleman bound by itself does not prove that we found all the #[m \QQ]-points already.
+                | The point
+                me \lb (1,1) - \infty \rb 
+                | is of infinite order in #[m J(\QQ)].
+                | We use it to construct an annihilating differential.
+                | Let #[m p = 11]. Then a basis of #[m H^0(X,\Omega ^1)] is given by
+                me \left\{ \omega _i = \frac{x^i \diff x}{2y}\right\}_{i=0,1}
+                | so the annihilating differential #[m \eta] is some  #[m \QQ_p]-linear combination of #[m \omega _0,\omega _1].
+                | We use the values of
+                me \int_\infty ^{(1,1)} \omega _0,\, \int_\infty ^{(1,1)} \omega _1
+                | to compute #[m \eta].
+                | We find
+                me \int_\infty ^{(1,1)} \omega _0 = 8\cdot 11 + 7 \cdot 11^2 + 7\cdot 11^3 + 4\cdot 11^7 + 9\cdot 11^8 + O(11^9)   = \alpha 
+                me \int_\infty ^{(1,1)} \omega _1 = 3\cdot 11 + 2\cdot 11^2 + 4\cdot 11^3 +  3  \cdot 11^4 + 6\cdot 11^5 + 6\cdot 11^6 + 8\cdot 11^7 + 3\cdot 11^8 + O(11^9)   = \beta 
+                | .
+                | Then
+                me \int_{\infty }^{(1,1)} \beta  \omega _0 - \alpha \omega _1 =  0
+                | so take
+                me \eta                  =\beta  \omega _0 - \alpha \omega _1
+                | .
+                | To use #[m \eta] to compute #[m X(\QQ)] or more precisely, a finite subset of #[m X(\QQ_p)] containing #[m X(\QQ)] we need to compute the collection of indefinite Coleman integrals
+                me \left\{\int_\infty ^{P_t} \eta\right\}
+                | where #[m P_t] ranges over all residue disks.
+                | And solve for #[m z\in X(\QQ_p)] such that
+                me \int_\infty ^z \eta = 0
+                | .
+                | So to compute #[m \alpha ,\beta ] and the functions we needed Coleman integrals between points not in the same residue disk.
+
+        p
+            | Goal: show how to compute these #[m p]-adic integrals.
+
+        p
+            | Let #[m X/\QQ] be a curve.
+            | Let #[m X^{an}] be the associated rigid analytic space.
+            | (Let #[m \mathcal X] be a smooth curve over #[m \ZZ_p] s.t.
+            me \mathcal X \otimes \QQ_p \simeq X\otimes \QQ_p
+            | , then #[m X^{an}] denotes the rigid analytic space over #[m \QQ_p] which is the generic fibre of #[m \mathcal X].)
+
+        definition
+            statement: p
+                | A wide open subspace of #[m X^{an}] is the complement in #[m X^{an}] of the union of a finite collection of disjoint closed disks of radius #[m \lambda _i \lt 1].
+        example
+            statement: p
+                | Let
+                me X\colon  y^2 = \prod_{i=1}^5 (x-\alpha _i)
+                | take out closed disks of radius #[m \lambda _i] for each #[m P_i = (\alpha _i ,0)] and #[m \infty ].
+
+        theorem
+            title Coleman, Coleman-de Shalit
+            statement
+                p
+                    | Let #[m \eta, \xi] be 1-forms on a wide open #[m V] of #[m X^{an}] and #[m P,Q,R \in V(\QQ_p)].
+                    | Let #[m a,b\in \QQ_p].
+                    | The definite Coleman integral has the following properties
+                    ol
+                        li
+                            | Linearity
+                            me \int_{P}^Q \alpha  \eta + b \xi = \alpha \int_P^Q \eta + b \int_P^Q \xi
+                        li
+                            | Additivity in endpoints
+                            me \int_P^Q \eta = \int_P^R \eta + \int_R^Q \eta
+                        li
+                            | Change of variables, if #[m V' \subseteq X'] is a wide open subspace of a rigid analytic space #[m X'] and #[m \phi  \colon V \to V'] is a rigid analytic map then
+                            me \int_P^Q \phi ^* \eta = \int_{\phi P}^{\phi Q} \eta
+                            | .
+                        li
+                            | Fundamental theorem of calculus
+                            me \int_P^Q \diff f = f(Q) - f(P)
+                            | for #[m f] a rigid analytic function on #[m V].
+
+
+        p
+            | Goal: want to integrate
+            me \int_P^Q \omega 
+            | for a 1-form of the second kind, #[m P,Q \in V(\QQ_p)].
+            |Idea
+            ol
+                li
+                    | Take #[m \phi ] to be a lift of frobenius from the special fibre.
+                li
+                    | Write a basis #[m \{\omega _i\}] of 1-forms of the second kind.
+                li
+                    | Compute #[m \phi ^*\omega _i] and use properties of Coleman integral to relate #[m \int_P^Q \phi ^*\omega _i] to #[m \int_P^Q \omega _i] and other terms we can compute.
+
+        p
+            | #[xref(ref="bib-kedlaya-counting")/], #[xref(ref="bib-edixhoven-after")/], also Stephanie Chan MMath thesis (is this online?)
+
+        p
+            | Setup #[m p\ne 2] prime
+            me \overline X/\FF_q,\,q=p^n
+            | hyperelliptic of genus #[m g] with affine equation
+            me y^2 = P(x)
+            | with #[m P(x)] monic degree #[m 2g+1], with no repeated roots.
+            me X \colon \overline X \smallsetminus \{ \infty , y=0\}
+            | .
+            | #[m W] ring of Witt vectors over #[m \FF_q], (the unique unramified extension of #[m \ZZ_p] with residue field #[m \FF_q].
+        p
+            | Choose a lift #[m \tilde P] of #[m P], to a monic polynomial of degree #[m 2g+1].
+            | Over #[m W] this gives a  lift #[m \widetilde X] of #[m X].
+            | Let #[m A = W\lb  x,y,y\inv\rb /(y^2 - \tilde P(x))]
+            | Let #[m A^\dagger] be the weak completion of #[m A], explicitly let #[m v_p] denote the #[m p]-adic valuation on #[m W] extend it to polynomials.
+            | If #[m g(x) = \sum a_i x^i], define #[m v_p(g) = \min\{v_p(a_i)\}].
+            | The elements of #[m A^\dagger] are series
+            me \sum_{-\infty }^\infty  ( S_n(x) + T_n(x)y)y^{2n}
+            | where #[m s_n] and #[m T_n] are polynomials of degree at most #[m 2g] s.t. limits are positive.

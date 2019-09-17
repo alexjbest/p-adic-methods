@@ -351,7 +351,7 @@ k(1-t^2) + k(1+t^2) + 2kt = 1 + u^2 + 1 + u^2 + 4u
 <p>this is a quadratic in \(k\text{,}\) and the discriminant is a square in \(\QQ\text{.}\) so</p>
 <div class="displaymath">
 \begin{equation*}
-X\colon  y^2 = (-3x^3 - 2*x^2 + 6x - 4)^2 - 4(2x)x^5
+X\colon  y^2 = (-3x^3 - 2x^2 + 6x - 4)^2 - 4(2x)x^5
 \end{equation*}
 </div>
 <div class="displaymath">
@@ -953,13 +953,213 @@ p \gt  2r + 2\text{.}
 \# X(\QQ) \le \# \overline X(\FF_p) + 2r + \floor{\frac{2r}{p-1}}\text{.}
 \end{equation*}
 </div>
-<p><a data-knowl="./knowl/bib-stoll-independence.html" title="Bibliographic Entry 83: Independence of Rational Points on Twists of a given Curve">[83]</a>. Katz-Rabinoff-Zuerieck-Brown (12) extend Stoll's result tot the case of bad reduction, if \(p \gt 2g\) and \(\mathcal X\) a proper regular model for \(X\) over \(\ZZ_p\) then</p>
+<p><a data-knowl="./knowl/bib-stoll-independence.html" title="Bibliographic Entry 84: Independence of Rational Points on Twists of a given Curve">[84]</a>. Katz-Rabinoff-Zuerieck-Brown (12) extend Stoll's result tot the case of bad reduction, if \(p \gt 2g\) and \(\mathcal X\) a proper regular model for \(X\) over \(\ZZ_p\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \#X(\QQ) \le \#\mathcal X_{sm}(\FF_p) + 2r
 \end{equation*}
 </div>
-<p>where \(\overline {\mathcal X}(\FF_p)\) is the set of smooth points in the special fiber of minimal roper regular model of \(X\) over \(\ZZ_p\text{.}\) <a data-knowl="./knowl/bib-katz-zureick-clifford.html" title="Bibliographic Entry 54: The Chabauty–Coleman Bound at a Prime of Bad Reduction and Clifford Bounds for Geometric Rank Functions">[54]</a>.</p></article></section></section></div></main>
+<p>where \(\overline {\mathcal X}(\FF_p)\) is the set of smooth points in the special fiber of minimal roper regular model of \(X\) over \(\ZZ_p\text{.}\) <a data-knowl="./knowl/bib-katz-zureick-clifford.html" title="Bibliographic Entry 55: The Chabauty–Coleman Bound at a Prime of Bad Reduction and Clifford Bounds for Geometric Rank Functions">[55]</a>.</p></article><aside class="aside-like" id="aside-4"><p id="p-79">Lecture 4 17/9/2019</p></aside><p id="p-80">A few results applying Chabauty-Coleman to prove uniform bounds:</p>
+<article class="theorem-like" id="theorem-8"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.19</span>. <span class="title">Stoll '13.</span>
+</h6>
+<p id="p-81">If \(X/\QQ\) is hyperelliptic of genus \(g\) with Jacobian of Mordell-Weil rank \(r \le g -3\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\#X(\QQ) \le 8rg + 33(g-1) + 1
+\end{equation*}
+</div>
+<p><a data-knowl="./knowl/bib-stoll-uniform.html" title="Bibliographic Entry 85: Uniform Bounds for the Number of Rational Points on Hyperelliptic Curves of Small Mordell–Weil Rank">[85]</a>.</p></article><article class="theorem-like" id="theorem-9"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.20</span>. <span class="title">Katz-Rabinoff-Zuerieck-Brown '19.</span>
+</h6>
+<p id="p-82">If \(X/\QQ\) curves of genus \(g\) with \(r\le g-3\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\#X(\QQ) \le 84 g^2 - 98 g + 28\text{.}
+\end{equation*}
+</div>
+<p>Ref KRZB and expository paper.</p></article><p id="p-83">Suppose \(X/\QQ\) is genus 3, hyperelliptic curve of rank 0, Stoll's bound gives \(\#X(\QQ) \le 67\text{.}\) Is there a curve meeting this bound? Or even \(\#X(\QQ) =10\text{?}\)</p>
+<p id="p-84">In the LMFDB we find in \(g=2\text{,}\) \(r=0\) the record seems to be \(\#X(\QQ) = 8\text{.}\) For <a class="external" href="http://lmfdb.org/Genus2Curve/Q/1116.a.214272.1" target="_blank"><code class="code-inline tex2jax_ignore">http://lmfdb.org/Genus2Curve/Q/1116.a.214272.1</code></a> we have \(\#X(\QQ) = 8\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+J(\QQ) \simeq \ZZ/39
+\end{equation*}
+</div>
+<p>with simple Jacobian (first found by Elkies).</p>
+<p id="p-85">It is possible to use constructions of Howe, Leprevost, Poonen, Elkies, others to construct Jacobians with even larger torsion (and possibly curves of low rank with many rational points? Earlier we talked about computing annihilating differentials in the Chabauty-Coleman method. Here is a concrete example, to motivate a discussion of explicit Coleman integration.</p>
+<article class="example-like" id="example-2"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.21</span>.</h6>
+<p id="p-86">Consider</p>
+<div class="displaymath">
+\begin{equation*}
+X\colon y^2 = x^5 - 4x^3 + 3x + 1
+\end{equation*}
+</div>
+<p><a class="external" href="http://lmfdb.org/Genus2Curve/Q/3920.b.62720.1" target="_blank"><code class="code-inline tex2jax_ignore">http://lmfdb.org/Genus2Curve/Q/3920.b.62720.1</code></a>.</p>
+<div class="displaymath">
+\begin{equation*}
+J(\QQ) \simeq \ZZ\oplus \ZZ/2\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+N = 3920 = 2^4 \cdot 5 \cdot 7^2\text{.}
+\end{equation*}
+</div>
+<p>And</p>
+<div class="displaymath">
+\begin{equation*}
+X(\QQ) \supseteq\{\infty , (0,\pm1), (1,\pm1), (-1,\pm 1)\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\#X_{\FF_{11}}(\FF_{11}) = 13
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\#X_{\FF_{13}}(\FF_{13}) = 14
+\end{equation*}
+</div>
+<p>so the Chabauty-Coleman bound by itself does not prove that we found all the \(\QQ\)-points already. The point</p>
+<div class="displaymath">
+\begin{equation*}
+\lb (1,1) - \infty \rb 
+\end{equation*}
+</div>
+<p>is of infinite order in \(J(\QQ)\text{.}\) We use it to construct an annihilating differential. Let \(p = 11\text{.}\) Then a basis of \(H^0(X,\Omega ^1)\) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{ \omega _i = \frac{x^i \diff x}{2y}\right\}_{i=0,1}
+\end{equation*}
+</div>
+<p>so the annihilating differential \(\eta\) is some  \(\QQ_p\)-linear combination of \(\omega _0,\omega _1\text{.}\) We use the values of</p>
+<div class="displaymath">
+\begin{equation*}
+\int_\infty ^{(1,1)} \omega _0,\, \int_\infty ^{(1,1)} \omega _1
+\end{equation*}
+</div>
+<p>to compute \(\eta\text{.}\) We find</p>
+<div class="displaymath">
+\begin{equation*}
+\int_\infty ^{(1,1)} \omega _0 = 8\cdot 11 + 7 \cdot 11^2 + 7\cdot 11^3 + 4\cdot 11^7 + 9\cdot 11^8 + O(11^9)   = \alpha 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\int_\infty ^{(1,1)} \omega _1 = 3\cdot 11 + 2\cdot 11^2 + 4\cdot 11^3 +  3  \cdot 11^4 + 6\cdot 11^5 + 6\cdot 11^6 + 8\cdot 11^7 + 3\cdot 11^8 + O(11^9)   = \beta \text{.}
+\end{equation*}
+</div>
+<p>Then</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{\infty }^{(1,1)} \beta  \omega _0 - \alpha \omega _1 =  0
+\end{equation*}
+</div>
+<p>so take</p>
+<div class="displaymath">
+\begin{equation*}
+\eta                  =\beta  \omega _0 - \alpha \omega _1\text{.}
+\end{equation*}
+</div>
+<p>To use \(\eta\) to compute \(X(\QQ)\) or more precisely, a finite subset of \(X(\QQ_p)\) containing \(X(\QQ)\) we need to compute the collection of indefinite Coleman integrals</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{\int_\infty ^{P_t} \eta\right\}
+\end{equation*}
+</div>
+<p>where \(P_t\) ranges over all residue disks. And solve for \(z\in X(\QQ_p)\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\int_\infty ^z \eta = 0\text{.}
+\end{equation*}
+</div>
+<p>So to compute \(\alpha ,\beta \) and the functions we needed Coleman integrals between points not in the same residue disk.</p></article><p id="p-87">Goal: show how to compute these \(p\)-adic integrals.</p>
+<p id="p-88">Let \(X/\QQ\) be a curve. Let \(X^{an}\) be the associated rigid analytic space. (Let \(\mathcal X\) be a smooth curve over \(\ZZ_p\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal X \otimes \QQ_p \simeq X\otimes \QQ_p\text{,}
+\end{equation*}
+</div>
+<p>then \(X^{an}\) denotes the rigid analytic space over \(\QQ_p\) which is the generic fibre of \(\mathcal X\text{.}\))</p>
+<article class="definition-like" id="definition-3"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.22</span>.</h6>
+<p id="p-89">A wide open subspace of \(X^{an}\) is the complement in \(X^{an}\) of the union of a finite collection of disjoint closed disks of radius \(\lambda _i \lt 1\text{.}\)</p></article><article class="example-like" id="example-3"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.23</span>.</h6>
+<p id="p-90">Let</p>
+<div class="displaymath">
+\begin{equation*}
+X\colon  y^2 = \prod_{i=1}^5 (x-\alpha _i)
+\end{equation*}
+</div>
+<p>take out closed disks of radius \(\lambda _i\) for each \(P_i = (\alpha _i ,0)\) and \(\infty \text{.}\)</p></article><article class="theorem-like" id="theorem-10"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.24</span>. <span class="title">Coleman, Coleman-de Shalit.</span>
+</h6>
+<p id="p-91">Let \(\eta, \xi\) be 1-forms on a wide open \(V\) of \(X^{an}\) and \(P,Q,R \in V(\QQ_p)\text{.}\) Let \(a,b\in \QQ_p\text{.}\) The definite Coleman integral has the following properties</p>
+<ol class="decimal">
+<li id="li-33">Linearity<div class="displaymath">
+\begin{equation*}
+\int_{P}^Q \alpha  \eta + b \xi = \alpha \int_P^Q \eta + b \int_P^Q \xi
+\end{equation*}
+</div>
+</li>
+<li id="li-34">Additivity in endpoints<div class="displaymath">
+\begin{equation*}
+\int_P^Q \eta = \int_P^R \eta + \int_R^Q \eta
+\end{equation*}
+</div>
+</li>
+<li id="li-35">Change of variables, if \(V' \subseteq X'\) is a wide open subspace of a rigid analytic space \(X'\) and \(\phi  \colon V \to V'\) is a rigid analytic map then<div class="displaymath">
+\begin{equation*}
+\int_P^Q \phi ^* \eta = \int_{\phi P}^{\phi Q} \eta\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-36">Fundamental theorem of calculus<div class="displaymath">
+\begin{equation*}
+\int_P^Q \diff f = f(Q) - f(P)
+\end{equation*}
+</div>for \(f\) a rigid analytic function on \(V\text{.}\)</li>
+</ol></article><p id="p-92">Goal: want to integrate</p>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \omega 
+\end{equation*}
+</div>
+<p>for a 1-form of the second kind, \(P,Q \in V(\QQ_p)\text{.}\) Idea</p>
+<ol class="decimal">
+<li id="li-37">Take \(\phi \) to be a lift of frobenius from the special fibre.</li>
+<li id="li-38">Write a basis \(\{\omega _i\}\) of 1-forms of the second kind.</li>
+<li id="li-39">Compute \(\phi ^*\omega _i\) and use properties of Coleman integral to relate \(\int_P^Q \phi ^*\omega _i\) to \(\int_P^Q \omega _i\) and other terms we can compute.</li>
+</ol>
+<p id="p-93"><a data-knowl="./knowl/bib-kedlaya-counting.html" title="Bibliographic Entry 56: Counting points on hyperelliptic curves using Monsky-Washnitzer cohomology">[56]</a>, <a data-knowl="./knowl/bib-edixhoven-after.html" title="Bibliographic Entry 34: Point Counting after Kedlaya, EIDMA-Stieltjes Graduate Course, Leiden, September 22–26, 2003">[34]</a>, also Stephanie Chan MMath thesis (is this online?)</p>
+<p id="p-94">Setup \(p\ne 2\) prime</p>
+<div class="displaymath">
+\begin{equation*}
+\overline X/\FF_q,\,q=p^n
+\end{equation*}
+</div>
+<p>hyperelliptic of genus \(g\) with affine equation</p>
+<div class="displaymath">
+\begin{equation*}
+y^2 = P(x)
+\end{equation*}
+</div>
+<p>with \(P(x)\) monic degree \(2g+1\text{,}\) with no repeated roots.</p>
+<div class="displaymath">
+\begin{equation*}
+X \colon \overline X \smallsetminus \{ \infty , y=0\}\text{.}
+\end{equation*}
+</div>
+<p>\(W\) ring of Witt vectors over \(\FF_q\text{,}\) (the unique unramified extension of \(\ZZ_p\) with residue field \(\FF_q\text{.}\)</p>
+<p id="p-95">Choose a lift \(\tilde P\) of \(P\text{,}\) to a monic polynomial of degree \(2g+1\text{.}\) Over \(W\) this gives a  lift \(\widetilde X\) of \(X\text{.}\) Let \(A = W\lb  x,y,y\inv\rb /(y^2 - \tilde P(x))\) Let \(A^\dagger\) be the weak completion of \(A\text{,}\) explicitly let \(v_p\) denote the \(p\)-adic valuation on \(W\) extend it to polynomials. If \(g(x) = \sum a_i x^i\text{,}\) define \(v_p(g) = \min\{v_p(a_i)\}\text{.}\) The elements of \(A^\dagger\) are series</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{-\infty }^\infty  ( S_n(x) + T_n(x)y)y^{2n}
+\end{equation*}
+</div>
+<p>where \(s_n\) and \(T_n\) are polynomials of degree at most \(2g\) s.t. limits are positive.</p></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>
