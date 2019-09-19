@@ -668,7 +668,7 @@ section#sec-chab-coleman
             | If #[m g(x) = \sum a_i x^i], define #[m v_p(g) = \min\{v_p(a_i)\}].
             | The elements of #[m A^\dagger] are series
             me \sum_{-\infty }^\infty  ( S_n(x) + T_n(x)y)y^{2n}
-            | where #[m s_n] and #[m T_n] are polynomials of degree at most #[m 2g] s.t. limits are positive.
+            | where #[m S_n] and #[m T_n] are polynomials of degree at most #[m 2g] s.t. limits are positive.
 
 
         aside: p Lecture 5 19/9/2019
@@ -688,7 +688,7 @@ section#sec-chab-coleman
         p
             me A \colon  \ZZ_q [x,y,y\inv]/(\tilde y^2 -\tilde P(x))
             | #[m A^\dagger] the weak completion of #[m A], this is
-            me \left\{\sum_{-\infty }^\infty  S_n(x) y^n : s_n \in \ZZ_q[x],\,\deg s_n\le 2g,\, \ord_p(s_n) \gt c^n\text{ for some }c> 0\right\}
+            me \left\{\sum_{-\infty }^\infty  s_n(x) y^n : s_n \in \ZZ_q[x],\,\deg s_n\le 2g,\, \ord_p(s_n) \gt c^n\text{ for some }c> 0\right\}
             |.
 
         p
@@ -749,7 +749,7 @@ section#sec-chab-coleman
             | .
         p
             | A special case of this: let #[m Q(x)  = x^{m-2g}] then
-            me \diff(2Q(x) y) = (Q(x) \tilde P'(x) + 2Q'(x) \tilde P(x)) \frac{\diff x}{y} \equiv  0 \text{ in }H^1_{MW} (X)
+            me \diff(Q(x) y) = (Q(x) \tilde P'(x) + 2Q'(x) \tilde P(x)) \frac{\diff x}{y} \equiv  0 \text{ in }H^1_{MW} (X)
             | .
 
         p
@@ -779,7 +779,7 @@ section#sec-chab-coleman
 
         p
             | At the end of the reduction algorithm we are left with
-            me \left(\frac{x^i \diff x}{y}\right)^\sigma  = \diff f_i + \sum_{j=0}^{2g -1} +  \sum_{j=0}^{2g-1} M_{ji} \frac{x^j \diff x}{y}
+            me \left(\frac{x^i \diff x}{y}\right)^\sigma  = \diff f_i +  \sum_{j=0}^{2g-1} M_{ji} \frac{x^j \diff x}{y}
             | the #[m \diff f_i] is whats eliminated by the reduction algorithm, we sum the #[m \diff]'s at each step.
 
         p
@@ -817,9 +817,9 @@ section#sec-chab-coleman
         proposition
             statement: p
                 | To get #[m N] correct digits in the expansion after reduction we need to start with precision
-                me N_1 = N + \max\{ \floor*{ \log_p(2M -3)},\floor*{ \log_p(2g+1)}\} + 1 + \floor*{\log_p(2g-1)}
+                me N_1 = N + \max \left\{   \floor*{ \log_p(2M -3)},\floor*{ \log_p(2g+1)}\right\} + 1 + \floor*{\log_p(2g-1)}
                 | , where #[m M] is the smallest integer s.t.
-                me M - \max\{ \floor*{\log_p(2M+1)},\floor*{\log_p(2g+1}\}
+                me M - \max\left\{ \floor*{\log_p(2M+1)},\floor*{\log_p(2g+1} \right\}
                 | .
 
 
@@ -829,7 +829,7 @@ section#sec-chab-coleman
                 me y^2 = \tilde P(x) = x^3 + x+ 1/\QQ
                 | let #[m p = 5] (or take this over #[m \FF_5] and lift to #[m \ZZ_5]).
                 | Let #[m N = 2] be the number of correct 5-adic digits, so #[m M =3], so #[m N_1 = 3], use the differentials #[m \frac{\diff x}{y},\frac{x\diff x}{y}]
-                me \left(\frac{\diff x}{y}\right)^\sigma = \left( \frac{25 x + 50}{y^{15}} + \frac{75 x62 + 100x + 25 }{y^{13}} + \frac {50x^2 50x+100}{y^{11}} + \frac{75 x + 50}{y^9} + \frac{ 50x^2 + 50x }{y^7 } + \frac{70x^2 + 70 x +  25}{y^5} + \frac{5x}{y^3} \right)\diff x \pmod {5^3}
+                me \left(\frac{\diff x}{y}\right)^\sigma = \left( \frac{25 x + 50}{y^{15}} + \frac{75 x^2 + 100x + 25 }{y^{13}} + \frac {50x^2 + 50x+100}{y^{11}} + \frac{75 x + 50}{y^9} + \frac{ 50x^2 + 50x }{y^7 } + \frac{70x^2 + 70 x +  25}{y^5} + \frac{5x}{y^3} \right)\diff x \pmod {5^3}
                 | similar for 
                 me \left(\frac{x\diff x}{y}\right)^\sigma = \left( \frac{100x^2 + 100x + 75}{y^{15}} + \cdots \right)\diff x \pmod {5^3}
                 | let #[m F_k] be the polynomial in the term
@@ -839,6 +839,6 @@ section#sec-chab-coleman
                 me A_{k+1}\tilde P + B_{k+1} \tilde P ' = s_{k+1}
                 | then set #[m s_k(x) = F_k(x)  + A_{k+1}(x) + \frac{2B'_{k+1}(x)}{2k+1}]
                 me \left(\frac{\diff x}{y}\right)^\sigma = 15x \frac{\diff x}{y}\pmod {5^2}
-                me \left(\frac{x\diff x}{y}\right)^\sigma = (28x+18) \frac{\diff x}{y}\pmod {5^2}
+                me \left(\frac{x\diff x}{y}\right)^\sigma = (22x+18) \frac{\diff x}{y}\pmod {5^2}
                 me M = \begin{pmatrix} 0 \amp 18 \\ 15 \amp 22\end{pmatrix}\pmod{5^2}
                 | .

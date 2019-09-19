@@ -1159,7 +1159,7 @@ X \colon \overline X \smallsetminus \{ \infty , y=0\}\text{.}
 \sum_{-\infty }^\infty  ( S_n(x) + T_n(x)y)y^{2n}
 \end{equation*}
 </div>
-<p>where \(s_n\) and \(T_n\) are polynomials of degree at most \(2g\) s.t. limits are positive.</p>
+<p>where \(S_n\) and \(T_n\) are polynomials of degree at most \(2g\) s.t. limits are positive.</p>
 <aside class="aside-like" id="aside-5"><p id="p-96">Lecture 5 19/9/2019</p></aside><p id="p-97">References for Rigid Geometry: <a data-knowl="./knowl/bib-fresnel-van-der-put.html" title="Bibliographic Entry 36: Rigid analytic geometry and its applications">[36]</a> <a data-knowl="./knowl/bib-bgr.html" title="Bibliographic Entry 21: Non-Archimedean Analysis">[21]</a>.</p>
 <p id="p-98">\(\overline X/\FF_q\) a hyperelliptic curve of genus \(g\text{,}\) with odd degree model and monic, no repeated roots.</p>
 <div class="displaymath">
@@ -1186,7 +1186,7 @@ A \colon  \ZZ_q [x,y,y\inv]/(\tilde y^2 -\tilde P(x))
 <p>\(A^\dagger\) the weak completion of \(A\text{,}\) this is</p>
 <div class="displaymath">
 \begin{equation*}
-\left\{\sum_{-\infty }^\infty  S_n(x) y^n : s_n \in \ZZ_q[x],\,\deg s_n\le 2g,\, \ord_p(s_n) \gt c^n\text{ for some }c&gt; 0\right\}\text{.}
+\left\{\sum_{-\infty }^\infty  s_n(x) y^n : s_n \in \ZZ_q[x],\,\deg s_n\le 2g,\, \ord_p(s_n) \gt c^n\text{ for some }c&gt; 0\right\}\text{.}
 \end{equation*}
 </div>
 <p id="p-101">Monsky-Washnitzer cohomology is a \(p\)-adic cohomology theory for smooth affine varieties, over fields of characteristic \(p\text{.}\)</p>
@@ -1283,7 +1283,7 @@ y \mapsto y^p \left( \frac{\tilde P(x)^\sigma}{\tilde P(x)^p}\right)^{\frac 12}
 <p id="p-111">A special case of this: let \(Q(x)  = x^{m-2g}\) then</p>
 <div class="displaymath">
 \begin{equation*}
-\diff(2Q(x) y) = (Q(x) \tilde P'(x) + 2Q'(x) \tilde P(x)) \frac{\diff x}{y} \equiv  0 \text{ in }H^1_{MW} (X)\text{.}
+\diff(Q(x) y) = (Q(x) \tilde P'(x) + 2Q'(x) \tilde P(x)) \frac{\diff x}{y} \equiv  0 \text{ in }H^1_{MW} (X)\text{.}
 \end{equation*}
 </div>
 <p id="p-112">Goal for Coleman integration: We compute</p>
@@ -1320,7 +1320,7 @@ y \mapsto y^p \left( \frac{\tilde P(x)^\sigma}{\tilde P(x)^p}\right)^{\frac 12}
 <p id="p-116">At the end of the reduction algorithm we are left with</p>
 <div class="displaymath">
 \begin{equation*}
-\left(\frac{x^i \diff x}{y}\right)^\sigma  = \diff f_i + \sum_{j=0}^{2g -1} +  \sum_{j=0}^{2g-1} M_{ji} \frac{x^j \diff x}{y}
+\left(\frac{x^i \diff x}{y}\right)^\sigma  = \diff f_i +  \sum_{j=0}^{2g-1} M_{ji} \frac{x^j \diff x}{y}
 \end{equation*}
 </div>
 <p>the \(\diff f_i\) is whats eliminated by the reduction algorithm, we sum the \(\diff\)'s at each step.</p>
@@ -1375,13 +1375,13 @@ f = cy^{2m+1} + \sum_{k=0}^{m-1} F_k(x) y^{2k+1}
 <p id="p-121">To get \(N\) correct digits in the expansion after reduction we need to start with precision</p>
 <div class="displaymath">
 \begin{equation*}
-N_1 = N + \max\{ \floor*{ \log_p(2M -3)},\floor*{ \log_p(2g+1)}\} + 1 + \floor*{\log_p(2g-1)}\text{,}
+N_1 = N + \max \left\{   \floor*{ \log_p(2M -3)},\floor*{ \log_p(2g+1)}\right\} + 1 + \floor*{\log_p(2g-1)}\text{,}
 \end{equation*}
 </div>
 <p>where \(M\) is the smallest integer s.t.</p>
 <div class="displaymath">
 \begin{equation*}
-M - \max\{ \floor*{\log_p(2M+1)},\floor*{\log_p(2g+1}\}\text{.}
+M - \max\left\{ \floor*{\log_p(2M+1)},\floor*{\log_p(2g+1} \right\}\text{.}
 \end{equation*}
 </div></article><article class="example-like" id="example-4"><h6 class="heading">
 <span class="type">Example</span> <span class="codenumber">2.32</span>.</h6>
@@ -1394,7 +1394,7 @@ y^2 = \tilde P(x) = x^3 + x+ 1/\QQ
 <p>let \(p = 5\) (or take this over \(\FF_5\) and lift to \(\ZZ_5\)). Let \(N = 2\) be the number of correct 5-adic digits, so \(M =3\text{,}\) so \(N_1 = 3\text{,}\) use the differentials \(\frac{\diff x}{y},\frac{x\diff x}{y}\)</p>
 <div class="displaymath">
 \begin{equation*}
-\left(\frac{\diff x}{y}\right)^\sigma = \left( \frac{25 x + 50}{y^{15}} + \frac{75 x62 + 100x + 25 }{y^{13}} + \frac {50x^2 50x+100}{y^{11}} + \frac{75 x + 50}{y^9} + \frac{ 50x^2 + 50x }{y^7 } + \frac{70x^2 + 70 x +  25}{y^5} + \frac{5x}{y^3} \right)\diff x \pmod {5^3}
+\left(\frac{\diff x}{y}\right)^\sigma = \left( \frac{25 x + 50}{y^{15}} + \frac{75 x^2 + 100x + 25 }{y^{13}} + \frac {50x^2 + 50x+100}{y^{11}} + \frac{75 x + 50}{y^9} + \frac{ 50x^2 + 50x }{y^7 } + \frac{70x^2 + 70 x +  25}{y^5} + \frac{5x}{y^3} \right)\diff x \pmod {5^3}
 \end{equation*}
 </div>
 <p>similar for</p>
@@ -1423,7 +1423,7 @@ A_{k+1}\tilde P + B_{k+1} \tilde P ' = s_{k+1}
 </div>
 <div class="displaymath">
 \begin{equation*}
-\left(\frac{x\diff x}{y}\right)^\sigma = (28x+18) \frac{\diff x}{y}\pmod {5^2}
+\left(\frac{x\diff x}{y}\right)^\sigma = (22x+18) \frac{\diff x}{y}\pmod {5^2}
 \end{equation*}
 </div>
 <div class="displaymath">
