@@ -12,13 +12,29 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>If \(A(x) = \tilde P(x) B(x) + \tilde P'C(x)\) then</p>
+<p>We also  have</p>
 <div class="displaymath">
 \begin{equation*}
-\frac{A(x)\diff x}{y^2} = \left(B(x) + \frac{2C'(x)}{s-2}\right) \frac{\diff x}{y^{s-2}}
+\diff(x^iy^j) = ix^{i-1}\diff x y^j  + x^i j y^{j-1} \diff y\text{,}
 \end{equation*}
 </div>
-<p>as elements of \(H^1_{MW}(X)\text{.}\)</p>
+<p>use \(y^2 = \tilde P(x)\) which implies</p>
+<div class="displaymath">
+\begin{equation*}
+\diff(y^2 = \tilde P(x))= 2y \diff y = \tilde P'(x) \diff x
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies \diff y = \frac{\tilde P'(x) \diff x}{2y}
+\end{equation*}
+</div>
+<p>giving</p>
+<div class="displaymath">
+\begin{equation*}
+\diff(x^iy^j) = ix^{i-1}y^j\diff x   + x^i j y^{j-1} \frac{\tilde P'(x) \diff x}{2y}\text{.}
+\end{equation*}
+</div>
 <span class="incontext"><a href="sec-chab-coleman.html#p-109">in-context</a></span>
 </body>
 </html>

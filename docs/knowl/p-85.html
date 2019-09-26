@@ -12,7 +12,93 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It is possible to use constructions of Howe, Leprevost, Poonen, Elkies, others to construct Jacobians with even larger torsion (and possibly curves of low rank with many rational points? Earlier we talked about computing annihilating differentials in the Chabauty-Coleman method. Here is a concrete example, to motivate a discussion of explicit Coleman integration.</p>
+<p>Consider</p>
+<div class="displaymath">
+\begin{equation*}
+X\colon y^2 = x^5 - 4x^3 + 3x + 1
+\end{equation*}
+</div>
+<p><a class="external" href="http://lmfdb.org/Genus2Curve/Q/3920.b.62720.1" target="_blank"><code class="code-inline tex2jax_ignore">http://lmfdb.org/Genus2Curve/Q/3920.b.62720.1</code></a>.</p>
+<div class="displaymath">
+\begin{equation*}
+J(\QQ) \simeq \ZZ\oplus \ZZ/2\text{.}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+N = 3920 = 2^4 \cdot 5 \cdot 7^2\text{.}
+\end{equation*}
+</div>
+<p>And</p>
+<div class="displaymath">
+\begin{equation*}
+X(\QQ) \supseteq\{\infty , (0,\pm1), (1,\pm1), (-1,\pm 1)\}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\#X_{\FF_{11}}(\FF_{11}) = 13
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\#X_{\FF_{13}}(\FF_{13}) = 14
+\end{equation*}
+</div>
+<p>so the Chabauty-Coleman bound by itself does not prove that we found all the \(\QQ\)-points already. The point</p>
+<div class="displaymath">
+\begin{equation*}
+\lb (1,1) - \infty \rb 
+\end{equation*}
+</div>
+<p>is of infinite order in \(J(\QQ)\text{.}\) We use it to construct an annihilating differential. Let \(p = 11\text{.}\) Then a basis of \(H^0(X,\Omega ^1)\) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{ \omega _i = \frac{x^i \diff x}{2y}\right\}_{i=0,1}
+\end{equation*}
+</div>
+<p>so the annihilating differential \(\eta\) is some  \(\QQ_p\)-linear combination of \(\omega _0,\omega _1\text{.}\) We use the values of</p>
+<div class="displaymath">
+\begin{equation*}
+\int_\infty ^{(1,1)} \omega _0,\, \int_\infty ^{(1,1)} \omega _1
+\end{equation*}
+</div>
+<p>to compute \(\eta\text{.}\) We find</p>
+<div class="displaymath">
+\begin{equation*}
+\int_\infty ^{(1,1)} \omega _0 = 8\cdot 11 + 7 \cdot 11^2 + 7\cdot 11^3 + 4\cdot 11^7 + 9\cdot 11^8 + O(11^9)   = \alpha 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\int_\infty ^{(1,1)} \omega _1 = 3\cdot 11 + 2\cdot 11^2 + 4\cdot 11^3 +  3  \cdot 11^4 + 6\cdot 11^5 + 6\cdot 11^6 + 8\cdot 11^7 + 3\cdot 11^8 + O(11^9)   = \beta \text{.}
+\end{equation*}
+</div>
+<p>Then</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{\infty }^{(1,1)} \beta  \omega _0 - \alpha \omega _1 =  0
+\end{equation*}
+</div>
+<p>so take</p>
+<div class="displaymath">
+\begin{equation*}
+\eta                  =\beta  \omega _0 - \alpha \omega _1\text{.}
+\end{equation*}
+</div>
+<p>To use \(\eta\) to compute \(X(\QQ)\) or more precisely, a finite subset of \(X(\QQ_p)\) containing \(X(\QQ)\) we need to compute the collection of indefinite Coleman integrals</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{\int_\infty ^{P_t} \eta\right\}
+\end{equation*}
+</div>
+<p>where \(P_t\) ranges over all residue disks. And solve for \(z\in X(\QQ_p)\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\int_\infty ^z \eta = 0\text{.}
+\end{equation*}
+</div>
+<p>So to compute \(\alpha ,\beta \) and the functions we needed Coleman integrals between points not in the same residue disk.</p>
 <span class="incontext"><a href="sec-chab-coleman.html#p-85">in-context</a></span>
 </body>
 </html>

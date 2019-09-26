@@ -12,16 +12,50 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>To get \(N\) correct digits in the expansion after reduction we need to start with precision</p>
+<p>Let</p>
 <div class="displaymath">
 \begin{equation*}
-N_1 = N + \max \left\{   \floor*{ \log_p(2M -3)},\floor*{ \log_p(2g+1)}\right\} + 1 + \floor*{\log_p(2g-1)}\text{,}
+y^2 = \tilde P(x) = x^3 + x+ 1/\QQ
 \end{equation*}
 </div>
-<p>where \(M\) is the smallest integer s.t.</p>
+<p>let \(p = 5\) (or take this over \(\FF_5\) and lift to \(\ZZ_5\)). Let \(N = 2\) be the number of correct 5-adic digits, so \(M =3\text{,}\) so \(N_1 = 3\text{,}\) use the differentials \(\frac{\diff x}{y},\frac{x\diff x}{y}\)</p>
 <div class="displaymath">
 \begin{equation*}
-M - \max\left\{ \floor*{\log_p(2M+1)},\floor*{\log_p(2g+1} \right\}\text{.}
+\left(\frac{\diff x}{y}\right)^\sigma = \left( \frac{25 x + 50}{y^{15}} + \frac{75 x^2 + 100x + 25 }{y^{13}} + \frac {50x^2 + 50x+100}{y^{11}} + \frac{75 x + 50}{y^9} + \frac{ 50x^2 + 50x }{y^7 } + \frac{70x^2 + 70 x +  25}{y^5} + \frac{5x}{y^3} \right)\diff x \pmod {5^3}
+\end{equation*}
+</div>
+<p>similar for</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{x\diff x}{y}\right)^\sigma = \left( \frac{100x^2 + 100x + 75}{y^{15}} + \cdots \right)\diff x \pmod {5^3}
+\end{equation*}
+</div>
+<p>let \(F_k\) be the polynomial in the term</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{F_k\diff x}{y^{2k +1}}
+\end{equation*}
+</div>
+<p>starting from \(k = 7\text{,}\) set \(s_k(x) = F_k(x)\text{,}\) compute a series of polynomials inductively for \(k-1,k-2, \ldots, 0\text{.}\) Given \(S_{k+1}\) find polynomials \(A_{k+1}, B_{k+1}\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+A_{k+1}\tilde P + B_{k+1} \tilde P ' = s_{k+1}
+\end{equation*}
+</div>
+<p>then set \(s_k(x) = F_k(x)  + A_{k+1}(x) + \frac{2B'_{k+1}(x)}{2k+1}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{\diff x}{y}\right)^\sigma = 15x \frac{\diff x}{y}\pmod {5^2}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{x\diff x}{y}\right)^\sigma = (22x+18) \frac{\diff x}{y}\pmod {5^2}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+M = \begin{pmatrix} 0 \amp 18 \\ 15 \amp 22\end{pmatrix}\pmod{5^2}\text{.}
 \end{equation*}
 </div>
 <span class="incontext"><a href="sec-chab-coleman.html#p-121">in-context</a></span>

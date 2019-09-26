@@ -15,26 +15,22 @@
 <p>Let \(A(x) \in \ZZ_q\lb  x\rb \) be a polynomial of degree \(\le 2g\text{.}\) For some \(m \gt 0\) consider the reduction of</p>
 <div class="displaymath">
 \begin{equation*}
-\omega = \frac{A(x)\diff x}{y^{2m + 1}}
+\omega = \frac{A(x)y^{2m}\diff x}{y}
 \end{equation*}
 </div>
-<p>by Reduction 1</p>
+<p>by Reduction 2</p>
 <div class="displaymath">
 \begin{equation*}
-\omega = \frac{A(x)\diff x}{y^{2m + 1}} = \frac{B(x)\diff x}{y} + \diff f
+\omega = \frac{A(x)y^{2m}\diff x}{y} = \frac{B(x)\diff x}{y} + \diff f
 \end{equation*}
 </div>
-<p>with \(B(x)\in \QQ_q\lb x\rb \) with \(\deg B(x)\le 2g-1\text{.}\) We have</p>
+<p>with \(B(x)\in \QQ_q\lb x\rb \) with \(\deg B(x)\le 2g-1\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
-p^{\floor*{\log_p(2m-1)}} B(x)\in \ZZ_q\rb x\rb \text{.}
+f = cy^{2m+1} + \sum_{k=0}^{m-1} F_k(x) y^{2k+1}
 \end{equation*}
 </div>
-<div class="displaymath">
-\begin{equation*}
-f = \sum_{k = -1}^{m-1} \frac{F_k (x)}{y^{2k+1}},\,\deg F_k  \le 2g\text{.}
-\end{equation*}
-</div>
+<p>\(c \in \QQ_q\text{,}\) \(\deg  F_k \le 2g\text{,}\) \(p^{\floor*{\log_p(2g+1)(2m+1)}} B(x)\in \ZZ_q\lb x\rb \) .</p>
 <span class="incontext"><a href="sec-chab-coleman.html#p-119">in-context</a></span>
 </body>
 </html>

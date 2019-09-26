@@ -12,11 +12,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>What does this look like?</p>
-<ol class="decimal">
-<li>The reduction process is essentially  subtracting the right linear combinations of \(\diff(x^i y^j)\) and using \(y^2 = \tilde P(x)\text{.}\)</li>
-<li>Precision is lost when we divide by \(p\) in the reduction algorithm, so we'll need to measure the loss of precision at each step to know how many provably correct \(p\)-adic digits we have.</li>
-</ol>
+<p>We compute</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{x^i \diff x}{y}\right)^\sigma  = \frac{px^{pi + p - 1} \diff x }{y^p} \sum_{i=0}^L \binom{-1/2} i  \frac{(\tilde P(x) ^\sigma  - \tilde P(x)^p)^i}{y^{2pi}}
+\end{equation*}
+</div>
+<p>we need to know how large \(L\) must be to get provably correct expansions.</p>
 <span class="incontext"><a href="sec-chab-coleman.html#p-113">in-context</a></span>
 </body>
 </html>
