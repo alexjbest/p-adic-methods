@@ -695,7 +695,7 @@ section#sec-chab-coleman
             | Monsky-Washnitzer cohomology is a #[m p]-adic cohomology theory for smooth affine varieties, over fields of characteristic #[m p].
 
         theorem
-            title Special case, Berthelot, 1974, 1997)
+            title Special case, Berthelot, (1974, 1997)
             statement: p
                 | The algebraic de Rham cohomology of #[m \widetilde X] coincides with the Monsky-Washnitzer cohomology of #[m X].
 
@@ -842,3 +842,143 @@ section#sec-chab-coleman
                 me \left(\frac{x\diff x}{y}\right)^\sigma = (22x+18) \frac{\diff x}{y}\pmod {5^2}
                 me M = \begin{pmatrix} 0 \amp 18 \\ 15 \amp 22\end{pmatrix}\pmod{5^2}
                 | .
+
+
+        p
+            | I missed a day heere!
+
+        aside: p Lecture 7 1/10/2019
+
+        p
+            | Set-up for Tuitman's algorithm:
+        p
+            | #[m X]: Smooth projective curve #[m \FF_q], birational to
+            me Q(x,y) = y^{d_x -1} + Q_{d_x - 1}y^{d_x-1} + \cdots + Q_0 = 0
+            | is irreducible, where #[m Q_i \in \FF_q\lb x \rb]  for #[m i = 0 , \ldots, d_x -1].
+            | This is part II of Tuitman #[xref(ref="bib-tuitman-map-to-p1-2")/] as we have a  not necessarily smooth model.
+        p
+            | Tuitman's idea:
+            ol
+                li
+                    | Use the (low degree) map #[m x\colon  X\to \PP^1].
+                li
+                    | remove the ramification locus of #[m x], call this #[m r(x) = 0], c.f. Kedlaya's algorithm where we deleted the Weierstrass points.
+                li Choose a lift of Frobenius that sends  #[m x] to #[m x^p]. Compute #[m y] via Hensel lifting.
+                li Compute the action of Frobenius on differentials, reduce in cohomology, using Lauders fibration algorithm.
+
+            | Then for a basis #[m \{\omega _i\}] of #[m H_\dR^1(X)] Tuitman's algorithm computes:
+            me \phi ^* \omega _i = \diff f_i + \sum_j M_{ji} \omega _j
+            | and as before this can be used to give an algorithm for Coleman integration #[xref(ref="bib-balakrishnan-tuitman")/].
+
+        p
+            | Let
+            me S = \ZZ_q \lb x, 1/r\rb,\,R = \ZZ_q \lb  x, 1/r, y\rb /Q
+            | where #[m Q] is a lift of #[m Q] to ##[m \ZZ_q] that is monic with same monomials in support.
+            | This is possibly an issue for #[m g \ge 5], see Tuitmans paper.
+
+            | See also #[xref(ref="bib-castryck-tuitman")/] for heuristics, possible solutions in higher genus.
+
+        p
+            | Let #[m V = \Spec S], #[m U = \Spec R].
+            | The ring of overconvergent functions on #[m U] is
+            me R^\dagger = \ZZ_q \langle x, 1/r, y\rangle^\dagger/Q
+
+        p
+            | Goal: compute a lift of Frobenius on #[m R^\dagger] in an explicit and fast way.
+
+        p
+            | Let #[m \FF_q(x,y)] denote the field of fractions of #[m R\otimes_{\ZZ_q} \FF_q] and #[m \QQ_q(x,y)] the field of fractions of #[m R\otimes _{\ZZ_q} \QQ_q].
+        p
+            | Assumption 0 : The polynomial #[m r(x)] is separable over #[m \FF_q], recall that
+            me \Omega ^1_{R^\dagger} = \frac{R^\dagger \diff x \oplus R^\dagger \diff y}{\diff Q}
+            | and if we write #[m \diff \colon  R^\dagger \to \Omega ^1_{R^\dagger}]
+            | we have
+            me H^1_{rig}(U) = \coker(\diff) \otimes \QQ_q
+            |. #[xref(ref="bib-baldassarri-chiarallotto")/]
+        p
+            | We will compute #[m H^(X) \subseteq H^1(U)] ???????????????
+
+        proposition
+            statement: p
+                | #[m R^\dagger] is a free module of rank #[m d_x] over #[m S^\dagger = \ZZ_q \langle x,1/r\rangle^\dagger].
+                | A basis is
+                me [1,y,\ldots, y^{d_x-1}]
+                | .
+        theorem
+            statement: p
+                | There is a lift of Frobeius #[m \phi ] on #[m R^\dagger] that sends #[m x] to #[m x^p].
+
+        p
+            | idea compute #[m \phi (y)] by Hensel lifting, using equation
+            me Q^\sigma  (x^p, \phi (y))
+            | note that this is possible since we've removed zeroes of 
+            m \partder[Q]y
+            |  from the curve by deleting #[m r(x)].
+
+        p
+            | After precomputing #[m \phi (y), \phi (y^2), \ldots , \phi (y^{d_x - 1})] and #[m \phi (1/r)] it is easy to compute #[m \phi ] on #[m R^\dagger, \Omega ^1_{R^\dagger}].
+        proposition
+            statement: p
+                | Let #[m G \in M_{d_x \times d_x} (\ZZ_q \lb x, 1/r\rb )] denote the matrix s.t.
+                me \diff(y^j) = \sum_{i=0}^{d_x-1} G_{i+1,j+1} y^i \diff x
+                | for #[m j=0,\ldots, d_x-1].
+                | then #[m G = M/r] where #[m M\in \Mat_{d_x \times d_x} ( \ZZ_q\lb x\rb )].
+        p
+            | Assumption 1: Let #[m W^0 \in \GL_{d_x}(\ZZ_q \lb x,1/r\rb )], #[m W^\infty \in \GL_{d_x}(\ZZ_q \lb x,1/x,1/r\rb )] be matrices such that if we denote
+            me b_{j}^0 = \sum_{i=0}^{d_x-1} W_{i+1,j+1}^0  y^i
+            me b_{j}^\infty  = \sum_{i=0}^{d_x-1} W_{i+1,j+1}^\infty  y^i
+            | for all #[m 0 \le j \le d_x - 1].
+            | Then #[m \{b_j^0 \}_{j=0}^{d_x-1}] is an integral basis for #[m \QQ(x,y) ] over #[m \QQ\lb x\rb ].
+            |  #[m \{b_j^\infty  \}_{j=0}^{d_x-1}] is an integral basis for #[m \QQ(x,y) ] over #[m \QQ\lb 1/x\rb ].
+
+        remark
+            p
+                | Magma can compute these integral bases.
+
+        p
+            | Once we compute the action of Frobenius on 1-forms we need to reduce, Tuitman uses Lauder's fibration algorithm.
+            ol
+                li
+                    | Reduce pole order of points not lying over #[m \infty ].
+                li
+                    | Reduce pole order of points lying over #[m \infty ].
+
+        p
+            | Let #[m r'] denote #[m \diff r/ \diff x] for points not over #[m \infty ].
+        proposition
+            statement: p
+                | For all #[m l\in \NN] and every #[m w \in \QQ_q\lb  x\rb ^{\oplus d_x}] there exist vectors #[m u,v\in \QQ_q\lb x\rb ^{\oplus d_x}] such that
+                me \deg(v) \lt \deg(r)
+                |and
+                me \frac{\sum_{i=0}^{d_x-1} w_i b_i^0}{r^l} \frac{\diff x}{r} = \diff \left(\frac {\sum_{i=0}^{d_x-1} v_i b_i^0}{r^l} \right) + \left(\frac {\sum_{i=0}^{d_x-1} u_i b_i^0}{r^{l-1}} \right) \frac{\diff x}{r}
+            proof: p
+                | Since #[m r] is separable, #[m r'] is invertible in #[m \QQ_q\lb  x\rb /r] Check that there exists a unique solution #[m v] to the #[m d_x\times d_x] linear system.
+                me \left( \frac{M}{r'} - l I\right)v \equiv  \frac{w}{r'} \pmod r
+                | over #[m \QQ_q\lb x\rb /(r)].
+                | Then take
+                me u = \frac{w - (M - lr'I)v}{r} - \frac{\diff v}{\diff x}
+                |.
+
+        p
+            | For points over infinity, similar proposition. ?????????
+
+        theorem
+            statement: p
+                | Define the #[m \QQ_q]-vector spaces
+                me E_0 = \left\{\left( \sum_{i=0}^{d_x-1} u_i(x) b_i^0\right)\frac{\diff x}r : u \in \QQ_q\lb x\rb ^{\oplus d_x}\right\}
+                me E_\infty  = \left\{\left( \sum_{i=0}^{d_x-1} u_i(x,1/x) b_i^\infty \right)\frac{\diff x}r : u \in \QQ_q\lb x,1/x\rb ^{\oplus d_x}\right\}
+                me B_0 = \left\{\sum_{i=0}^{d_x-1} v_i(x) b_i^0 : v\in \QQ_q[x]^{\oplus d_x}\right\}
+                me B_\infty  = \left\{\sum_{i=0}^{d_x-1} v_i(x,1/x) b_i^\infty  : v\in \QQ_q[x,1/x]^{\oplus d_x}\right\}
+
+                | then #[m E_0 \cap E_\infty ] and #[m \diff(B_0\cap B_\infty )] are finite dimensional #[m \QQ_q]-vector spaces and
+                me H^1_{rig} (U)\simeq (E_0 \cap E_\infty )/\diff(B_0\cap B_\infty )
+                | .
+        theorem
+            statement: p
+                | There is an exact sequence
+                me  0 \to H^1(X) \to H^1_{rig}(U) \xrightarrow{)(\res_0\oplus \res_\infty )  \otimes \QQ_q}
+
+
+
+
+
