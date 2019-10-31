@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>The vector space \(V\) has the structure of a \(G_K\)-rep so we want a Galois theoretic way of identifying the image of \(J(K)_{\QQ_p}\) in \(H^1(G_K, V)\text{.}\) This is where the Bloch-Kato Selmer groups come in. Back to the fundamental short exact sequence from the Kummer sequence let \(m=p^n\) and we have the local diagram as well.</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+0 \ar[r]\ar[d]&amp; J(K)/mJ(K) \ar[r]^{\kappa } &amp;  H^1(G_K, J[m]) \ar[r]\ar[d]^\alpha &amp; H^1(G_K, J)[m] \ar[r]\ar[d]&amp; 0\\
+0 \ar[r]&amp;\prod_v J(K_v)/mJ(K_v) \ar[r]_\beta &amp;  \prod H^1(G_{K_v}, J[m]) \ar[r]&amp; \prod H^1(G_{K_v}, J)[m] \ar[r]&amp; 0
+}
+\end{equation*}
+</div>
+<p>the selmer group is a finite dimensional subspace of \(H^1(G_K, J\lb p^n\rb )\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\Sel_{p^n}(J) = \alpha \inv(\im \beta )
+\end{equation*}
+</div>
+<p>we have</p>
+<div class="displaymath">
+\begin{equation*}
+J(K)/p^nJ(K) \hookrightarrow \Sel_{p^n}(J)
+\end{equation*}
+</div>
+<p>now taking inverse limits gives</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat{J(K)} \hookrightarrow \Sel_{\ZZ_p} J \subseteq H^1 (G_K, T)
+\end{equation*}
+</div>
+<p>and inverting \(p\) gives</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat{J(K)}[1/p] \hookrightarrow \Sel_{\QQ_p} J \subseteq H^1 (G_K, V)
+\end{equation*}
+</div>
+<p>let \(\Sha\) be the Shafarevich-Tate group of \(J\text{.}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to J(K)/p^nJ(K) \to \Sel_{p^n}(J) \to \Sha[p^n] \to 0
+\end{equation*}
+</div>
+<p>take inverse limits and invert \(p\)</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \widehat{J(K)}[1/p]\to \Sel_{\QQ_p}(J) \to (\varprojlim_n \Sha[p^n])[1/p] \to 0
+\end{equation*}
+</div>
+<p>if \(\Sha\lb p^\infty \rb\) is finite, then</p>
+<div class="displaymath">
+\begin{equation*}
+\varprojlim_n \Sha[p^n] = 0
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat{J(K)}[1/p]\simeq \Sel_{\QQ_p}(J)
+\end{equation*}
+</div>
+<p>we want to determine the image of \(J(K)_{\QQ_p}\) in \(H^1(G_K, V)\) in terms of \(V\) using \(V\) as a Galois rep. We're almost there, we've replaced \(J(K)_{\QQ_p} \) with \(\Sel_{\QQ_p}(J)\text{.}\) Remaining problem is that the local conditions giving us</p>
+<div class="displaymath">
+\begin{equation*}
+\Sel_{\QQ_p}(J) \subseteq H^1(G_K, V)
+\end{equation*}
+</div>
+<p>we use information from the geometry of \(J\text{.}\) (certain subgroups of \(\prod H^1(G_{K_v}, V)\)). This problem was solved by Bloch and Kato using Bloch-Kato Selmer groups. use \(p\)-adic Hodge theory to re-interpret \(\im \beta \text{.}\)</p>
+<span class="incontext"><a href="sec-chab-coleman.html#p-270">in-context</a></span>
+</body>
+</html>

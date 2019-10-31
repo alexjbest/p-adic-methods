@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Last time: we were computing Coleman integrals</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{\phi (P)}^{\phi (Q)} \omega _i \omega _j = \int_P^Q \phi ^*(\omega _i \omega _j)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \int_P^Q \diff f_i \diff f_k + \int_P^Q \sum_j M_{ji} \omega _j \diff f_k + \int_P^Q \diff f_i \sum_j M_{jk} \omega _j + \int _P^Q \sum_j M_{ji} \omega _j \sum_j M_{jk} \omega _j
+\end{equation*}
+</div>
+<p>expand each of the first three terms into expressions involving single Coleman integrals</p>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \diff f_i\diff f_k = \int_P^Q \diff f_i(R) \int_P^R \diff f_k = \int_P^Q \diff f_i(R) (f_k(R) - f_k(P)) = \int_P^Q f_k \diff f_i - f_k(P)(f_i(Q) - f_i(P))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \sum M_{ji} \omega _j \diff f_k  = \int_P^Q \sum M_{ji} \omega _j(R) \int_P^R \diff f_k = \int_P^Q \sum M_{ji} \omega _j(R) (f_k(R) - f_k(P)) = \int_P^Q \sum _j f_k M_{ji} \omega _j - f_k(P)\int_P^Q \sum M_{ji} \omega _j
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \diff f_i \sum_j M_{jk} \omega _j = \int_P^Q \diff f_i(R) \int_P^R \sum M_{jk} \omega _j
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= f_i(R) \int_P^R \sum_j M_{jk} \omega _j | - \int_P^Q f_i(R) \left( \sum M_{jk} \omega _j(R\right))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= f_i(Q) \int_P^Q \sum_j M_{jk} \omega _j - \int_P^Q f_i \sum M_{jk} \omega _j
+\end{equation*}
+</div>
+<p>then collect terms If \(c_{ik}\) is the sum of the expanded above, then the vector of double coleman integrals is a solution of a linear system involving all of the above.</p>
+<span class="incontext"><a href="sec-chab-coleman.html#p-175">in-context</a></span>
+</body>
+</html>

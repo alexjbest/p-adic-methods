@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>More details on each step</p>
+<ol class="decimal">
+<li>Let \(D_1, \ldots, D_g \in \Div^0(X)\) representing basis elements of \(J(\QQ)\otimes \QQ\) then compute global height pairings. \(h(D_i ,D_j)\) using B.-Besser-Muller. A basis for spaces of bilinear forms on \(J(\QQ)\) is<div class="displaymath">
+\begin{equation*}
+\frac12(f_kf_l + f_l f_k)
+\end{equation*}
+</div>so compute<div class="displaymath">
+\begin{equation*}
+\frac12(f_k(D_i)f_l(D_j) + f_l(D_i) f_k(D_j))
+\end{equation*}
+</div>do linear algebra to compute<div class="displaymath">
+\begin{equation*}
+\alpha _{k,l}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+h(D_i,D_j)  = \sum \alpha _{k,l} ( \frac12(f_k(D_i)f_l(D_j) + f_l(D_i) f_k(D_j)))
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Want to compute</p>
+<div class="displaymath">
+\begin{equation*}
+\{ \bar\omega _i\}
+\end{equation*}
+</div>
+<p>for \(0\le 1 \le g-1\) such that \(\lb  \bar \pi _i \rb  \cup \lb \omega _j \rb  = \delta _{ij}\)</p>
+<ol class="lower-alpha">
+<li>Compute splitting of<div class="displaymath">
+\begin{equation*}
+H^1_\dR(X/\QQ_p) = H^0(X, \Omega ^1_X) \oplus W\text{,}
+\end{equation*}
+</div>where \(W\) is the unit root eigenspace of frob, recall that modulo \(p^n\) a basis for \(W\) is<div class="displaymath">
+\begin{equation*}
+\{(\phi ^*)^n \omega _g, \ldots, (\phi ^*)^n\omega _{2g-1}\}
+\end{equation*}
+</div>
+</li>
+<li>Let \(\tilde \omega _j\) be a projection of \(\omega _j \) onto \(W\) along \(H^0(X, \Omega ^1)\text{.}\) i.e.<div class="displaymath">
+\begin{equation*}
+\tilde \omega _j = \omega _j - \sum_{i=0}^{g-1} a_i \omega _i\text{.}
+\end{equation*}
+</div>
+</li>
+<li>use cup product matrix to compute<div class="displaymath">
+\begin{equation*}
+\bar\omega _0=\sum_{i=g}^{2g-1} b_{0i} \tilde \omega _i
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\ldots
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\bar\omega _{g-1}=\sum_{i=g}^{2g-1} b_{g-1,i} \tilde \omega _i
+\end{equation*}
+</div>then let<div class="displaymath">
+\begin{equation*}
+\theta (z)  = -2\sum_{i=0}^{g-1} \int \omega _i \bar \omega _i
+\end{equation*}
+</div>to compute this as a power series in each residue disk for each residue disk compute a \(\ZZ_p\) point \(P\text{,}\) the value \(\theta (P)\) local coordinate \(z_P\) at \(P\text{.}\)<div class="displaymath">
+\begin{equation*}
+\theta (z) =-2 \sum_{i=0}^{g-1} \int_{\infty }^z \omega _i \bar \omega _i
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= -2 \left(\sum_{i=0}^{g-1} \int_\infty ^{P} \omega _i \bar \omega _i + \sum_{i=0}^{g-1} \int_P^{z_P} \omega _i \bar \omega _i + \sum_{i=0}^{g-1} \int_P^{z_P} \omega _i \int_{\infty }^P \bar \omega _i\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \theta (P) - 2\left(\sum_{i=0}^{g-1} \int_P^{z_P} \omega _i \bar \omega _i + \sum_{i=0}^{g-1} \int_P^{z_P} \omega _i \int_{\infty }^P \bar \omega _i\right)
+\end{equation*}
+</div>
+</li>
+</ol>
+</li>
+<li>Prop. There is  a proper regular model \(\mathcal X \) of \(X\otimes \QQ_q\) over \(\ZZ_q\) (\(q\ne p\)) such that if \(\mathcal X\) is \(p\)-integral then<div class="displaymath">
+\begin{equation*}
+h_q((x) -(\infty ),(x)-(\infty ))
+\end{equation*}
+</div>depends solely on the component of the special fibre \(\mathcal X_q\) that the section in \(\mathcal X(\ZZ_z)\) corresponding to \(x\) intersects. e.g. in \(g =2\) special fibres have been classified by Namikawa-Ueno and if \(\mathcal X\) is semistable then the types are<div class="displaymath">
+\begin{equation*}
+\lb I_{n_1} - I_{n_2} - m\rb  \text{ or } \lb I_{n_1n_2 - n_3 } \rb 
+\end{equation*}
+</div>pos integers \(n_i,m\text{.}\) Need to compute regular models (implementation in Magma by Donnelly) and grobner bases of ideals of divisors to compute intersection multiplicities.</li>
+</ol>
+<span class="incontext"><a href="sec-chab-coleman.html#p-249">in-context</a></span>
+</body>
+</html>

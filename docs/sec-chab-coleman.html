@@ -297,6 +297,10 @@ var js_version = 0.12;
 <li><a href="sec-chab-coleman.html#subsec-triangles" data-scroll="subsec-triangles">A question about triangles</a></li>
 <li><a href="sec-chab-coleman.html#subsection-2" data-scroll="subsection-2">Why care about \(X(\QQ)\) for \(X\) of genus 2?</a></li>
 <li><a href="sec-chab-coleman.html#subsection-3" data-scroll="subsection-3">Coleman's bound</a></li>
+<li><a href="sec-chab-coleman.html#subsection-4" data-scroll="subsection-4">Iterated Coleman Integrals</a></li>
+<li><a href="sec-chab-coleman.html#subsection-5" data-scroll="subsection-5">Algorithm for tiny iterated integral</a></li>
+<li><a href="sec-chab-coleman.html#subsection-6" data-scroll="subsection-6">Strategy for computing double Coleman integrals of words in \(H^1_\text{dR}(X)\)</a></li>
+<li><a href="sec-chab-coleman.html#subsection-7" data-scroll="subsection-7">Introduction to \(p\)-adic heights</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
@@ -1192,7 +1196,7 @@ A \colon  \ZZ_q [x,y,y\inv]/(\tilde y^2 -\tilde P(x))
 </div>
 <p id="p-100">Monsky-Washnitzer cohomology is a \(p\)-adic cohomology theory for smooth affine varieties, over fields of characteristic \(p\text{.}\)</p>
 <article class="theorem-like" id="theorem-11"><h6 class="heading">
-<span class="type">Theorem</span> <span class="codenumber">2.25</span>. <span class="title">Special case, Berthelot, 1974, 1997).</span>
+<span class="type">Theorem</span> <span class="codenumber">2.25</span>. <span class="title">Special case, Berthelot, (1974, 1997).</span>
 </h6>
 <p id="p-101">The algebraic de Rham cohomology of \(\widetilde X\) coincides with the Monsky-Washnitzer cohomology of \(X\text{.}\)</p></article><p id="p-102">Monsky-Washnitzer cohomology is finite dimensional and is equipped with an action of Frobenius. So the theorem tells us that we can compute via a description of de Rham cohomology.</p>
 <article class="theorem-like" id="proposition-1"><h6 class="heading">
@@ -1498,7 +1502,7 @@ H^1_{rig}(U) = \coker(\diff) \otimes \QQ_q\text{.}
 Q^\sigma  (x^p, \phi (y))
 \end{equation*}
 </div>
-<p>note that this is possible since we've removed zeroes of \(\partder[Q]y\)from the curve by deleting \(r(x)\text{.}\)</p>
+<p>note that this is possible since we've removed zeroes of \(\partder[Q]y\) from the curve by deleting \(r(x)\text{.}\)</p>
 <p id="p-136">After precomputing \(\phi (y), \phi (y^2), \ldots , \phi (y^{d_x - 1})\) and \(\phi (1/r)\) it is easy to compute \(\phi \) on \(R^\dagger, \Omega ^1_{R^\dagger}\text{.}\)</p>
 <article class="theorem-like" id="proposition-4"><h6 class="heading">
 <span class="type">Proposition</span> <span class="codenumber">2.35</span>.</h6>
@@ -1589,7 +1593,1132 @@ H^1_{rig} (U)\simeq (E_0 \cap E_\infty )/\diff(B_0\cap B_\infty )\text{.}
 \begin{equation*}
 0 \to H^1(X) \to H^1_{rig}(U) \xrightarrow{)(\res_0\oplus \res_\infty )  \otimes \QQ_q}
 \end{equation*}
-</div></article></section></section></div></main>
+</div></article><aside class="aside-like" id="aside-7"><p id="p-147">Lecture 8 3/10/2019</p></aside><p id="p-148">I lovingly stole this from Angus' notes, ty Angus.</p>
+<ol id="p-149" class="decimal">
+<li id="li-48">
+<p id="p-150">Determine a basis for cohomology. We want to find \(\omega_0, \ldots, \omega_{k-1} \in (E_0 \cap E_\infty)\cap \Omega^1(U)\) such that</p>
+<ol class="lower-alpha">
+<li id="li-49">\(\{ \omega_0, \ldots, \omega_{k-1} \}\) is a basis of<div class="displaymath">
+\begin{equation*}
+H^1_\text{rig} \cong (E_0 \cap E_\infty) / d(B_0 \cap B_\infty)
+\end{equation*}
+</div>
+</li>
+<li id="li-50">The class of every element of \((E_0 \cap E_\infty) \cap \Omega^1(U)\) in \(H^1_\text{rig}(U)\) has \(p\)-adically integral coefficients with respect to \(\{ \omega_0, \ldots, \omega_{k-1} \}\text{.}\)</li>
+<li id="li-51">\(\{ \omega_0, \ldots, \omega_{k-1} \}\) is a basis for the kernel of \(\res_0 \oplus \res_\infty\) and hence for the subspace \(H^1_\text{rig}(X)\) of \(H^1_\text{rig}(U)\text{.}\)</li>
+</ol>
+</li>
+<li id="li-52">Compute lift of Frob \(\phi\text{,}\) and compute the action of Frob on \(\{ \omega_0, \ldots, \omega_{k-1} \}\text{.}\)</li>
+<li id="li-53">Reduce pole orders so that we have<div class="displaymath">
+\begin{equation*}
+\phi^\ast \omega_i = df_i + \sum_j M_{ji} \omega_j
+\end{equation*}
+</div>where<div class="displaymath">
+\begin{equation*}
+df_i = \underbrace{df_{i,0}}_{\text{finite pole reduction}} + \underbrace{df_{i,\infty}}_{\text{infinite pole reduction}} + df_{i,\text{end}}
+\end{equation*}
+</div>
+</li>
+</ol>
+<article class="remark-like" id="remark-8"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.40</span>.</h6>
+<ol id="p-151" class="decimal">
+<li id="li-54">Let \(X\) be a genus 3 smooth plane quartic, say \(X = X_s(13)\text{,}\) the split Cartan curve of level 13. Then \(\dim H^1_\text{rig}(X) = 6\text{,}\) but \(\dim H^1_\text{rig}(U) = 45 = 6 + 39\text{,}\) where \(39 = 3 \deg r(x)\text{.}\)</li>
+<li id="li-55">For applications to Coleman integrals between “good points”, proceed as before<div class="displaymath">
+\begin{equation*}
+\int_{\phi(P)}^{\phi(Q)} \omega_i = \int_P^Q \phi^\ast \omega_i
+\end{equation*}
+</div>and correct endpoints.</li>
+<li id="li-56">For Coleman integration from a <em class="emphasis">very bad point</em> (a point above \(\infty\) or a point with \(x\)-coordinate such that \(r(x) = 0\)) \(B\text{,}\) split up the integral<div class="displaymath">
+\begin{equation*}
+\int_B^Q \omega_i = \int_B^{B'} \omega_i + \int_{B'}^Q \omega_i
+\end{equation*}
+</div>for \(B'\) a point near the boundary of the residue disk of \(B\text{.}\)</li>
+</ol></article><article class="paragraphs" id="paragraphs-3"><h5 class="heading"><span class="title">Finite pole order reduction:.</span></h5>
+<p id="p-152">For \(i = 0, \ldots, 2g-1\text{,}\) find \(f_{i,0} \in \mathcal R^\dagger \otimes \QQ_p\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\phi^\ast \omega_i = df_{i,0} + G_i \frac{dx}{r}
+\end{equation*}
+</div>
+<p>where \(G_i \in \mathcal R \otimes \QQ_p\) only has poles above \(\infty\text{.}\)</p></article><article class="paragraphs" id="paragraphs-4"><h5 class="heading"><span class="title">Infinite pole order reduction:.</span></h5>
+<p id="p-153">For \(i = 0, \ldots, 2g-1\text{,}\) find \(f_{i,\infty} \in \mathcal R \otimes \QQ_p\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\phi^\ast \omega_i = df_{i,0} + df_{i,\infty} + H_i
+\end{equation*}
+</div>
+<p>where \(H_i\) only has poles at point \(P\) above \(\infty\text{,}\) and \(\ord_P(H_i) \geq (\ord_0 (W) - \deg r + 2) e_p\) where \(W = (W^0)^{-1} W^\infty\) and \(e_p\) is the index of ramification of \(x\)-map at \(P\text{.}\)</p></article><article class="paragraphs" id="paragraphs-5"><h5 class="heading"><span class="title">Final reduction:.</span></h5>
+<p id="p-154">For \(i = 0, \ldots, 2g-1\text{,}\) find \(f_{i, \text{end}} \in \mathcal R \otimes \QQ_p\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\phi^\ast \omega_i = \underbrace{df_{i,0} + df_{i,\infty} + df_{i,\text{end}}}_{= df_i} + \sum_j M_{ji} \omega_j\text{.}
+\end{equation*}
+</div></article></section><section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4</span> <span class="title">Iterated Coleman Integrals</span>
+</h3>
+<p id="p-155">Let \(X / \QQ\) be a smooth, projective curve, \(p\) a prime of good reduction.</p>
+<article class="paragraphs" id="paragraphs-6"><h5 class="heading"><span class="title">Goal:.</span></h5>
+<p id="p-156">Describe an iterated Coleman integral on \(X_{\QQ_p}\) and applications to rational points.</p></article><p id="p-157">Roughly speaking, an iterated Coleman integral is an iterated path integral</p>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \eta_n \ldots \eta_1 = \int_0^1 \int_0^{t_1} \ldots \int_0^{t_{n-1}} f_n(t_n) \ldots f_1(t_1) dt_n \ldots dt_1.
+\end{equation*}
+</div>
+<article class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">Idea:.</span></h5>
+<p id="p-158">Want to apply Kedlaya/Tuitman as before, by computing action of Frob and reducing to simpler integrals. Earlier we had</p>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q df = f(Q) - f(P)
+\end{equation*}
+</div>
+<p>and now reduce \(n\)-fold integral to \((n-1)\)-fold integral.</p></article><article class="paragraphs" id="paragraphs-8"><h5 class="heading"><span class="title">Notation:.</span></h5>
+<p id="p-159">\(P,Q \in X(\QQ_p)\text{,}\) \(\eta_1, \ldots, \eta_n\) are 1-forms of the 2nd kind, without poles at \(P,Q\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\eta_P^Q \eta_1 \ldots \eta_n = \int_P^Q \eta_1(R_1) \int_P^{R_1} \eta_2(R_2) \ldots \int_P^{R_{n-2}} \eta_{n-1}(R_{n-1}) \int_P^{R_{n-1}} \eta_n
+\end{equation*}
+</div>
+<p>for dummy variables \(R_i\text{.}\)</p></article></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5</span> <span class="title">Algorithm for tiny iterated integral</span>
+</h3>
+<article class="paragraphs" id="paragraphs-9"><h5 class="heading"><span class="title">Input:.</span></h5>
+<p id="p-160">Points \(P,Q \in X(\QQ_p)\) in same residue disk.</p></article><article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Output:.</span></h5>
+<p id="p-161">\(\int_P^Q \eta_1 \ldots \eta_n\)</p></article><ol id="p-162" class="decimal">
+<li id="li-57">Compute a local coordinate at \(P\text{,}\) \((x(t), y(t))\)</li>
+<li id="li-58">For each \(k\text{,}\) write \(\eta_k(x,y)\) as \(\eta_k(t)dt\text{.}\)</li>
+<li id="li-59">Let \(I_{n+1} = 1\text{.}\) Compute for \(k = n, n-1, \ldots, 2\)<div class="displaymath">
+\begin{equation*}
+I_k = \int_P^{R_{k-1}} \eta_k I_{k+1} = \int_P^{t(R_{k-1})} \eta_k(t) I_{k+1} dt
+\end{equation*}
+</div>where \(t(R_{k-1})\) is parameterising points in the residue disk of \(P\text{.}\)</li>
+<li id="li-60">\(\int_P^Q \eta_1 \ldots \eta_n = \int_P^{t(Q)} \eta_1(t) I_2(t) dt\text{.}\)</li>
+</ol>
+<p id="p-163">To compute more general iterated Coleman integrals, we'll use the following properties.</p>
+<article class="theorem-like" id="proposition-6"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.41</span>.</h6>
+<p id="p-164">Let \(\omega_{i_1}, \ldots \omega_{i_n}\) be forms of the second kind, regular at \(P,Q \in X(\QQ_p)\text{.}\)</p>
+<ol class="decimal">
+<li id="li-61">\(\int_P^P \omega_{i_1} \ldots \omega_{i_n} = 0\)</li>
+<li id="li-62">\(\sum_{\text{all permutations }\sigma}  \int_P^Q \omega_{\sigma(i_1)} \ldots \omega_{\sigma(i_n)} = \prod_{j=1}^n \int_P^Q \omega_{i_j}\)</li>
+<li id="li-63">\(\int_P^Q \omega_{i_1} \ldots \omega_{i_n} = (-1)^n \int_Q^P \omega_{i_n} \ldots \omega_{i_1}\)</li>
+</ol></article><article class="theorem-like" id="corollary-3"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">2.42</span>.</h6>
+<p id="p-165">\(\int_P^Q \omega_i \ldots \omega_i = \frac{1}{n!}\left( \int_P^Q \omega_i \right)^n\)</p></article><article class="paragraphs" id="paragraphs-11"><h5 class="heading"><span class="title">References.</span></h5>
+<p id="p-166">For classical theory of iterated integrals</p>
+<ul class="disc"><li id="li-64">K-T. Chen, Algebras of iterated path integrals and fundamental groups, Trans. of AMS 156 (1971) <a data-knowl="./knowl/bib-chen.html" title="Bibliographic Entry 31: Algebras of iterated path integrals and fundamental groups.">[31]</a>
+</li></ul>
+<p>For \(p\)-adic theory</p>
+<ul class="disc">
+<li id="li-65">Coleman, Dilogarithms, regulators and \(p\)-adic \(L\)-functions, Invent. Math 1982 <a data-knowl="./knowl/bib-coleman-dilogs.html" title="Bibliographic Entry 35: Dilogarithms, regulators and \(p\)-adic \(L\)-functions">[35]</a>.</li>
+<li id="li-66">Coleman, de Shalit, \(p\)-adic regulators on curves and special values of \(p\)-adic \(L\)-functions, Invent. Math. 1988 <a data-knowl="./knowl/bib-coleman-de-shalit.html" title="Bibliographic Entry 34: \(p\)-adic regulators on curves and special values of \(p\)-adic \(L\)-functions">[34]</a>
+</li>
+<li id="li-67">Besser, Coleman integration using the Tannakian formalism, Math. Ann. 2002 <a data-knowl="./knowl/bib-besser-coleman-tannakian.html" title="Bibliographic Entry 16: Coleman integration using the Tannakian formalism">[16]</a>
+</li>
+</ul></article><article class="remark-like" id="remark-9"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.43</span>.</h6>
+<p id="p-167">Still have linearity in the integrand, change of variables under rigid analytic maps. Be careful about additivity in endpoints.</p></article><article class="theorem-like" id="lemma-5"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">2.44</span>.</h6>
+<p id="p-168">Let \(P, P', Q \in X(\QQ_p)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \omega_{i_1} \ldots \omega_{i_n} = \sum_{j=0}^n \int_{P'}^Q \omega_{i_1} \ldots \omega_{i_j} \int_P^{P'} \omega_{i_{j+1}} \ldots \omega_{i_n}
+\end{equation*}
+</div></article><p id="p-169">For all algorithms, we'll restrict to the case \(n=2\) (double Coleman integrals).</p>
+<article class="example-like" id="example-5"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.45</span>.</h6>
+<p id="p-170">Let \(\phi(P), \phi(Q)\) be images of \(P, Q \in X(\QQ_p)\) under Frobenius \(\phi\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation}
+\int_P^Q \omega_i \omega_k = \int_P^{\phi(P)} \omega_i \omega_k + \int_{\phi(P)}^{\phi(Q)} \omega_i \omega_k + \int_{\phi(Q)}^Q \omega_i \omega_k + \int_P^{\phi(P)} \omega_k \int_{\phi(P)}^Q \omega_i + \int_{\phi(P)}^{\phi(Q)} \omega_k \int_{\phi(Q)}^Q \omega_i\label{iteratedfrob}\tag{2.1}
+\end{equation}
+</div></article></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6</span> <span class="title">Strategy for computing double Coleman integrals of words in \(H^1_\text{dR}(X)\)</span>
+</h3>
+<article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Input:.</span></h5>
+<p id="p-171">\(\int_P^Q \omega_i \omega_j\)</p></article><ol id="p-172" class="decimal">
+<li id="li-68">Compute \(\phi(P)\text{,}\) \(\phi(Q)\)</li>
+<li id="li-69">Compute action of Frob and do some linear algebra to simplify<div class="displaymath">
+\begin{equation*}
+\int_{\phi(P)}^{\phi(Q)} \omega_i \omega_j = \int_P^Q \phi^\ast(\omega_i) \phi^\ast(\omega_j)
+\end{equation*}
+</div>
+</li>
+<li id="li-70">Correct endpoints using equation <a data-knowl="./knowl/iteratedfrob.html" title="Equation 2.1">(2.1)</a>.</li>
+</ol>
+<div class="displaymath" id="p-173">
+\begin{align*}
+\int_{\phi(P)}^{\phi(Q)} \omega_i \omega_k  \amp= \int_P^Q \phi^\ast(\omega_i \omega_k)\\
+\amp= \int_P^Q (\phi^\ast \omega_i)(\phi^\ast \omega_k)\\
+\amp= \int_P^Q \left(df_i + \sum_j M_{ji} \omega_j\right)\left(df_k + \sum_j M_{jk} \omega_j\right)\\
+\amp= \int_P^Q \left( df_idf_k + df_i \sum_j M_{jk}\omega_j + \sum_j M_{ji} \omega_j df_K + \sum_j M_{ji} \omega_j \sum_j M_{jk} \omega_j \right)
+\end{align*}
+</div>
+<aside class="aside-like" id="aside-8"><p id="p-174">Lecture 9 8/10/2019</p></aside><p id="p-175">Last time: we were computing Coleman integrals</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{\phi (P)}^{\phi (Q)} \omega _i \omega _j = \int_P^Q \phi ^*(\omega _i \omega _j)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \int_P^Q \diff f_i \diff f_k + \int_P^Q \sum_j M_{ji} \omega _j \diff f_k + \int_P^Q \diff f_i \sum_j M_{jk} \omega _j + \int _P^Q \sum_j M_{ji} \omega _j \sum_j M_{jk} \omega _j
+\end{equation*}
+</div>
+<p>expand each of the first three terms into expressions involving single Coleman integrals</p>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \diff f_i\diff f_k = \int_P^Q \diff f_i(R) \int_P^R \diff f_k = \int_P^Q \diff f_i(R) (f_k(R) - f_k(P)) = \int_P^Q f_k \diff f_i - f_k(P)(f_i(Q) - f_i(P))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \sum M_{ji} \omega _j \diff f_k  = \int_P^Q \sum M_{ji} \omega _j(R) \int_P^R \diff f_k = \int_P^Q \sum M_{ji} \omega _j(R) (f_k(R) - f_k(P)) = \int_P^Q \sum _j f_k M_{ji} \omega _j - f_k(P)\int_P^Q \sum M_{ji} \omega _j
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\int_P^Q \diff f_i \sum_j M_{jk} \omega _j = \int_P^Q \diff f_i(R) \int_P^R \sum M_{jk} \omega _j
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= f_i(R) \int_P^R \sum_j M_{jk} \omega _j | - \int_P^Q f_i(R) \left( \sum M_{jk} \omega _j(R\right))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= f_i(Q) \int_P^Q \sum_j M_{jk} \omega _j - \int_P^Q f_i \sum M_{jk} \omega _j
+\end{equation*}
+</div>
+<p>then collect terms If \(c_{ik}\) is the sum of the expanded above, then the vector of double coleman integrals is a solution of a linear system involving all of the above.</p>
+<article class="paragraphs" id="paragraphs-13"><h5 class="heading"><span class="title">Application (preview).</span></h5>
+<p id="p-176">Let \(\mathcal E/\ZZ\) be the minimal regular model of an elliptic curve, and let \(\mathcal X = \mathcal E - 0\text{.}\) Let</p>
+<div class="displaymath">
+\begin{equation*}
+\omega _0 = \frac {\diff x}{2y + a_1 x + a_3},\,\omega _1 = x\omega _1
+\end{equation*}
+</div>
+<p>in Weierstrass coordinates, let \(b\) be \(0\) (really a tangential base-point at \(0\)). Or an integral 2-torsion point. Let \(p\) be an odd prime of good reduction, suppose \(\mathcal E\) has analytic rank 1, and Tamagawa product 1.</p>
+<p id="p-177">Consider</p>
+<div class="displaymath">
+\begin{equation*}
+\log(z) = \int_b^z \omega _0,\,D_2 (z) = \int_b^z \omega _0 \omega _1\text{,}
+\end{equation*}
+</div>
+<p>can think of \(\log\) as extending the log in the formal group.</p>
+<article class="theorem-like" id="theorem-15"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.46</span>. <span class="title">Kim '10, B.-Kedlaya-Kim '11.</span>
+</h6>
+<p id="p-178">Suppose \(P\) is a point of infinite order in \(\mathcal E(\ZZ)\) then \(\mathcal X(\ZZ) \subseteq \mathcal E(\ZZ)\) is in the zero set of</p>
+<div class="displaymath">
+\begin{equation*}
+f(z) = (\log(P))^2 D_2(z) - (\log(z))^2 D_2(P)\text{.}
+\end{equation*}
+</div></article></article><article class="paragraphs" id="paragraphs-14"><h5 class="heading"><span class="title">Chabauty-Coleman wrap up.</span></h5>
+<p id="p-179">What if Coleman's bound</p>
+<div class="displaymath">
+\begin{equation*}
+\# X(\QQ) \le \# X(\FF_p) +2g-2
+\end{equation*}
+</div>
+<p>is larger than \(\#X(\QQ)_{\text{known}}\text{.}\) If we carry out Chabauty-Coleman, what can we do if we seem to find “extra” \(p\)-adic points that don't look like they live if \(X(\QQ)\text{?}\)</p>
+<p id="p-180">Try using the Mordell-Weil sieve (developed by Scharashkin in his thesis 99, adapted by Flynn ('04), Poonen-Schaefer-Stoll 07, Bruin-Stoll. See <span>(((Unresolved xref, reference "bib-bruin-stoll-mw"; check spelling or use "provisional" attribute)))</span><a href="" class="internal" title=""> </a><span>(((Unresolved xref, reference "bib-siksek-mw"; check spelling or use "provisional" attribute)))</span><a href="" class="internal" title=""> </a>.</p>
+<p id="p-181">Set-up</p>
+<div class="displaymath">
+\begin{equation*}
+X/\QQ
+\end{equation*}
+</div>
+<p>a curve of genus \(g \ge 2\text{,}\) \(M \gt 0\) an integer</p>
+<div class="displaymath">
+\begin{equation*}
+i\colon  X\hookrightarrow J
+\end{equation*}
+</div>
+<p>suppose \(c_M \subseteq J(\QQ)/MJ(\QQ)\) is a set of residue classes for which we want to show that no rational point \(P \in X(\QQ)\) maps to \(c_M\) under \(\pi \circ i\text{.}\)</p>
+<p id="p-182">Simplest case: pick a good prime \(v\)</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{X(\QQ) \ar[r]\ar[d] &amp; J(\QQ)/MJ(\QQ) \ar[d]\\ X(\FF_v) \ar[r] &amp; J(\FF_v)/MJ(\FF_v)}
+\end{equation*}
+</div>
+<p>if \(\alpha _v(c_M) \cap \beta _v(X(\FF_v)) = \emptyset\) then done. Typically this is not enough: More generally consider set \(S\) of good primes and the commutative diagram</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{X(\QQ) \ar[r]\ar[d] &amp; J(\QQ)/MJ(\QQ) \ar[d]\\ \prod_v X(\FF_v) \ar[r] &amp; \prod_v J(\FF_v)/MJ(\FF_v)}
+\end{equation*}
+</div>
+<p>then it suffices to show that \(\alpha _s(c_M) \cap \beta _s(\prod_v X(\FF_v)) = \emptyset\text{.}\)</p>
+<p id="p-183">The goal is then to find a good set of \(S\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+A(S, c_M) = \left\{c\in c_M : \alpha _S(c) \in \beta _s(\prod_v X(\FF_v))\right\}
+\end{equation*}
+</div>
+<p>is empty.</p>
+<p id="p-184">Heuristically the size of \(A(S,c_M)\) is as follows: For a good prime</p>
+<div class="displaymath">
+\begin{equation*}
+X_{M,v} = \beta _v(X(\FF_v))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\gamma (v,M) = \frac{\# X_{M,v}}{\#J(\FF_v)/ M(J(\FF_v))}
+\end{equation*}
+</div>
+<p>Note : \(v\) is only useful if \(\gamma (v,M) \lt 1\text{.}\)</p>
+<p id="p-185">Expected size of \(A(S, M)\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\#c_M \prod_c \gamma (v, M)
+\end{equation*}
+</div>
+<p>want this to be small.</p>
+<p id="p-186">Difficulties in using the sieve, the set, \(A(S, c_M)\) can be large. The computation of images of \(X(\FF_v)\) in \(J(\FF_v)\) can become infeasible (the computation requires \(v\) discrete logs in \(J(\FF_v)\)). Can be mitigated by using primes for which \(\#J(\FF_v)\) is sufficiently smooth.</p>
+<p id="p-187">Two variations on Chabauty-Coleman: Pass to a collection of covering curves, (difficulty: constructing covers) Elliptic Chabauty method: (difficulty computing \(E(K)\) for \(K/\QQ\) a larger degree number field.</p>
+<p id="p-188">These methods can potentially compute \(X(\QQ)\) when \(\rk J(\QQ) \ge g\text{.}\)</p>
+<article class="theorem-like" id="theorem-16"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.47</span>. <span class="title">Chevalley-Weil.</span>
+</h6>
+<p id="p-189">Let \(f \colon Y\to X\) be an unramified morphism of curves \(/\QQ\) then there is a computable finite extension \(K/\QQ\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+f\inv(X(\QQ))  \subseteq Y(K)\text{.}
+\end{equation*}
+</div></article><article class="theorem-like" id="theorem-17"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.48</span>. <span class="title">Wetherell '97.</span>
+</h6>
+<p id="p-190">There is a finite set of unramified covering curves \(Y_i \to X\) over \(\QQ\) (all isomorphic  over \(\overline\QQ\)), such that</p>
+<div class="displaymath">
+\begin{equation*}
+X(\QQ) \subseteq \bigcup_{i=1}^n f_i(Y_i(\QQ))\text{.}
+\end{equation*}
+</div></article><article class="remark-like" id="remark-10"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.49</span>.</h6>
+<p id="p-191">When \(X\) is an elliptic curve this is descent in the proof of the Mordell-Weil theorem.</p></article></article></section><section class="subsection" id="subsection-7"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.7</span> <span class="title">Introduction to \(p\)-adic heights</span>
+</h3>
+<aside class="aside-like" id="aside-9"><p id="p-192">Lecture 11 17/10/2019</p></aside><p id="p-193">The theory of \(p\)-adic heights has developed over 20 years, with work due to Bernardi, Neron, Schneider, Perrin-Riou, Mazur, Tate, Zarhin, Iovita, Werner, Coleman, Gross, Nekovar.</p>
+<p id="p-194">We will begin with \(p\)-adic heights on elliptic curves. Let \(E/\QQ\) be an elliptic curve, then a \(p\)-adic height \(h\) is a function</p>
+<div class="displaymath">
+\begin{equation*}
+h\colon  E(\overline \QQ) \to \QQ_p
+\end{equation*}
+</div>
+<p>that plays a similar role to the canonical height</p>
+<div class="displaymath">
+\begin{equation*}
+\hat h E(\overline \QQ) \to \RR\text{.}
+\end{equation*}
+</div>
+<p id="p-195">Let \(p\ge 5\) be a prime of good ordinary reduction for \(E\text{.}\) Let \(0\ne P \in E(\QQ)\text{,}\) then write</p>
+<div class="displaymath">
+\begin{equation*}
+P = (x(P), y(P))= \left( \frac{a(P)}{d(P)^2},\frac{b(P)}{d(P)^2}\right)
+\end{equation*}
+</div>
+<p>and assume \((a(P),d(P)) = (b(P),d(P))  = 1\) and \(d \ge 1\text{.}\) \(d(P)\) is the denominator of \(P\text{.}\)</p>
+<p id="p-196">Suppose \(P\) satisfies two conditions</p>
+<ol class="decimal">
+<li id="li-71"><p id="p-197">\(P\) reduces to \(0\) in \(E(\FF_p)\text{.}\)</p></li>
+<li id="li-72"><p id="p-198">\(P\) reduces to a non-singular point of \(E(\FF_l)\) for all bad primes \(l\text{.}\)</p></li>
+</ol>
+<p id="p-199">1. Implies \(E(P) = -x(P)/y(P)\) is divisible by \(P\text{.}\)</p>
+<article class="definition-like" id="definition-4"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.50</span>.</h6>
+<p id="p-200">Let \(E/\QQ\) and \(p \ge 5\) be good ordinary, the cyclotomic \(p\)-adic height \(h\) on such points \(P\) in \(E(\QQ)\) is</p>
+<div class="displaymath">
+\begin{equation*}
+h(P) = \frac 1p \log_p\left(\frac{\sigma (P)}{d(P)}\right)\text{.}
+\end{equation*}
+</div>
+<p>\(\sigma (P)\) is the \(p\)-adic sigma function associated to \(E/\ZZ_p\text{.}\)</p></article><p id="p-201">What is \(\sigma (P)\text{?}\)</p>
+<p id="p-202">Mazur-Stein-Tate “Computation of p-adic heights and log convergence”, Doc. Math 2006. Mazur-Tate “The            p-adic sigma function”, Duke 1991. Mazur-Tate gave 11 different characterizations of the \(p\)-adic sigma function. We'll describe one characterization, let</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = t^{-2} + \cdots \in \ZZ_p ((t))
+\end{equation*}
+</div>
+<p>be \(x\) in the formal group of \(E/\ZZ_p\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = t^{-3} + \cdots \in \ZZ_p ((t))
+\end{equation*}
+</div>
+<p>(Silverman AEC, Ch IV).</p>
+<article class="theorem-like" id="theorem-18"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.51</span>. <span class="title">Mazur-Tate.</span>
+</h6>
+<p id="p-203">There is exactly on odd function</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma (t) = t + \cdots \in t \ZZ_p\lb \lb t\rb \rb
+\end{equation*}
+</div>
+<p>and constant \(c\in \ZZ_p\) that together satisfy the \(p\)-adic differential equation</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) + c = \frac{-\diff}{\omega }\left(\frac 1\sigma  \frac {\diff \sigma }{\omega }\right)
+\end{equation*}
+</div>
+<p>\(\omega \) is the invariant differential associated to a chosen Weierstrass model for \(E\)</p>
+<div class="displaymath">
+\begin{equation*}
+\omega  = \frac{\diff x}{2y + a_1x + a_3}
+\end{equation*}
+</div>
+<p>and</p>
+<div class="displaymath">
+\begin{equation*}
+c = \frac{a_1^2 + 4a_2 - E_2(E,\omega )}{12}
+\end{equation*}
+</div>
+<p>we'll say more about \(E_2(E, \omega )\) in a bit!</p></article><article class="theorem-like" id="lemma-6"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">2.52</span>.</h6>
+<p id="p-204">The height function \(h\) extends uniquely to the full Mordell-Weil group \(E(\QQ)\) and satisfies \(h(nQ) = n^2 h(Q)\) for all \(n\in \ZZ\text{,}\) and \(Q\in E(\QQ)\) for \(P,Q \in E(\QQ)\) setting</p>
+<div class="displaymath">
+\begin{equation*}
+(P,Q) = h(P) + h(Q) - h(P+Q)
+\end{equation*}
+</div>
+<p>we get a pairing on \(E(\QQ)\text{.}\)</p></article><p id="p-205">To compute \(h(Q)\) for arbitrary \(Q\in E(\QQ)\text{.}\) Let \(n_1 = \#E(\FF_p)\text{,}\) \(n_2 = \lcm_v(\{c_v\})\text{,}\) let \(n = \lcm(n_1,n_2)\) then \(P=nQ\) satisfies 1) and 2) from earlier. So compute \(h(P) = h(nQ)\) and then</p>
+<div class="displaymath">
+\begin{equation*}
+h(Q) = \frac{1}{n^2 } h(nQ) = \frac{1}{n^2} h(P)\text{.}
+\end{equation*}
+</div>
+<article class="remark-like" id="remark-11"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.53</span>.</h6>
+<p id="p-206">The \(p\)-adic regulator \(\Reg_p\) of \(E/\QQ\) is the determinant of the matrix of pairings on \(E(\QQ)/E(\QQ)_{\text{tors}}\text{.}\)</p></article><article class="theorem-like" id="conjecture-1"><h6 class="heading">
+<span class="type">Conjecture</span> <span class="codenumber">2.54</span>. <span class="title">Schneider '82.</span>
+</h6>
+<p id="p-207">The (cyclotomic) height pairing is non-degenerate, equivalently \(\Reg_p\) is non-zero.</p></article><p id="p-208">Contrast with canonical height \(\hat h(P) = 0 \iff P\) is torsion</p>
+<article class="remark-like" id="remark-12"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.55</span>.</h6>
+<p id="p-209">This \(p\)-adic regulator fits into a \(p\)-adic BSD conjecture.</p></article><article class="theorem-like" id="conjecture-2"><h6 class="heading">
+<span class="type">Conjecture</span> <span class="codenumber">2.56</span>. <span class="title">Special case of Mazur-Tate-Teitelbaum, '86, Inventionnes.</span>
+</h6>
+<p id="p-210">Suppose \(E\) has good ordinary reduction at \(p\text{,}\) let \(\mathcal L_p(E,T)\) be the \(p\)-adic \(L\)-function attached to \(E/\QQ\text{.}\)</p>
+<ol class="decimal">
+<li id="li-73"><div class="displaymath">
+\begin{equation*}
+\ord_{T=0} \mathcal L_p(E,T)=\rk E(\QQ)
+\end{equation*}
+</div></li>
+<li id="li-74">
+<div class="displaymath">
+\begin{equation*}
+\mathcal L_p^* (E,0) =\frac{ \epsilon_p \prod c_v  |\Sha(E/\QQ)|\Reg_p}{\#E(\QQ)_{\text{tors}}^2}
+\end{equation*}
+</div>the leading coefficient.</li>
+</ol>
+<p>\(\epsilon _p = (1-\alpha \inv)^2\) where \(\alpha  \) is the unit root of \(x^2  - a_p x + p=0\text{.}\)</p></article><article class="remark-like" id="remark-13"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.57</span>.</h6>
+<p id="p-211">See also Stein-Wuthrich, “Algorithms for the arithmetic of elliptic curves using Iwasawa theory”, Math. Comp. 2013.</p></article><p id="p-212">Back to \(E_2 (E,\omega )\text{,}\) Katz '73, gave an interpretation of \(E_2(E,\omega )\) as a direction of the unit-root eigenspace of frobenius acting on Monsky-Washnitzer cohomology. Suppose \(E \colon  y^2 = f(x)\text{,}\) then the basis for</p>
+<div class="displaymath">
+\begin{equation*}
+H^1_{\dR}(E) = H^1_{MW}(E')^-  = \left\{ \frac{\diff x}{y},\frac{x\diff x}{y}\right\}
+\end{equation*}
+</div>
+<p>moreover \(H^1_{\dR}(E) = H^0(E, \Omega ^1) \oplus U\) with \(U\) the unit root subspace. Compute the matrix of \(p\)-power frobenius \(F\text{,}\) want to find a basis for \(U\text{.}\) We know that</p>
+<div class="displaymath">
+\begin{equation*}
+F\left(\frac{\diff x}{y}\right)  \in p H^1_{\dR}(E)
+\end{equation*}
+</div>
+<p>so that \(\mod {p^n}\text{,}\) \(U\) is the span of \(F^n \left(\frac{x\diff x}{y}\right)\) so for each \(n\) write</p>
+<div class="displaymath">
+\begin{equation*}
+F^n\left(\frac{x\diff x}{y}\right) = a_n \frac{\diff x}{y} + b_n \frac{x\diff x}{y}
+\end{equation*}
+</div>
+<p>then \(E_2(E,\omega )  = -12 \frac{a_n}{b_n} \pmod{p^n}\text{.}\)</p>
+<p id="p-213">What does this have to do with rational/integral points on \(E\text{?}\)</p>
+<div class="displaymath">
+\begin{equation*}
+E\colon  y^2 = f(x)
+\end{equation*}
+</div>
+<p>Recall</p>
+<div class="displaymath">
+\begin{equation*}
+x + c = \frac{-\diff}{\omega }
+\end{equation*}
+</div>
+<p>in formal group</p>
+<div class="displaymath">
+\begin{equation*}
+\implies \omega (x+c) = - \diff \left(\frac 1 \sigma  \frac{\diff \sigma }{\omega }\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\implies \int \left(\frac{x\diff x}{y } + \frac{c\diff x}{y} \right)  = -\frac{\diff \sigma }{\sigma \omega } = \frac{\diff}{}.
+\end{equation*}
+</div>
+<aside class="aside-like" id="aside-10"><p id="p-214">Lecture 1? 22/10/2019</p></aside><p id="p-215">\(p\)-adic heights after Coleman-Gross, “p-adic heights on curves” 1989.</p>
+<p id="p-216">Let \(X/\QQ\) be a smooth projective curve of genus \(g \ge 1\) and \(p\) a prime of good reduction for \(X\) and ordinary reduction for \(J\text{.}\) We'll be thinking of \(X/\QQ_p = K\text{.}\)</p>
+<p id="p-217">Important: fix a subspace of \(H^1_{\dR}(Y_{/K})\) complementary to  \(H^0(X, \Omega ^1_{X/K})\) call this \(W\text{.}\) \(H^1_{\dR}(X_{/K}) = H^0(X, \Omega _{X}^1)  \oplus W\text{.}\)</p>
+<p id="p-218">We'd like to understand the \(p\)-adic height of two degree 0 divisors \(D_1,D_2\text{.}\) Assume \(D_1, D_2\in \Div^0(X)\) have disjoint support.</p>
+<article class="definition-like" id="definition-5"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.58</span>.</h6>
+<p id="p-219">The cyclotomic \(p\)-adic height is a symmetric bilinear pairing</p>
+<div class="displaymath">
+\begin{equation*}
+h \colon  \Div^0(X) \times \Div^0(X) \to \QQ_p
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+(D_1,D_2)\mapsto h(D_1, D_2)
+\end{equation*}
+</div>
+<p>disjoint support.</p>
+<p id="p-220">where</p>
+<ol class="decimal">
+<li id="li-75">
+<div class="displaymath">
+\begin{equation*}
+h(D_1,D_2)  = \sum_v h_v(D_1,D_2) = h_p(D_1,D_2) + \sum_{v\ne p} h_v(D_1,D_2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\int_{D_2} \omega _{D_1} + \sum_{v\ne p }m_v \log_p(v)
+\end{equation*}
+</div>with the left term a coleman integral of the third kind and \(m_v\) some intersection multiplicities.</li>
+<li id="li-76">
+<div class="displaymath">
+\begin{equation*}
+h(D, \div(\beta )) = 0
+\end{equation*}
+</div>for \(\beta \in \QQ(X)^\times\text{,}\) so \(h\) is well defined on \(J \times J\text{.}\)</li>
+</ol></article><article class="remark-like" id="remark-14"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.59</span>.</h6>
+<p id="p-221">The local heights can be extended non-uniquely to give the self-pairing</p>
+<div class="displaymath">
+\begin{equation*}
+h(D,D) = \sum h_v(D,D)
+\end{equation*}
+</div>
+<p>this needs a choice of tangent vector at each point in the support of \(D\text{.}\)</p></article><article class="remark-like" id="remark-15"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.60</span>.</h6>
+<p id="p-222">The local height at \(p\) is a Coleman integral of a normalized differential w.r.t. \(W\) of the third kind.</p></article><p id="p-223">e.g. if</p>
+<div class="displaymath">
+\begin{equation*}
+X\colon  y^2 = f(x)
+\end{equation*}
+</div>
+<p>is a hyperelliptic curve</p>
+<div class="displaymath">
+\begin{equation*}
+D_1 = (P) - (Q),\,P,Q\in X(\QQ),\,y(P),y(Q) \ne 0
+\end{equation*}
+</div>
+<p>can we construct \(\omega \) with \(\Res(\omega ) = D_1\text{?}\) We want residue 1 at \(P\) and -1 at \(Q\text{.}\) So \(\omega \) has simple poles at \(P,Q\text{.}\) e.g.</p>
+<div class="displaymath">
+\begin{equation*}
+\omega  = \frac{\diff x}{2y}\left(\frac{y+y(P)}{x-x(P)}  - \frac{y + y(Q)}{x-x(Q)}\right)
+\end{equation*}
+</div>
+<p>has \(\Res(\omega ) = D_1\text{.}\) But there are lots more!</p>
+<p id="p-224">Recall: \(H^1_{\dR}(X)\) has a canonical non-degenerate form given by cup-product pairing</p>
+<div class="displaymath">
+\begin{equation*}
+H^1_{\dR} (X/K) \times H^1_{\dR}(X/K) \to K
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+([\mu _1],[\mu _2]) \mapsto [\mu _1] \cup [\mu _2]
+\end{equation*}
+</div>
+<p>where</p>
+<div class="displaymath">
+\begin{equation*}
+[\mu _1] \cup [\mu _2] = \sum_Q \Res_Q\left( \mu _2\int \mu _1\right)
+\end{equation*}
+</div>
+<p>note that \(\mu _1,\mu _2\) are differentials of the second kind (residue 0). So the residue does not depend on the choice of local integral for \(\mu _1\) since \(\mu _2\) has no residue at any point.</p>
+<p id="p-225">Let \(T(K)\) be the space of differentials of the third kind on \(X\text{,}\) at most simple poles, integer residues. We have a residue divisor hom</p>
+<div class="displaymath">
+\begin{equation*}
+\Res \colon T(K) \to \Div^0(X)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\omega \mapsto \Res(\omega ) = \sum_p \Res_p \omega 
+\end{equation*}
+</div>
+<p>we have the short exact sequence</p>
+<div class="displaymath">
+\begin{equation*}
+0\to H^0(X, \Omega _X^1) \to T(K) \xrightarrow{\Res}\Div^0(X) \to 0\text{.}
+\end{equation*}
+</div>
+<p>We're interested in \(T_l(K)\) these are log differentials</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\diff f}{f},\,f\in K(X)^\times\text{.}
+\end{equation*}
+</div>
+<p id="p-226">Since</p>
+<div class="displaymath">
+\begin{equation*}
+T_l(K) \cap H^0(X, \Omega ^1_{X/K}) = \{0\}
+\end{equation*}
+</div>
+<p>and \(\Res(\diff f / f) = \divisor (f)\) we get from the above sequence</p>
+<div class="displaymath">
+\begin{equation*}
+0\to H^0(X, \Omega _X^1) \to T(K)/T_l(K) \to J(K)\to 0
+\end{equation*}
+</div>
+<article class="theorem-like" id="proposition-7"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.61</span>.</h6>
+<p id="p-227">There is a canonical homomorphism</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi \colon T(K)/T_l(K) \to H^1_{\dR}(X)\text{.}
+\end{equation*}
+</div></article><p id="p-228">Note: \(\Psi\) is the identity on differentials of the first kind. \(\Psi\) sends third kind differentials to second kind or exact differentials. \(\Psi\) sends log differentials to 0.</p>
+<article class="definition-like" id="definition-6"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.62</span>.</h6>
+<p id="p-229">Let \(D \in \Div^0(X)\) then \(\omega _D\) is the unique form of the third kind with</p>
+<div class="displaymath">
+\begin{equation*}
+\Res(\omega _D) = D
+\end{equation*}
+</div>
+<p>and</p>
+<div class="displaymath">
+\begin{equation*}
+\Psi(\omega _D)\in W
+\end{equation*}
+</div>
+<p>recall we fixed</p>
+<div class="displaymath">
+\begin{equation*}
+H^1_\dR(X) = H^0(X, \Omega _X^1) \oplus W\text{.}
+\end{equation*}
+</div></article><article class="definition-like" id="definition-7"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.63</span>.</h6>
+<p id="p-230">The local height at \(p\) of \(D_1,D_2\) is</p>
+<div class="displaymath">
+\begin{equation*}
+h_p(D_1,D_2) = \int_{D_2} \omega _{D_1}\text{.}
+\end{equation*}
+</div></article><article class="remark-like" id="remark-16"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.64</span>.</h6>
+<p id="p-231">When \(X\) has good reduction and \(J\) has ordinary reduction then there is a canonical choice for \(W\text{,}\) the unit root subspace for the action of frobenius.</p></article><article class="theorem-like" id="proposition-8"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.65</span>.</h6>
+<p id="p-232">If \(\{\omega _{0}, \ldots, \omega _{2g-1}\}\) is a basis for \(H^1_{\dR}(X)\) with \(\{\omega _0, \ldots, \omega _{g-1}\}\subseteq H^0(X, \Omega ^1)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\{ (\phi ^*)^n \omega _g, \ldots,  (\phi ^*)^n \omega _{2g-1}\}
+\end{equation*}
+</div>
+<p>is a basis for \(W\) mod \(p^n\) where \(\phi \) is a lift of frobenius.</p></article><article class="theorem-like" id="algorithm-1"><h6 class="heading">
+<span class="type">Algorithm</span> <span class="codenumber">2.66</span>. <span class="title">Coleman integral of differential of the third kind, with poles in non-weierstrass disks.</span>
+</h6>
+<p id="p-233">Input: \(\omega \) with \(\Res(\omega ) = (P) - (Q)\text{.}\) \(P,Q\in X(\QQ)\) non-weierstrass. \(R,S\in X(\QQ_p)\text{,}\) \(R,S\not\in \operatorname{disk}(P),\operatorname{disk}(Q)\text{.}\) Output:</p>
+<div class="displaymath">
+\begin{equation*}
+\int_S^R \omega 
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-77">Compute \(\Psi (\omega ) \in H^1_{\dR}(X)\text{.}\) Let \(\phi \) be a lift of Frobenius. Let \(\alpha  = \phi ^* \omega  - p\omega \text{.}\) Use \(\Psi (\omega )\) and frobenius equivariance. We have<div class="displaymath">
+\begin{equation*}
+\Psi (\alpha ) = \Psi (\phi ^* \omega  - p\omega ) 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \Psi (\phi ^* \omega)  -\Psi ( p\omega )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \phi ^* \Psi (\omega)  -p\Psi (\omega )
+\end{equation*}
+</div>
+</li>
+<li id="li-78">Let \(\beta \) be a 1-form with \(\Res(\beta ) = (R)- (S)\text{.}\) Compute \(\Psi (\beta )\text{.}\)</li>
+<li id="li-79">Compute \(\Psi (\alpha ) \cup \Psi (\beta )\text{,}\) easy since both are elements in \(H^1_{\dR}\) that we just computed.</li>
+<li id="li-80">Compute<div class="displaymath">
+\begin{equation*}
+\int_{\phi (S)}^S \omega 
+\end{equation*}
+</div>and<div class="displaymath">
+\begin{equation*}
+\int_R^{\phi (R)} \omega 
+\end{equation*}
+</div>tiny</li>
+<li id="li-81">Compute<div class="displaymath">
+\begin{equation*}
+\sum_A \Res_A (\alpha \int \beta )\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-82"><div class="displaymath">
+\begin{equation*}
+\int_S^R \omega  = \frac{1}{1-p} \left(\Psi (\alpha ) \cup \Psi (\beta ) + \sum_A \Res_A(\alpha \int \beta ) - \int_{\phi (S)}^S \omega  - \int_R^{\phi (R)} \omega \right)
+\end{equation*}
+</div></li>
+</ol></article><article class="remark-like" id="remark-17"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.67</span>.</h6>
+<p id="p-234">Idea behind this algorithm is that \(\alpha \) is almost of the second kind, in that the sum of the residues of \(\alpha \) in each annulus is 0.</p></article><article class="theorem-like" id="algorithm-2"><h6 class="heading">
+<span class="type">Algorithm</span> <span class="codenumber">2.68</span>. <span class="title">Local height at \(p\).</span>
+</h6>
+<p id="p-235">Output: \(h_p(D_1,D_2)\text{.}\)</p>
+<ol class="decimal">
+<li id="li-83">Let \(\omega \) be a differential in \(T(K)\) with \(\Res(\omega ) = D_1\text{.}\)</li>
+<li id="li-84">Compute \(\Psi (\omega ) = \sum_{i=0}^{2g-1} a_i\omega _i \in H^1_\dR(X)\text{.}\) Then<div class="displaymath">
+\begin{equation*}
+\Psi (\omega ) - \sum_{i=0}^{g-1} a_i\omega _i  \in W
+\end{equation*}
+</div>let \(\omega _{D_1} = \omega  - \sum_{i=0}^{g-1} a_i \omega _i\text{.}\)</li>
+<li id="li-85">Compute using the previous algorithm<div class="displaymath">
+\begin{equation*}
+h_p(D_1,D_2) = \int_{D_2} \omega _{D_1}\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></article><p id="p-236">More details in Balakrishnan-Besser “computing local p-adic heights on hyperelliptic curves”. IMRN 2012.</p>
+<p id="p-237">What if \(D_1\) and \(D_2\) have common support? e.g. \(h_(D,D)\text{.}\)</p>
+<p id="p-238">The local height at \(P\) would be</p>
+<div class="displaymath">
+\begin{equation*}
+h_p(D,D) = \int_D \omega _D
+\end{equation*}
+</div>
+<p>ideal of Gross “local heights on curves” Arithmetic Geometry '86.</p>
+<p id="p-239">At each point \(x\) in the common support of your divisors, choose a basis \(t,t_x\) for the tangent space.</p>
+<p id="p-240">Let \(z = z_\infty \) be a uniformizer at \(x\)</p>
+<div class="displaymath">
+\begin{equation*}
+\partial _t z = 1
+\end{equation*}
+</div>
+<p>any function</p>
+<div class="displaymath">
+\begin{equation*}
+f \in K(X)^\times
+\end{equation*}
+</div>
+<p>then has a well-defined “value” at x</p>
+<div class="displaymath">
+\begin{equation*}
+f[x]  = \frac{f}{z^m}(x)
+\end{equation*}
+</div>
+<p>where \(m = \ord_x(f)\text{.}\) This depends only on \(t\) and not \(z\text{.}\) To do this for local p-adic heights use Besser's p-adic Arakelov theory, JNT 2005.</p>
+<p id="p-241">Balakrishnan-Besser Coleman-Gross height pairings and p-adic sigma function, Crelle, 2015.</p>
+<article class="theorem-like" id="proposition-9"><h6 class="heading">
+<span class="type">Proposition</span> <span class="codenumber">2.69</span>.</h6>
+<p id="p-242">Let \(X/\QQ\) be a hyperelliptic curve with odd degree model monic.</p>
+<div class="displaymath">
+\begin{equation*}
+D = (P) - (\infty )
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+h(D,D) = \cancel{``\int_D \omega _D''}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \int_{i=0}^{g-1} \int_\infty ^P \omega _i\overline \omega _i
+\end{equation*}
+</div>
+<p>\(\omega _i\) self dual basis for cup.</p></article><aside class="aside-like" id="aside-11"><p id="p-243">Lecture 1? 29/10/2019</p></aside><p id="p-244">How do we use local heights on Jacobians of curves to study integral points.</p>
+<article class="theorem-like" id="theorem-19"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.70</span>. <span class="title">Quadratic Chabauty for integral points on hyperelliptic curves B.-Besser-Muller.</span>
+</h6>
+<p id="p-245">Let \(f(x) \in \ZZ\lb x\rb \) be monic separable polynomial of degree \(2g+1 \ge 3\text{,}\) that does not reduce to a square modulo \(q\) for any prime \(q\text{.}\) (in the paper monic is not used, this condition then restricts the reduction type) Let \(U  = \Spec (\ZZ\lb x,y\rb  /(y^2 - f(x)))\) and let \(X\) be the normalization of the proj closure of the generic fiber of \(U\text{.}\) Let \(J\) be the Jacobian on \(X\) and assume \(\rk J(\QQ) = g\text{,}\) choose a prime \(p\) of good ordinary reduction. Suppose that the \(p\)-adic coleman integrals</p>
+<div class="displaymath">
+\begin{equation*}
+f_i(z) = \int_\infty ^z \omega _i = \int_\infty ^z \frac{x^i \diff x}{2y}
+\end{equation*}
+</div>
+<p>then there exists  explicitly computable constants \(\alpha _{ij} \in \QQ_p\) s.t. the locally analytic function</p>
+<div class="displaymath">
+\begin{equation*}
+\rho (z) = \theta(z) - \sum_{0\le i \le j \le g-1 } \alpha _{ij} f_i(z) f_j(z)\text,
+\end{equation*}
+</div>
+<p>where \(\theta(z) = h_p((z) - (\infty ),(z) - (\infty ))\) is an extension of the Coleman-Gross local height at \(p\) which takes values in</p>
+<div class="displaymath">
+\begin{equation*}
+\mathcal U(\ZZ\lb 1/p\rb )
+\end{equation*}
+</div>
+<p>in an effectively computable finite set \(S\subseteq \QQ_p\text{.}\)</p></article><p id="p-246">Refs, Balakrishnan, Jennifer S., Amnon Besser, and J. Steffen Müller. “Quadratic Chabauty: P-Adic Heights and Integral Points on Hyperelliptic Curves.” Journal Für Die Reine Und Angewandte Mathematik (Crelles Journal) 2016, no. 720 (January 1, 2016). https://doi.org/10.1515/crelle-2014-0048. Balakrishnan, Jennifer S., Amnon Besser, and J. Steffen Müller. “Computing Integral Points on Hyperelliptic Curves Using Quadratic Chabauty.” Mathematics of Computation 86, no. 305 (October 12, 2016): 1403–34. https://doi.org/10.1090/mcom/3130. Müller, Jan Steffen. “Computing Canonical Heights Using Arithmetic Intersection Theory.” Mathematics of Computation 83, no. 285 (2014): 311–336. https://doi.org/10.1090/S0025-5718-2013-02719-6.</p>
+<article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-6" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-247">Sketch: Recall the Coleman-Gross \(p\)-adic height for \(X/\QQ\) is a symmetric bilinear pairing</p>
+<div class="displaymath">
+\begin{equation*}
+h \colon J(\QQ) \times J(\QQ) \to \QQ_p
+\end{equation*}
+</div>
+<p>the global height decomposees as a sum of local heights</p>
+<div class="displaymath">
+\begin{equation*}
+h(D_1,D_2) = \sum_{v} h_v(D_1,D_2)
+\end{equation*}
+</div>
+<p>in particular we have</p>
+<div class="displaymath">
+\begin{equation*}
+h(D_1, D_2) = h_p(D_1,D_2) + \sum_{v\ne p} h_v(D_1,D_2)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+=\int_{D_2} \omega _{D_1} + \sum_{v\ne p} h_v(D_1,D_2)
+\end{equation*}
+</div>
+<p>where \(\omega _{D_1}\) is a normalized differential of the 3rd kind (depends on a splitting of the Hodge filtration on \(H^1_\dR(X/\QQ_p)\)) and for \(v\ne p\)</p>
+<div class="displaymath">
+\begin{equation*}
+h_v(D_1,D_2) = m_v \log_p v,\,m_v\in \QQ
+\end{equation*}
+</div>
+<p>computed using arithmetic intersection theory. See Muller and: Bommel, Raymond van, David Holmes, and J. Steffen Müller. “Explicit Arithmetic Intersection Theory and Computation of Néron-Tate Heights.” Mathematics of Computation, 2019. https://arxiv.org/abs/1809.06791v1.</p>
+<p id="p-248">Then look at \(h = h_p + \sum_{v \ne p} h_v\) note</p>
+<ol class="decimal">
+<li id="li-86">\(h\) is a quadratic form, so can be written in terms of a basis of space of quadratic forms for \(J(\QQ)\) and this can be done using Coleman integrals.<div class="displaymath">
+\begin{equation*}
+h(z-\infty , z-\infty ) = \sum \alpha _{ij} f_i(z) f_j(z)\text{,}
+\end{equation*}
+</div>
+</li>
+<li id="li-87">\(h_p\) is a locally analytic function and in the extension to self-pairing:<div class="displaymath">
+\begin{equation*}
+h_p(z-\infty , z-\infty ) = -2\sum_{i=0}^{g-1} \int_\infty ^z \omega _i\bar \omega _i,\,\omega _i = \frac{x^i \diff x}{2y},\,\bar\omega _i\text{ cup product duals}\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-88">The sum<div class="displaymath">
+\begin{equation*}
+\sum_{v\ne p} h_v(z-\infty ,z-\infty )
+\end{equation*}
+</div>takes on finitely many values in \(S\) when restricted to \(p\)-integral points. The set \(S\) can be computed by knowing the reduction of \(X\) at bad primes.</li>
+<li id="li-89">Then rewrite<div class="displaymath">
+\begin{equation*}
+h- h_p  \in \{ \sum_{v\ne p} h_v \} = S
+\end{equation*}
+</div>
+</li>
+<li id="li-90">this \(\rho \) can be computed as a convergent power series in each residue disk. So now pretend we are working in classical chabauty Coleman. Expand \(\rho \) in each disk, set equal to each value in \(S\) solve for all \(t \in U(\ZZ_p)\) s.t. \(\rho (z) \in Z\text{.}\) Take all such points call that \(X(\ZZ_p)_2\text{.}\)</li>
+<li id="li-91">It's possible that \(X(\ZZ_p)_2\) is strictly larger than the known points in \(U(\ZZ)\text{.}\) In this case run 1-4 on a collection of good ordinary \(p\) and run Mordell-Weil sieve.</li>
+</ol>
+<p id="p-249">More details on each step</p>
+<ol class="decimal">
+<li id="li-92">Let \(D_1, \ldots, D_g \in \Div^0(X)\) representing basis elements of \(J(\QQ)\otimes \QQ\) then compute global height pairings. \(h(D_i ,D_j)\) using B.-Besser-Muller. A basis for spaces of bilinear forms on \(J(\QQ)\) is<div class="displaymath">
+\begin{equation*}
+\frac12(f_kf_l + f_l f_k)
+\end{equation*}
+</div>so compute<div class="displaymath">
+\begin{equation*}
+\frac12(f_k(D_i)f_l(D_j) + f_l(D_i) f_k(D_j))
+\end{equation*}
+</div>do linear algebra to compute<div class="displaymath">
+\begin{equation*}
+\alpha _{k,l}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+h(D_i,D_j)  = \sum \alpha _{k,l} ( \frac12(f_k(D_i)f_l(D_j) + f_l(D_i) f_k(D_j)))
+\end{equation*}
+</div>
+</li>
+<li id="li-93">
+<p id="p-250">Want to compute</p>
+<div class="displaymath">
+\begin{equation*}
+\{ \bar\omega _i\}
+\end{equation*}
+</div>
+<p>for \(0\le 1 \le g-1\) such that \(\lb  \bar \pi _i \rb  \cup \lb \omega _j \rb  = \delta _{ij}\)</p>
+<ol class="lower-alpha">
+<li id="li-94">Compute splitting of<div class="displaymath">
+\begin{equation*}
+H^1_\dR(X/\QQ_p) = H^0(X, \Omega ^1_X) \oplus W\text{,}
+\end{equation*}
+</div>where \(W\) is the unit root eigenspace of frob, recall that modulo \(p^n\) a basis for \(W\) is<div class="displaymath">
+\begin{equation*}
+\{(\phi ^*)^n \omega _g, \ldots, (\phi ^*)^n\omega _{2g-1}\}
+\end{equation*}
+</div>
+</li>
+<li id="li-95">Let \(\tilde \omega _j\) be a projection of \(\omega _j \) onto \(W\) along \(H^0(X, \Omega ^1)\text{.}\) i.e.<div class="displaymath">
+\begin{equation*}
+\tilde \omega _j = \omega _j - \sum_{i=0}^{g-1} a_i \omega _i\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-96">use cup product matrix to compute<div class="displaymath">
+\begin{equation*}
+\bar\omega _0=\sum_{i=g}^{2g-1} b_{0i} \tilde \omega _i
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\ldots
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\bar\omega _{g-1}=\sum_{i=g}^{2g-1} b_{g-1,i} \tilde \omega _i
+\end{equation*}
+</div>then let<div class="displaymath">
+\begin{equation*}
+\theta (z)  = -2\sum_{i=0}^{g-1} \int \omega _i \bar \omega _i
+\end{equation*}
+</div>to compute this as a power series in each residue disk for each residue disk compute a \(\ZZ_p\) point \(P\text{,}\) the value \(\theta (P)\) local coordinate \(z_P\) at \(P\text{.}\)<div class="displaymath">
+\begin{equation*}
+\theta (z) =-2 \sum_{i=0}^{g-1} \int_{\infty }^z \omega _i \bar \omega _i
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= -2 \left(\sum_{i=0}^{g-1} \int_\infty ^{P} \omega _i \bar \omega _i + \sum_{i=0}^{g-1} \int_P^{z_P} \omega _i \bar \omega _i + \sum_{i=0}^{g-1} \int_P^{z_P} \omega _i \int_{\infty }^P \bar \omega _i\right)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+= \theta (P) - 2\left(\sum_{i=0}^{g-1} \int_P^{z_P} \omega _i \bar \omega _i + \sum_{i=0}^{g-1} \int_P^{z_P} \omega _i \int_{\infty }^P \bar \omega _i\right)
+\end{equation*}
+</div>
+</li>
+</ol>
+</li>
+<li id="li-97">Prop. There is  a proper regular model \(\mathcal X \) of \(X\otimes \QQ_q\) over \(\ZZ_q\) (\(q\ne p\)) such that if \(\mathcal X\) is \(p\)-integral then<div class="displaymath">
+\begin{equation*}
+h_q((x) -(\infty ),(x)-(\infty ))
+\end{equation*}
+</div>depends solely on the component of the special fibre \(\mathcal X_q\) that the section in \(\mathcal X(\ZZ_z)\) corresponding to \(x\) intersects. e.g. in \(g =2\) special fibres have been classified by Namikawa-Ueno and if \(\mathcal X\) is semistable then the types are<div class="displaymath">
+\begin{equation*}
+\lb I_{n_1} - I_{n_2} - m\rb  \text{ or } \lb I_{n_1n_2 - n_3 } \rb 
+\end{equation*}
+</div>pos integers \(n_i,m\text{.}\) Need to compute regular models (implementation in Magma by Donnelly) and grobner bases of ideals of divisors to compute intersection multiplicities.</li>
+</ol></article></div>
+<article class="remark-like" id="remark-18"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.71</span>.</h6>
+<p id="p-251">Roughly speaking intersections are computing denominators which is why its not obvious how to go beyond integral points using this construction. e.g. for elliptic curves have Mazur-Stein-Tate \(p\)-adic height.</p>
+<div class="displaymath">
+\begin{equation*}
+h(P) = \frac 1p \log_p(\sigma (P)) - \frac 1p \log_p(D(P))
+\end{equation*}
+</div>
+<p>ocleman gross</p>
+<div class="displaymath">
+\begin{equation*}
+h(P -\infty ) = h_p(P-\infty ) + \sum_{v\ne p} h_v(P-\infty )
+\end{equation*}
+</div>
+<p>extended appropriately.</p></article><article class="example-like" id="example-6"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.72</span>.</h6>
+<p id="p-252">Let</p>
+<div class="displaymath">
+\begin{equation*}
+X\colon  y^2 = (x^3 + x + 1)(x^4 + 2x^3 - 3x^2 + 4x + 4)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+C_{496}^J
+\end{equation*}
+</div>
+<p>new modular curve studied by Baker Gonzalez-Jimenez Gonzalez, Poonen</p>
+<div class="displaymath">
+\begin{equation*}
+J(\QQ) = \ZZ^3 \oplus \ZZ/2
+\end{equation*}
+</div>
+<p>let \(P=(-1,2), Q= (0,2), R= (-2,12), S = (3,62)\) want to show that up to hyperelliptic involution these are the only integral points. Gens for \(J(\QQ) \otimes \QQ\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\left\{P_{1}=[(P)-(\infty)], P_{2}=[(S)-(w(Q))], P_{3}=[(w(S))-(R)]\right\}
+\end{equation*}
+</div></article><aside class="aside-like" id="aside-12"><p id="p-253">Lecture 1? 31/10/2019</p></aside><p id="p-254">Goal today: Give more context for quadratic chabauty, discuss Kim's nonabelian Chabauty program.</p>
+<p id="p-255">References</p>
+<ol class="decimal">
+<li id="li-98">“p-adic approaches to rational and integral points on curves” - Poonen</li>
+<li id="li-99">From chabauty's method to kim's non-abelian chabauty method - Corwin</li>
+</ol>
+<p id="p-256">Let \(X\) be a  smooth projective curve over \(K\) a number field and let \(Z\) be a 0-dimensional subscheme. Let \(U = X-Z\text{,}\) \(d= \#Z(\overline K)\text{.}\) The topological Euler characteristic of \(U\) is \(\chi (U) = \chi (X) - d = 2g-2 -d\text{.}\) If \(\chi (U) \lt 0\) we say that \(U \) is hyperbolic (we want to consider hyperbolic curves because they have nonabelian \(\pi _1\text{.}\))</p>
+<article class="example-like" id="example-7"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.73</span>.</h6>
+<p id="p-257">\(g = 0\text{,}\) \(d\ge 3\) e.g. \(\PP^1 \smallsetminus \{0,1,\infty \}\text{.}\)</p></article><article class="example-like" id="example-8"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.74</span>.</h6>
+<p id="p-258">\(g = 1\text{,}\) \(d\ge 1\) e.g. punctured elliptic curve \(E \smallsetminus \{0\}\text{.}\)</p></article><article class="example-like" id="example-9"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.75</span>.</h6>
+<p id="p-259">\(g = 2\text{,}\) \(d\ge 0\) e.g. smooth projective curves of genus \(g \ge 2\) or punctured versions, integral points.</p></article><p id="p-260">Fix a prime \(p\) of good reduction for \(X\text{.}\)</p>
+<p id="p-261">Recall the classical Chabauty-Coleman diagram</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+X(K) \ar[r] \ar[d] &amp; X(K_p)\ar[d] &amp; \\
+J(K) \ar[r]  &amp; J(K_p)\ar[r] &amp; \Lie J_{K_p}
+}
+\end{equation*}
+</div>
+<p>in the classical chabauty-coleman method, the image of \(J(K)\) in the \(g\)-dimensional space \(\Lie J_{K_p}\) spans a \(K_p\) subspace of dimension at most \(r = \rk J(K)\text{.}\) So if \(r \lt  g\) there exists a non-zero \(K_p\) valued functional on \(\Lie J_{K_p}\) vanishing on \(J(K)\text{.}\) This pulls back to \(d\) non-zero locally analytic functions on \(X(K_p)\) that vanish on \(X(K)\text{.}\)</p>
+<p id="p-262">Problem: By using the geometry of \(J\) impose too much structure, can't extend this to \(r \ge g\text{.}\) Kim's idea: Replace \(J\) with references to \(X\) and various homology groups, then generalize the diagram by replacing homology with various deeper quotients of (nonabelian) \(\pi _1\text{.}\)</p>
+<p id="p-263">Gives construction of Selmer varieties.</p>
+<p id="p-264">References for Kims work: Kim, Minhyong. “The Motivic Fundamental Group of \(P^1 \smallsetminus  \{ 0,1,\infty \} \) and the Theorem of Siegel.” Inventiones Mathematicae 161, no. 3 (September 2005): 629–56. https://doi.org/10.1007/s00222-004-0433-9. Kim, Minhyong. “The Unipotent Albanese Map and Selmer Varieties for Curves.” Publications of the Research Institute for Mathematical Sciences 45, no. 1 (2009): 89–133. https://doi.org/10.2977/prims/1234361156. Kim, Minhyong. “Massey Products for Elliptic Curves of Rank 1.” Journal of the American Mathematical Society 23, no. 3 (2010): 725–47. https://doi.org/10.1090/S0894-0347-10-00665-X.</p>
+<div class="displaymath" id="p-265">
+\begin{equation*}
+\xymatrix{
+X(K) \ar[r] \ar[d] &amp; X(K_p)\ar[d] &amp; \\
+J(K) \ar[r]\ar[d]  &amp; J(K_p)\ar[r]\ar[d] &amp; \Lie J_{K_p} \\
+\widehat{J(K)[1/p]} \ar[r] \ar[d] &amp; \widehat{J(K_p)[1/p]}\ar[ur] &amp; \\
+\Sel_{\QQ_p}(J) = H^1_f(G_{K}, V)\ar[r]\ar[d] &amp; H^1_f(G_{K_v}, V)\ar[r] &amp; H_1^\dR(X_{K_p})/F^0 \\
+H^1(G_K, V) &amp;&amp;  &amp; 
+}
+\end{equation*}
+</div>
+<p>We want to start by removing \(J(K)\) from the diagram. Recall: Let \(M\) be an abelian group. The \(p\)-adic completion</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat M = \varprojlim_n M/p^nM
+\end{equation*}
+</div>
+<p>is a \(\ZZ_p\)-module. We can get  a \(\QQ_p\)-vector space by inverting \(p\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat M [1/p]\simeq \widehat M\otimes_{\ZZ_p} \QQ_p\text{.}
+\end{equation*}
+</div>
+<p>The group \(J(K_p)\) is compact so that the images of \(p^nJ(K_p)\) in \(\Lie J(K_p) \to 0\text{,}\) \(p\)-adically as \(n\to \infty \text{.}\) So the homomorphism</p>
+<div class="displaymath">
+\begin{equation*}
+J(K_p) \to \Lie J_{K_p}
+\end{equation*}
+</div>
+<p>factors through \(\widehat {J(K_p)}\) and hence also through  \(\widehat{J(K_p)} \lb 1/p\rb \text{.}\) Since \(\log \) is a local diffeomorphism with finite kernel get a \(\QQ_p\)-linear map</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat{J(K_p)} [1/p] \to \Lie J_{K_p}
+\end{equation*}
+</div>
+<p>is an isomorphism.</p>
+<p id="p-266">Recall the Kummer exact sequence</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to J[m] \to J \xrightarrow{\cdot m} J \to 0
+\end{equation*}
+</div>
+<p>take \(G_K = \absgal K\)-cohomology to get a long exact sequence which leads to a short exact sequence</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to J(K)/mJ(K) \xrightarrow{\kappa_m } H^1(G_K, J[m]) \to H^1(G_K, J)[m] \to 0
+\end{equation*}
+</div>
+<p>where \(\kappa \) is the Kummer map. There is a canonical \(G_K\)-equivariant isomorphism</p>
+<div class="displaymath">
+\begin{equation*}
+J[m] \simeq H_1^\et(J_{\overline K}, \ZZ/m) \simeq H_1^\et(X_{\overline K}, \ZZ/m)\text{.}
+\end{equation*}
+</div>
+<p>The Kummer map gives an embedding</p>
+<div class="displaymath">
+\begin{equation*}
+J(K)/mJ(K) \hookrightarrow H^1(G_k, H^\et_1(X_{\overline K}, \ZZ/m))
+\end{equation*}
+</div>
+<p>to get an embedding of \(J(K)\) rather than just \(J(K)/mJ(K)\) take \(m=p^n\) and inverse limit.</p>
+<p id="p-267">Get a \(\ZZ_p\)-Tate module.</p>
+<div class="displaymath">
+\begin{equation*}
+T = \varprojlim_n J[p^n] \simeq H^\et_1(X_{\overline K}, \ZZ_p)
+\end{equation*}
+</div>
+<p>let \(V = T\lb 1/p\rb  = T\otimes_{\ZZ_p} \QQ_p\text{.}\) Let \(J(K)_{\ZZ_p} = J(K) \otimes_\ZZ \ZZ_p\text{,}\) \(J(K)_{\QQ_p} = J(K) \otimes_{\ZZ} \QQ_p\text{.}\)</p>
+<p id="p-268">This gives us embeddings</p>
+<div class="displaymath">
+\begin{equation*}
+J(K)_{\ZZ_p} \hookrightarrow H^1(G_K, T)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+J(K)_{\QQ_p} \hookrightarrow H^1(G_K, V)
+\end{equation*}
+</div>
+<p>this is almost our replacement for \(J\text{.}\)</p>
+<p id="p-269">We still need to identify \(\QQ_p\)-span of \(J(K)\) inside \(H^1(G_K, V)\) using   \(V\) and without reference to \(J\text{.}\)</p>
+<p id="p-270">The vector space \(V\) has the structure of a \(G_K\)-rep so we want a Galois theoretic way of identifying the image of \(J(K)_{\QQ_p}\) in \(H^1(G_K, V)\text{.}\) This is where the Bloch-Kato Selmer groups come in. Back to the fundamental short exact sequence from the Kummer sequence let \(m=p^n\) and we have the local diagram as well.</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+0 \ar[r]\ar[d]&amp; J(K)/mJ(K) \ar[r]^{\kappa } &amp;  H^1(G_K, J[m]) \ar[r]\ar[d]^\alpha &amp; H^1(G_K, J)[m] \ar[r]\ar[d]&amp; 0\\
+0 \ar[r]&amp;\prod_v J(K_v)/mJ(K_v) \ar[r]_\beta &amp;  \prod H^1(G_{K_v}, J[m]) \ar[r]&amp; \prod H^1(G_{K_v}, J)[m] \ar[r]&amp; 0
+}
+\end{equation*}
+</div>
+<p>the selmer group is a finite dimensional subspace of \(H^1(G_K, J\lb p^n\rb )\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\Sel_{p^n}(J) = \alpha \inv(\im \beta )
+\end{equation*}
+</div>
+<p>we have</p>
+<div class="displaymath">
+\begin{equation*}
+J(K)/p^nJ(K) \hookrightarrow \Sel_{p^n}(J)
+\end{equation*}
+</div>
+<p>now taking inverse limits gives</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat{J(K)} \hookrightarrow \Sel_{\ZZ_p} J \subseteq H^1 (G_K, T)
+\end{equation*}
+</div>
+<p>and inverting \(p\) gives</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat{J(K)}[1/p] \hookrightarrow \Sel_{\QQ_p} J \subseteq H^1 (G_K, V)
+\end{equation*}
+</div>
+<p>let \(\Sha\) be the Shafarevich-Tate group of \(J\text{.}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to J(K)/p^nJ(K) \to \Sel_{p^n}(J) \to \Sha[p^n] \to 0
+\end{equation*}
+</div>
+<p>take inverse limits and invert \(p\)</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \widehat{J(K)}[1/p]\to \Sel_{\QQ_p}(J) \to (\varprojlim_n \Sha[p^n])[1/p] \to 0
+\end{equation*}
+</div>
+<p>if \(\Sha\lb p^\infty \rb\) is finite, then</p>
+<div class="displaymath">
+\begin{equation*}
+\varprojlim_n \Sha[p^n] = 0
+\end{equation*}
+</div>
+<p>so</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat{J(K)}[1/p]\simeq \Sel_{\QQ_p}(J)
+\end{equation*}
+</div>
+<p>we want to determine the image of \(J(K)_{\QQ_p}\) in \(H^1(G_K, V)\) in terms of \(V\) using \(V\) as a Galois rep. We're almost there, we've replaced \(J(K)_{\QQ_p} \) with \(\Sel_{\QQ_p}(J)\text{.}\) Remaining problem is that the local conditions giving us</p>
+<div class="displaymath">
+\begin{equation*}
+\Sel_{\QQ_p}(J) \subseteq H^1(G_K, V)
+\end{equation*}
+</div>
+<p>we use information from the geometry of \(J\text{.}\) (certain subgroups of \(\prod H^1(G_{K_v}, V)\)). This problem was solved by Bloch and Kato using Bloch-Kato Selmer groups. use \(p\)-adic Hodge theory to re-interpret \(\im \beta \text{.}\)</p></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>
