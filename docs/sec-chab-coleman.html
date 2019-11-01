@@ -50,6 +50,7 @@ MathJax.Hub.Config({
 <link href="https://pretextbook.org/css/0.2/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/setcolors.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="https://alexjbest.github.io/css/pretext.css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.2/features.css" rel="stylesheet" type="text/css">
 <script>var logged_in = false;
 var role = 'student';
@@ -1699,9 +1700,9 @@ I_k = \int_P^{R_{k-1}} \eta_k I_{k+1} = \int_P^{t(R_{k-1})} \eta_k(t) I_{k+1} dt
 <span class="type">Proposition</span> <span class="codenumber">2.41</span>.</h6>
 <p id="p-164">Let \(\omega_{i_1}, \ldots \omega_{i_n}\) be forms of the second kind, regular at \(P,Q \in X(\QQ_p)\text{.}\)</p>
 <ol class="decimal">
-<li id="li-61">\(\int_P^P \omega_{i_1} \ldots \omega_{i_n} = 0\)</li>
-<li id="li-62">\(\sum_{\text{all permutations }\sigma}  \int_P^Q \omega_{\sigma(i_1)} \ldots \omega_{\sigma(i_n)} = \prod_{j=1}^n \int_P^Q \omega_{i_j}\)</li>
-<li id="li-63">\(\int_P^Q \omega_{i_1} \ldots \omega_{i_n} = (-1)^n \int_Q^P \omega_{i_n} \ldots \omega_{i_1}\)</li>
+<li id="li-61">\(\displaystyle \int_P^P \omega_{i_1} \ldots \omega_{i_n} = 0\)</li>
+<li id="li-62">\(\displaystyle \sum_{\text{all permutations }\sigma}  \int_P^Q \omega_{\sigma(i_1)} \ldots \omega_{\sigma(i_n)} = \prod_{j=1}^n \int_P^Q \omega_{i_j}\)</li>
+<li id="li-63">\(\displaystyle \int_P^Q \omega_{i_1} \ldots \omega_{i_n} = (-1)^n \int_Q^P \omega_{i_n} \ldots \omega_{i_1}\)</li>
 </ol></article><article class="theorem-like" id="corollary-3"><h6 class="heading">
 <span class="type">Corollary</span> <span class="codenumber">2.42</span>.</h6>
 <p id="p-165">\(\int_P^Q \omega_i \ldots \omega_i = \frac{1}{n!}\left( \int_P^Q \omega_i \right)^n\)</p></article><article class="paragraphs" id="paragraphs-11"><h5 class="heading"><span class="title">References.</span></h5>
@@ -2470,7 +2471,7 @@ H^1_\dR(X/\QQ_p) = H^0(X, \Omega ^1_X) \oplus W\text{,}
 </div>
 <div class="displaymath">
 \begin{equation*}
-\ldots
+\vdots
 \end{equation*}
 </div>
 <div class="displaymath">
@@ -2517,7 +2518,7 @@ h_q((x) -(\infty ),(x)-(\infty ))
 h(P) = \frac 1p \log_p(\sigma (P)) - \frac 1p \log_p(D(P))
 \end{equation*}
 </div>
-<p>ocleman gross</p>
+<p>Coleman-Gross</p>
 <div class="displaymath">
 \begin{equation*}
 h(P -\infty ) = h_p(P-\infty ) + \sum_{v\ne p} h_v(P-\infty )
@@ -2659,7 +2660,7 @@ J(K)_{\QQ_p} \hookrightarrow H^1(G_K, V)
 <div class="displaymath">
 \begin{equation*}
 \xymatrix{
-0 \ar[r]\ar[d]&amp; J(K)/mJ(K) \ar[r]^{\kappa } &amp;  H^1(G_K, J[m]) \ar[r]\ar[d]^\alpha &amp; H^1(G_K, J)[m] \ar[r]\ar[d]&amp; 0\\
+0 \ar[r]&amp; J(K)/mJ(K) \ar[d]\ar[r]^{\kappa } &amp;  H^1(G_K, J[m]) \ar[r]\ar[d]^\alpha &amp; H^1(G_K, J)[m] \ar[r]\ar[d]&amp; 0\\
 0 \ar[r]&amp;\prod_v J(K_v)/mJ(K_v) \ar[r]_\beta &amp;  \prod H^1(G_{K_v}, J[m]) \ar[r]&amp; \prod H^1(G_{K_v}, J)[m] \ar[r]&amp; 0
 }
 \end{equation*}
