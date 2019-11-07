@@ -1799,8 +1799,8 @@ section#sec-chab-coleman
                 X(K) \ar[r] \ar[d] &amp; X(K_p)\ar[d] &amp; \\
                 J(K) \ar[r]\ar[d]  &amp; J(K_p)\ar[r]\ar[d] &amp; \Lie J_{K_p} \\
                 \widehat{J(K)[1/p]} \ar[r] \ar[d] &amp; \widehat{J(K_p)[1/p]}\ar[ur] &amp; \\
-                \Sel_{\QQ_p}(J) = H^1_f(G_{K}, V)\ar[r]\ar[d] &amp; H^1_f(G_{K_v}, V)\ar[r] &amp; H_1^\dR(X_{K_p})/F^0 \\
-                H^1(G_K, V) &amp;&amp;  &amp; 
+                \Sel_{\QQ_p}(J) = H^1_f(G_{K}, V)\ar[r]\ar[d] &amp; H^1_f(G_{K_v}, V)\ar[r]\ar[d]  &amp; H_1^\dR(X_{K_p})/F^0 \\
+                H^1(G_K, V) &amp;H^1(G_K, V)&amp;  &amp; 
                 }
             | We want to start by removing #[m  J(K)] from the diagram.
             | Recall: Let #[m M] be an abelian group.
@@ -1878,4 +1878,278 @@ section#sec-chab-coleman
             | (certain subgroups of #[m \prod H^1(G_{K_v}, V)]).
             | This problem was solved by Bloch and Kato using Bloch-Kato Selmer groups.
             | use #[m p]-adic Hodge theory to re-interpret #[m \im \beta ].
+
+        aside: p Lecture 1? 5/11/2019
+
+        p
+            | Recall the big chabauty-kim diagram.
+        p
+            | Last time we had this
+            me.
+                \xymatrix{
+                J(K)/p^nJ(K) \ar[r] \ar[d] &amp; H^1(G_K, J[p^n])\ar[d]^\alpha \\
+                \prod_v J(K_v)/p^nJ(K_v) \ar[r]_\beta  &amp; H^1(G_K, J[p^n])
+                }
+            me \Sel_{p^n}(J) = \alpha \inv(\im (\beta ))
+            me \varprojlim_n \Sel_{p^n} (J) = \Sel_{\ZZ_p} J
+            | , then we get
+            me \widehat J(K) [1/p] \hookrightarrow \Sel_{\QQ_p} (J) \subseteq H^1(G_K, V)
+            | .
+
+        p
+            | Goal is to determine the image of #[m J(K)_{\QQ_p}] in #[m H^1(G_K, V)] in terms of the Galois representation #[m V].
+            | We replaced #[m J(K)_{\QQ_p}] by #[m \Sel_{\QQ_p}], defined by local conditions.
+            | But the local conditions (subgroup of #[m \prod_v H^1(G_{K_v},V)] are defined via geometry of #[m J] rather than via galois reps.
+
+        p
+            | Bloch and Kato defined #[m \im \beta ] using #[m p]-adic Hodge theory and defined #[m \Sel_{\QQ_p} (J)] in terms of data from #[m V].
+            ol
+                li
+                    | They wanted to extend Selmer and Shafarevich-Tate groups to motives beyond  #[m H^1] of abelian varieties.
+                li
+                    | this construction will let us extend the idea of Selmer group from
+                    me T = H_1^\et(X_{\overline K}, \ZZ_p) \simeq \pi_1^\et(X_{\overline K})^\ab \otimes \ZZ_p
+                    | to certain (non-abelian) quotients of #[m \pi_1^\et].
+        p
+            | Crash course in Bloch-Kato Selmer groups.
+            | Let #[m V] be a finite dimensional #[m \QQ_q]-vector space with a continuous action of #[m G_{K_v}].
+
+            | Let, #[m K_v = \QQ_p].
+            | Fontaine defined #[m D_\cris (V)  = (B_{\cris} \otimes_{\QQ_p} V)^{G_{K_v}}] for a ring of p-adic periods #[m B_{cris}]
+            | we have
+            me  \dim_{K_v} D_{\cris} ( V) \le \dim_{\QQ_p} V
+            | and if equality holds we say that #[m V] is crystalline.
+            | See Berger, or Caruso, or Andre.
+        p
+            | An element #[m \xi  \in H^1(G_{K_v}, V)] corresponds to an isomorphism class of extensions of #[m \QQ_p] by #[m V]
+            me 0\to V \to E \to \QQ_p \to 0
+            | and #[m \xi ] is said to be crystalline if the galois representation is.
+            | Let #[m H_f^1(G_{K_v}, V)] be the set of crystalline classes in #[m H^1(G_{K_v}, V)].
+            | The #[q local Bloch-Kato Selmer group] at #[m v].
+
+        definition
+            statement: p
+                | The Bloch-Kato Selmer group #[m H_f^1(G_{K_v}, V)] is the set of #[m \xi  \in H^1(G_K, V)] whose image in #[m H^1(G_{K_v}, V)] is crystalline for each #[m v| p].
+
+        theorem
+            title Bloch-Kato
+            statement: p
+                | The image of the Kummer map
+                me \kappa _v \colon J(K_v)_\QQ \to H^1(G_{K_v}, V)
+                | is #[m H_f^1(G_{K_v}, V)].
+
+        corollary
+            statement: p
+                | The Selmer group
+                me \Sel_{\QQ_p} J
+                | coincides with #[m H^1_f(G_K, V)] in #[m H^1(G_K, V)].
+
+        p
+            | Need to also define log intrinsically, also needs a new target space in place of #[m \Lie J(K_{K_p})].
+        definition
+            statement: p
+                | A filtered module over a commutative ring #][m R] is an #[m R]-module  #[m M] with a collection
+                me \{ G^i M \}
+                | of submodules that is decreasing
+                me F^{i+1 } M \subseteq F^i M,\, \forall i
+                | . If #[m \bigcup F^i M = M] the filtration is exhaustive.
+                | For any filtered #[m R]-module #[m M] the associated graded module
+                me \gr(M)  = \bigoplus _i \gr^i(M),\,\gr^i(M) = F^iM/F{i+1}M
+                | .
+        p
+            | Recall the Hodge filtration on de Rham cohomology, this is a decreasing filtration #[m F^i] on #[m H^1_\dR(J_{K_p})] with 
+            me 0 = F^2 \subseteq F^1 = H^0(J_{K_p}, \Omega ^1) \subseteq F^0 = H^1_\dR
+            | .
+
+        p
+            | The de Rham cohomology #[m H^1_\dR(J_{K_p})]  is the dual of #[m H_1^\dR(J_{K_p})] and has a decreasing hodge filtration dual to that of #[m H^1_\dR(J_{K_p})], defined as
+            me H^i H_1^\dR(J_{K_p}) = \Ann ( F^{-i + 1} H^1_\dR(J_{K_p}))].
+        p
+            me H^0(X, \Omega ^1)^\vee \simeq H^0(J, \Omega ^1) ^\vee = (\gr^1 H^1_\dR(J_{K_p}))^\vee = \gr^{-1} H_1^\dR( J_{K_p})
+            me \gr^{-1} H_1^\dR(J_{K_p}) = H_1^\dR(J_{K_p}) / F^0H_1^\dR(J_{K_p}) \simeq H_1^\dR(X_{K_p}) / F^0H_1^\dR(X_{K_p})
+            | this is our intrinsic definition of #[m H^0(X, \Omega ^1)^\vee].
+        p
+            | More of our crash course on #[m p]-adic hodge theory.
+            | To define #[m \log_{BK}].
+
+        p
+            | We assume #[m K_p \simeq \QQ_p], Fontaine's theory defines a series of #[m \QQ_p]-algebras with #[m G_{\QQ_p}]-action and additional structure compatible with  this, (i.e. frob, differential operators, hodge)
+            | we have
+            me B_{crys} \subseteq B_{\dR}
+
+
+            | ???
+
+        p
+            | Facts, theres a descending filtration #[m F^1] on #[m B_{\dR}], for which #[m B_{\dR}^+ = F^0 B_{dR}] is a DVR with fraction field #[m B_{\dR}] and residue field #[m \CC_p].
+
+            | There is an  action of frobenius on #[m B_{crys}] whose fixed subring is denoted
+            me B_{crys}^{\phi = 1}
+            | .
+            | We have #[m B_{crys}^{G_{K_p}} = B_{\dR}^{G_{K_p}}  = K_p].
+
+        p
+            | For a continuous #[m p]-adic representation #[m V] of #[m G_{\QQ_p}].
+            | We define
+            me D_\dR(V) = (B_{\dR} \otimes V)^{G_{K_p}}
+            me D^+_\dR(V) = (B^+_{\dR} \otimes V)^{G_{K_p}}
+            | the filtration on #[m B_{\dR}] induces one on #[m D_\dR(V)].
+        p
+            | If #[m Y] is a smooth variety over #[m \QQ_p] then #[m p]-adic height gives for
+            me V = H^i_\et(Y_{\overline \QQ_p}, \QQ_p)
+            | that
+            me D_\dR(V) \xrightarrow\sim H^i_\dR(Y)
+            | .
+            | Respecting the Hodge filtration on either side.
+            | Also #[m D_\dR^+(V)] is naturally identified with #[m F^0 D_\dR(V)].
+            me F^m D_\dR(V) = (F^{m} B_\dR \otimes V)^{G_{K_v}}
+            | Frobenius on #[m B_\crys] induces a Frobenius map on #[m D_\crys (V) ] and #[m V = H^i_\et(Y_{\overline \QQ_p}, \QQ_p)] and #[m Y] good reduction with special fibre #[m Y_{\FF_p}].
+            | Then there's a natural isomorphism
+            me D_\crys(V) \xrightarrow\sim H^1_\crys (Y_{\FF_p}, \QQ_p)
+            | respects frob on each side.
+        p
+            | #[m D_\dR] and #[m D_\crys] commute with taking  #[m {}^\vee] so have correesponding results for homology.
+        example
+            statement: p
+                | Let #[m V= H_1^\et(X_{\overline K}, \QQ_p)] then
+                me H_1^\dR(X_{K_p})  \simeq D_\dR(V) \simeq D_\crys(V)]
+                | compat with hodge 
+
+        aside: p Lecture 1? 7/11/2019
+
+        p
+            me T = H_1^\et(X_{\overline K}, \ZZ_p)
+            me V = H_1^\et(X_{\overline K}, \QQ_p)
+            | want to define the Bloch-Kato logarithm.
+            me \log_{BK} \colon H_{f}^1(G_{K_p}, V)\to H_1^\dR(X_{K_p}) /F^0
+            | .
+        p
+            | Bloch-Kato 1990
+            | give a short exact sequence
+            me 0\to \QQ_p\xrightarrow\alpha B_{cris}^{\phi =1} \oplus B_{\dR}^+ \xrightarrow\beta  B_\dR \to 0
+            | ,
+            | where #[m \alpha (x) = (x,x),\beta (x,y) = x-y].
+            | Tensor with #[m V] and take Galois cohomology to get
+            me 0 \to V^{G_{K_p}} \to D_{cris}(V) ^{\phi =1} \oplus D_\dR^+(V) \to D_\dR(V)\to H^1(G_{K_p}, V)  \to H^1(G_{K_p},V\otimes B_{cris}^{\phi =1}) \to \cdots
+            | Bloch-Kato show that
+            me H^1_e(G_{K_p}, V) = \ker(H^1(G_{K_p}, V) \to  H^1(G_{K_p},V\otimes B_{cris}^{\phi =1}))
+            | is equal to
+            me H^1_f(G_{K_p}, V)
+            | .
+        p
+            | This gives a surjection
+            me D_\dR(V) / D_\dR^+(V) \to H_f^1(G_{K_p}, V)
+            | this is the Bloch-Kato exponential map.
+            | (coincides with usual #[m \exp] in the case of a #[m p]-adic formal lie group).
+            | The kernel of this map is
+            me D_{cris}(V)^{\phi =1}/V^{G_{K_p}}
+            | this is trivial since #[m V] is the Tate module of an abelian variety (true because of the Weil conjecture, and what we know about eigenvalues of frobenius).
+        p
+            | So in this case the Bloch-Kato exponential map has an inverse, our Bloch-Kato logarithm.
+            me \log_{BK} \colon H^1_f(G_{K_p}, V) \xrightarrow\sim D_\dR(V)/D_\dR^+ (V) \simeq H_1^\dR (X)/F^0
+        p
+            | Kim's generalization.
+            | Let #[m G] be a group (resp. topological group).
+            | For subgroups
+            me A,B\subseteq G
+            | let #[m \lb A,B\rb ] denote the (the closure of) the commutator of the subgroups.
+        definition
+            statement: p
+                | Let
+                me G^{\lb 1\rb } = G
+                me G^{\lb 2\rb } =\lb  G^{\lb 1\rb } ,G\rb 
+                me \ldots
+                me G^{\lb i+1\rb } =\lb  G^{\lb i\rb } ,G\rb 
+                | then
+                me G^{\lb 1\rb } \unrhd G^{\lb 2\rb } \unrhd\cdots
+                | is a descending chain of normal subgroups of #[m G] called the lower central series of #[m G].
+                | Let #[m G_n = G/G^{\lb n + 1\rb }].
+
+        example
+            statement: p
+                me G_1 = G/G^{\lb 1\rb } = G/\lb G,G\rb 
+                | is the abelianization #[m G^{ab}] of #[m G].
+                | For #[m n \ge 2] the group #[m G_n] is an #[m n]-step nilpotent group, typically nonabelian.
+        p
+            | Now for various flavours of #[m \pi _1(X)] we have
+            me \pi _1(X)_1 = \pi _1(X) ^{ab} = H_1(X)
+            | so above we should think of #[m H_1] as the abelianization of #[m \pi _1].
+            | We can therefore try to replace it by #[m \pi _1(X)_n] for #[m n \gt  1].
+            | We'll do this for the two homology groups associated to #[m X]
+            ol
+                li
+                    | #[m p]-adic étale homology
+                li
+                    | de Rham homology
+            | we can define the geometric étale fundamental group #[m \pi _1^\et (X_{\overline K})] such that
+            me \pi_1^\et(X_{\overline K})^{ab} \simeq H_1^\et(X_{\overline K} , \widehat \ZZ)
+            me \pi_1^\et(X_{\overline K})^{ab} \simeq H_1^\et(X_{\overline K} , \widehat \ZZ) \twoheadrightarrow H_1^\et(X_{\overline K}, \ZZ_p) \subseteq H_1^\et(X_{\overline K}, \QQ_p) = V = \GG_a^{2g}(\QQ_p)
+            | with action of #[m G_K] in particular #[m G_K] acts via #[m \QQ_p]-linear automorphisms on #[m \GG_a^{2g}].
+
+        p
+            | For #[m n \ge 2] there's an analogous construction that transforms #[m \pi _1^\et(X_{\overline K})_n] into a topological group #[m V_n] that is the group of #[m \QQ_p]-points of a unipotent algebraic group #[m \mathcal V_n/\QQ_p], equipped with a #[m G_K]-action.
+        definition
+            statement: p
+                | A pro-unipotent group over #[m \QQ_p] is a group scheme of #[m \QQ_p] that is a projective limit of unipotent  algebraic groups over #[m \QQ_p].
+
+        p
+            | Then there is a notion of #[m \QQ_p]-pro-unipotent completion
+            me \pi_1^\et(X_{\overline K})_{\QQ_p}
+            | of
+            me \pi_1^\et(X_{\overline K})
+            | there is a continuous homomorphism
+            me \pi_1^\et(X_{\overline K}) \to \pi_1^\et(X_{\overline K})_{\QQ_p}(\QQ_p)
+            | is universal among such maps.
+        p
+            | There are lower central series quotients
+            me U_n^\et = \pi _1^\et(X_{\overline K})_{\QQ_{p,n}} = \pi _1^\et(X_{\overline K})_{\QQ_p}/ \pi _1^\et(X_{\overline K})_{\QQ_p} ^{\lb n + 1\rb }
+            | .
+        p
+            | In the cases we consider, these are finite dimensional varieties.
+            | The coordinate ring
+            me \sheaf O(\pi _1^\et(X_{\overline K})_{\QQ_p})
+            | is a #[m \QQ_p]-vector space.
+            | Recall that for a smooth curve #[m X] we had
+            me H_1^\dR(X_{K_p}) \simeq D_{\dR} (H_1^\et(X_{\overline K}, \QQ_p))
+            | we may define the de Rham fundamental group
+            me \pi _1^\dR(X_{K_p})
+            | as
+            me \Spec(D_{\dR}(\sheaf O(\pi _1^\et(X_{\overline K})_{\QQ_p})))
+            | .
+        p
+            | #[m \pi _1^\dR] is equipped with a Hodge filtration.
+            | Just like we took the lower central series filtration on #[m \pi _1^\et(X_{\overline K})_{\QQ_p}].
+            | do the same thing for quotients by
+            me \pi _1^\dR(X_{K_p})_n
+            | We'll denote these as #[m U_n^\dR].
+            | We have
+            me U_n^\dR = D_{cris}(U_n^\et)
+            | so it is equipped with a frobenius action.
+        p
+            | Now we have a non-abelian version of the Chabauty-Coleman diagram
+            me.
+                \xymatrix{
+                X(K)\ar[r]\ar[d] &amp; X(K_p)\ar[d] \ar[dr] &amp; \\
+                H^1_f(G_{K}, \pi _1^\et(X_{\overline K})_{\QQ_p, n}) &amp; H^1_f(G_{K_p}, U_n^\et) &amp; U_n^\dR / F^0
+                }
+
+        p
+            | An element of
+            me H_f^1(G_K, U_n^\et)
+            | is a scheme over #[m \QQ_p] with continuous #[m G_K]-action and #[m G_K]-equivariant action of #[m U_n^\et] making it into a #[m U_n^\et]-torsor.
+        p
+            | Kim shows that
+            me H_f^1(G_K, U_n^\et) \subseteq H^1 (G_K, U_n^\et)
+            | has the structure of an algebraic variety the Selmer variety #[m \Sel(U_n)].
+
+        p
+            | We refer to #[m H^1_f(G_{K_p}, U_n^\et)] as the local Selmer variety.
+
+        theorem
+            title Kim
+            statement: p
+                | For some #[m n \gt 1] if
+                me \dim \Sel(U_n) \lt \dim  H^1_f(G_{K_p}, U_n^\et)
+                | then #[m X(K)] is contained in the zero locus of non-trivial locally analytic function on #[m X(K_p)] so #[m X(K)] is finite.
+
 

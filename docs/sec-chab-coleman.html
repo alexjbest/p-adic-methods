@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>PAR The Chabauty-Coleman method</title>
+<title>PAM The Chabauty-Coleman method</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/x-mathjax-config">
@@ -2581,8 +2581,8 @@ J(K) \ar[r]  &amp; J(K_p)\ar[r] &amp; \Lie J_{K_p}
 X(K) \ar[r] \ar[d] &amp; X(K_p)\ar[d] &amp; \\
 J(K) \ar[r]\ar[d]  &amp; J(K_p)\ar[r]\ar[d] &amp; \Lie J_{K_p} \\
 \widehat{J(K)[1/p]} \ar[r] \ar[d] &amp; \widehat{J(K_p)[1/p]}\ar[ur] &amp; \\
-\Sel_{\QQ_p}(J) = H^1_f(G_{K}, V)\ar[r]\ar[d] &amp; H^1_f(G_{K_v}, V)\ar[r] &amp; H_1^\dR(X_{K_p})/F^0 \\
-H^1(G_K, V) &amp;&amp;  &amp; 
+\Sel_{\QQ_p}(J) = H^1_f(G_{K}, V)\ar[r]\ar[d] &amp; H^1_f(G_{K_v}, V)\ar[r]\ar[d]  &amp; H_1^\dR(X_{K_p})/F^0 \\
+H^1(G_K, V) &amp;H^1(G_K, V)&amp;  &amp; 
 }
 \end{equation*}
 </div>
@@ -2719,7 +2719,403 @@ J(K)/p^nJ(K) \hookrightarrow \Sel_{p^n}(J)
 \Sel_{\QQ_p}(J) \subseteq H^1(G_K, V)
 \end{equation*}
 </div>
-<p>we use information from the geometry of \(J\text{.}\) (certain subgroups of \(\prod H^1(G_{K_v}, V)\)). This problem was solved by Bloch and Kato using Bloch-Kato Selmer groups. use \(p\)-adic Hodge theory to re-interpret \(\im \beta \text{.}\)</p></section></section></div></main>
+<p>we use information from the geometry of \(J\text{.}\) (certain subgroups of \(\prod H^1(G_{K_v}, V)\)). This problem was solved by Bloch and Kato using Bloch-Kato Selmer groups. use \(p\)-adic Hodge theory to re-interpret \(\im \beta \text{.}\)</p>
+<aside class="aside-like" id="aside-13"><p id="p-271">Lecture 1? 5/11/2019</p></aside><p id="p-272">Recall the big chabauty-kim diagram.</p>
+<p id="p-273">Last time we had this</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+J(K)/p^nJ(K) \ar[r] \ar[d] &amp; H^1(G_K, J[p^n])\ar[d]^\alpha \\
+\prod_v J(K_v)/p^nJ(K_v) \ar[r]_\beta  &amp; H^1(G_K, J[p^n])
+}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\Sel_{p^n}(J) = \alpha \inv(\im (\beta ))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\varprojlim_n \Sel_{p^n} (J) = \Sel_{\ZZ_p} J\text{,}
+\end{equation*}
+</div>
+<p>then we get</p>
+<div class="displaymath">
+\begin{equation*}
+\widehat J(K) [1/p] \hookrightarrow \Sel_{\QQ_p} (J) \subseteq H^1(G_K, V)\text{.}
+\end{equation*}
+</div>
+<p id="p-274">Goal is to determine the image of \(J(K)_{\QQ_p}\) in \(H^1(G_K, V)\) in terms of the Galois representation \(V\text{.}\) We replaced \(J(K)_{\QQ_p}\) by \(\Sel_{\QQ_p}\text{,}\) defined by local conditions. But the local conditions (subgroup of \(\prod_v H^1(G_{K_v},V)\) are defined via geometry of \(J\) rather than via galois reps.</p>
+<p id="p-275">Bloch and Kato defined \(\im \beta \) using \(p\)-adic Hodge theory and defined \(\Sel_{\QQ_p} (J)\) in terms of data from \(V\text{.}\)</p>
+<ol class="decimal">
+<li id="li-100">They wanted to extend Selmer and Shafarevich-Tate groups to motives beyond  \(H^1\) of abelian varieties.</li>
+<li id="li-101">this construction will let us extend the idea of Selmer group from<div class="displaymath">
+\begin{equation*}
+T = H_1^\et(X_{\overline K}, \ZZ_p) \simeq \pi_1^\et(X_{\overline K})^\ab \otimes \ZZ_p
+\end{equation*}
+</div>to certain (non-abelian) quotients of \(\pi_1^\et\text{.}\)</li>
+</ol>
+<p id="p-276">Crash course in Bloch-Kato Selmer groups. Let \(V\) be a finite dimensional \(\QQ_q\)-vector space with a continuous action of \(G_{K_v}\text{.}\) Let, \(K_v = \QQ_p\text{.}\) Fontaine defined \(D_\cris (V)  = (B_{\cris} \otimes_{\QQ_p} V)^{G_{K_v}}\) for a ring of p-adic periods \(B_{cris}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\dim_{K_v} D_{\cris} ( V) \le \dim_{\QQ_p} V
+\end{equation*}
+</div>
+<p>and if equality holds we say that \(V\) is crystalline. See Berger, or Caruso, or Andre.</p>
+<p id="p-277">An element \(\xi  \in H^1(G_{K_v}, V)\) corresponds to an isomorphism class of extensions of \(\QQ_p\) by \(V\)</p>
+<div class="displaymath">
+\begin{equation*}
+0\to V \to E \to \QQ_p \to 0
+\end{equation*}
+</div>
+<p>and \(\xi \) is said to be crystalline if the galois representation is. Let \(H_f^1(G_{K_v}, V)\) be the set of crystalline classes in \(H^1(G_{K_v}, V)\text{.}\) The “local Bloch-Kato Selmer group” at \(v\text{.}\)</p>
+<article class="definition-like" id="definition-8"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.76</span>.</h6>
+<p id="p-278">The Bloch-Kato Selmer group \(H_f^1(G_{K_v}, V)\) is the set of \(\xi  \in H^1(G_K, V)\) whose image in \(H^1(G_{K_v}, V)\) is crystalline for each \(v| p\text{.}\)</p></article><article class="theorem-like" id="theorem-20"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.77</span>. <span class="title">Bloch-Kato.</span>
+</h6>
+<p id="p-279">The image of the Kummer map</p>
+<div class="displaymath">
+\begin{equation*}
+\kappa _v \colon J(K_v)_\QQ \to H^1(G_{K_v}, V)
+\end{equation*}
+</div>
+<p>is \(H_f^1(G_{K_v}, V)\text{.}\)</p></article><article class="theorem-like" id="corollary-4"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">2.78</span>.</h6>
+<p id="p-280">The Selmer group</p>
+<div class="displaymath">
+\begin{equation*}
+\Sel_{\QQ_p} J
+\end{equation*}
+</div>
+<p>coincides with \(H^1_f(G_K, V)\) in \(H^1(G_K, V)\text{.}\)</p></article><p id="p-281">Need to also define log intrinsically, also needs a new target space in place of \(\Lie J(K_{K_p})\text{.}\)</p>
+<article class="definition-like" id="definition-9"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.79</span>.</h6>
+<p id="p-282">A filtered module over a commutative ring #][m R] is an \(R\)-module  \(M\) with a collection</p>
+<div class="displaymath">
+\begin{equation*}
+\{ G^i M \}
+\end{equation*}
+</div>
+<p>of submodules that is decreasing</p>
+<div class="displaymath">
+\begin{equation*}
+F^{i+1 } M \subseteq F^i M,\, \forall i\text{.}
+\end{equation*}
+</div>
+<p>If \(\bigcup F^i M = M\) the filtration is exhaustive. For any filtered \(R\)-module \(M\) the associated graded module</p>
+<div class="displaymath">
+\begin{equation*}
+\gr(M)  = \bigoplus _i \gr^i(M),\,\gr^i(M) = F^iM/F{i+1}M\text{.}
+\end{equation*}
+</div></article><p id="p-283">Recall the Hodge filtration on de Rham cohomology, this is a decreasing filtration \(F^i\) on \(H^1_\dR(J_{K_p})\) with</p>
+<div class="displaymath">
+\begin{equation*}
+0 = F^2 \subseteq F^1 = H^0(J_{K_p}, \Omega ^1) \subseteq F^0 = H^1_\dR\text{.}
+\end{equation*}
+</div>
+<p id="p-284">The de Rham cohomology \(H^1_\dR(J_{K_p})\)  is the dual of \(H_1^\dR(J_{K_p})\) and has a decreasing hodge filtration dual to that of \(H^1_\dR(J_{K_p})\text{,}\) defined as</p>
+<div class="displaymath">
+\begin{equation*}
+H^i H_1^\dR(J_{K_p}) = \Ann ( F^{-i + 1} H^1_\dR(J_{K_p}))].
+\end{equation*}
+</div>
+<div class="displaymath" id="p-285">
+\begin{equation*}
+H^0(X, \Omega ^1)^\vee \simeq H^0(J, \Omega ^1) ^\vee = (\gr^1 H^1_\dR(J_{K_p}))^\vee = \gr^{-1} H_1^\dR( J_{K_p})
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\gr^{-1} H_1^\dR(J_{K_p}) = H_1^\dR(J_{K_p}) / F^0H_1^\dR(J_{K_p}) \simeq H_1^\dR(X_{K_p}) / F^0H_1^\dR(X_{K_p})
+\end{equation*}
+</div>
+<p>this is our intrinsic definition of \(H^0(X, \Omega ^1)^\vee\text{.}\)</p>
+<p id="p-286">More of our crash course on \(p\)-adic hodge theory. To define \(\log_{BK}\text{.}\)</p>
+<p id="p-287">We assume \(K_p \simeq \QQ_p\text{,}\) Fontaine's theory defines a series of \(\QQ_p\)-algebras with \(G_{\QQ_p}\)-action and additional structure compatible with  this, (i.e. frob, differential operators, hodge) we have</p>
+<div class="displaymath">
+\begin{equation*}
+B_{crys} \subseteq B_{\dR}\text{???}
+\end{equation*}
+</div>
+<p id="p-288">Facts, theres a descending filtration \(F^1\) on \(B_{\dR}\text{,}\) for which \(B_{\dR}^+ = F^0 B_{dR}\) is a DVR with fraction field \(B_{\dR}\) and residue field \(\CC_p\text{.}\) There is an  action of frobenius on \(B_{crys}\) whose fixed subring is denoted</p>
+<div class="displaymath">
+\begin{equation*}
+B_{crys}^{\phi = 1}\text{.}
+\end{equation*}
+</div>
+<p>We have \(B_{crys}^{G_{K_p}} = B_{\dR}^{G_{K_p}}  = K_p\text{.}\)</p>
+<p id="p-289">For a continuous \(p\)-adic representation \(V\) of \(G_{\QQ_p}\text{.}\) We define</p>
+<div class="displaymath">
+\begin{equation*}
+D_\dR(V) = (B_{\dR} \otimes V)^{G_{K_p}}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+D^+_\dR(V) = (B^+_{\dR} \otimes V)^{G_{K_p}}
+\end{equation*}
+</div>
+<p>the filtration on \(B_{\dR}\) induces one on \(D_\dR(V)\text{.}\)</p>
+<p id="p-290">If \(Y\) is a smooth variety over \(\QQ_p\) then \(p\)-adic height gives for</p>
+<div class="displaymath">
+\begin{equation*}
+V = H^i_\et(Y_{\overline \QQ_p}, \QQ_p)
+\end{equation*}
+</div>
+<p>that</p>
+<div class="displaymath">
+\begin{equation*}
+D_\dR(V) \xrightarrow\sim H^i_\dR(Y)\text{.}
+\end{equation*}
+</div>
+<p>Respecting the Hodge filtration on either side. Also \(D_\dR^+(V)\) is naturally identified with \(F^0 D_\dR(V)\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+F^m D_\dR(V) = (F^{m} B_\dR \otimes V)^{G_{K_v}}
+\end{equation*}
+</div>
+<p>Frobenius on \(B_\crys\) induces a Frobenius map on \(D_\crys (V) \) and \(V = H^i_\et(Y_{\overline \QQ_p}, \QQ_p)\) and \(Y\) good reduction with special fibre \(Y_{\FF_p}\text{.}\) Then there's a natural isomorphism</p>
+<div class="displaymath">
+\begin{equation*}
+D_\crys(V) \xrightarrow\sim H^1_\crys (Y_{\FF_p}, \QQ_p)
+\end{equation*}
+</div>
+<p>respects frob on each side.</p>
+<p id="p-291">\(D_\dR\) and \(D_\crys\) commute with taking  \({}^\vee\) so have correesponding results for homology.</p>
+<article class="example-like" id="example-10"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.80</span>.</h6>
+<p id="p-292">Let \(V= H_1^\et(X_{\overline K}, \QQ_p)\) then</p>
+<div class="displaymath">
+\begin{equation*}
+H_1^\dR(X_{K_p})  \simeq D_\dR(V) \simeq D_\crys(V)]
+\end{equation*}
+</div>
+<p>compat with hodge</p></article><aside class="aside-like" id="aside-14"><p id="p-293">Lecture 1? 7/11/2019</p></aside><div class="displaymath" id="p-294">
+\begin{equation*}
+T = H_1^\et(X_{\overline K}, \ZZ_p)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+V = H_1^\et(X_{\overline K}, \QQ_p)
+\end{equation*}
+</div>
+<p>want to define the Bloch-Kato logarithm.</p>
+<div class="displaymath">
+\begin{equation*}
+\log_{BK} \colon H_{f}^1(G_{K_p}, V)\to H_1^\dR(X_{K_p}) /F^0\text{.}
+\end{equation*}
+</div>
+<p id="p-295">Bloch-Kato 1990 give a short exact sequence</p>
+<div class="displaymath">
+\begin{equation*}
+0\to \QQ_p\xrightarrow\alpha B_{cris}^{\phi =1} \oplus B_{\dR}^+ \xrightarrow\beta  B_\dR \to 0\text{,}
+\end{equation*}
+</div>
+<p>where \(\alpha (x) = (x,x),\beta (x,y) = x-y\text{.}\) Tensor with \(V\) and take Galois cohomology to get</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to V^{G_{K_p}} \to D_{cris}(V) ^{\phi =1} \oplus D_\dR^+(V) \to D_\dR(V)\to H^1(G_{K_p}, V)  \to H^1(G_{K_p},V\otimes B_{cris}^{\phi =1}) \to \cdots
+\end{equation*}
+</div>
+<p>Bloch-Kato show that</p>
+<div class="displaymath">
+\begin{equation*}
+H^1_e(G_{K_p}, V) = \ker(H^1(G_{K_p}, V) \to  H^1(G_{K_p},V\otimes B_{cris}^{\phi =1}))
+\end{equation*}
+</div>
+<p>is equal to</p>
+<div class="displaymath">
+\begin{equation*}
+H^1_f(G_{K_p}, V)\text{.}
+\end{equation*}
+</div>
+<p id="p-296">This gives a surjection</p>
+<div class="displaymath">
+\begin{equation*}
+D_\dR(V) / D_\dR^+(V) \to H_f^1(G_{K_p}, V)
+\end{equation*}
+</div>
+<p>this is the Bloch-Kato exponential map. (coincides with usual \(\exp\) in the case of a \(p\)-adic formal lie group). The kernel of this map is</p>
+<div class="displaymath">
+\begin{equation*}
+D_{cris}(V)^{\phi =1}/V^{G_{K_p}}
+\end{equation*}
+</div>
+<p>this is trivial since \(V\) is the Tate module of an abelian variety (true because of the Weil conjecture, and what we know about eigenvalues of frobenius).</p>
+<p id="p-297">So in this case the Bloch-Kato exponential map has an inverse, our Bloch-Kato logarithm.</p>
+<div class="displaymath">
+\begin{equation*}
+\log_{BK} \colon H^1_f(G_{K_p}, V) \xrightarrow\sim D_\dR(V)/D_\dR^+ (V) \simeq H_1^\dR (X)/F^0
+\end{equation*}
+</div>
+<p id="p-298">Kim's generalization. Let \(G\) be a group (resp. topological group). For subgroups</p>
+<div class="displaymath">
+\begin{equation*}
+A,B\subseteq G
+\end{equation*}
+</div>
+<p>let \(\lb A,B\rb \) denote the (the closure of) the commutator of the subgroups.</p>
+<article class="definition-like" id="definition-10"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.81</span>.</h6>
+<p id="p-299">Let</p>
+<div class="displaymath">
+\begin{equation*}
+G^{\lb 1\rb } = G
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G^{\lb 2\rb } =\lb  G^{\lb 1\rb } ,G\rb 
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\ldots
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G^{\lb i+1\rb } =\lb  G^{\lb i\rb } ,G\rb 
+\end{equation*}
+</div>
+<p>then</p>
+<div class="displaymath">
+\begin{equation*}
+G^{\lb 1\rb } \unrhd G^{\lb 2\rb } \unrhd\cdots
+\end{equation*}
+</div>
+<p>is a descending chain of normal subgroups of \(G\) called the lower central series of \(G\text{.}\) Let \(G_n = G/G^{\lb n + 1\rb }\text{.}\)</p></article><article class="example-like" id="example-11"><h6 class="heading">
+<span class="type">Example</span> <span class="codenumber">2.82</span>.</h6>
+<div class="displaymath" id="p-300">
+\begin{equation*}
+G_1 = G/G^{\lb 1\rb } = G/\lb G,G\rb 
+\end{equation*}
+</div>
+<p>is the abelianization \(G^{ab}\) of \(G\text{.}\) For \(n \ge 2\) the group \(G_n\) is an \(n\)-step nilpotent group, typically nonabelian.</p></article><p id="p-301">Now for various flavours of \(\pi _1(X)\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\pi _1(X)_1 = \pi _1(X) ^{ab} = H_1(X)
+\end{equation*}
+</div>
+<p>so above we should think of \(H_1\) as the abelianization of \(\pi _1\text{.}\) We can therefore try to replace it by \(\pi _1(X)_n\) for \(n \gt  1\text{.}\) We'll do this for the two homology groups associated to \(X\)</p>
+<ol class="decimal">
+<li id="li-102">\(p\)-adic étale homology</li>
+<li id="li-103">de Rham homology</li>
+</ol>
+<p>we can define the geometric étale fundamental group \(\pi _1^\et (X_{\overline K})\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\pi_1^\et(X_{\overline K})^{ab} \simeq H_1^\et(X_{\overline K} , \widehat \ZZ)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\pi_1^\et(X_{\overline K})^{ab} \simeq H_1^\et(X_{\overline K} , \widehat \ZZ) \twoheadrightarrow H_1^\et(X_{\overline K}, \ZZ_p) \subseteq H_1^\et(X_{\overline K}, \QQ_p) = V = \GG_a^{2g}(\QQ_p)
+\end{equation*}
+</div>
+<p>with action of \(G_K\) in particular \(G_K\) acts via \(\QQ_p\)-linear automorphisms on \(\GG_a^{2g}\text{.}\)</p>
+<p id="p-302">For \(n \ge 2\) there's an analogous construction that transforms \(\pi _1^\et(X_{\overline K})_n\) into a topological group \(V_n\) that is the group of \(\QQ_p\)-points of a unipotent algebraic group \(\mathcal V_n/\QQ_p\text{,}\) equipped with a \(G_K\)-action.</p>
+<article class="definition-like" id="definition-11"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.83</span>.</h6>
+<p id="p-303">A pro-unipotent group over \(\QQ_p\) is a group scheme of \(\QQ_p\) that is a projective limit of unipotent  algebraic groups over \(\QQ_p\text{.}\)</p></article><p id="p-304">Then there is a notion of \(\QQ_p\)-pro-unipotent completion</p>
+<div class="displaymath">
+\begin{equation*}
+\pi_1^\et(X_{\overline K})_{\QQ_p}
+\end{equation*}
+</div>
+<p>of</p>
+<div class="displaymath">
+\begin{equation*}
+\pi_1^\et(X_{\overline K})
+\end{equation*}
+</div>
+<p>there is a continuous homomorphism</p>
+<div class="displaymath">
+\begin{equation*}
+\pi_1^\et(X_{\overline K}) \to \pi_1^\et(X_{\overline K})_{\QQ_p}(\QQ_p)
+\end{equation*}
+</div>
+<p>is universal among such maps.</p>
+<p id="p-305">There are lower central series quotients</p>
+<div class="displaymath">
+\begin{equation*}
+U_n^\et = \pi _1^\et(X_{\overline K})_{\QQ_{p,n}} = \pi _1^\et(X_{\overline K})_{\QQ_p}/ \pi _1^\et(X_{\overline K})_{\QQ_p} ^{\lb n + 1\rb }\text{.}
+\end{equation*}
+</div>
+<p id="p-306">In the cases we consider, these are finite dimensional varieties. The coordinate ring</p>
+<div class="displaymath">
+\begin{equation*}
+\sheaf O(\pi _1^\et(X_{\overline K})_{\QQ_p})
+\end{equation*}
+</div>
+<p>is a \(\QQ_p\)-vector space. Recall that for a smooth curve \(X\) we had</p>
+<div class="displaymath">
+\begin{equation*}
+H_1^\dR(X_{K_p}) \simeq D_{\dR} (H_1^\et(X_{\overline K}, \QQ_p))
+\end{equation*}
+</div>
+<p>we may define the de Rham fundamental group</p>
+<div class="displaymath">
+\begin{equation*}
+\pi _1^\dR(X_{K_p})
+\end{equation*}
+</div>
+<p>as</p>
+<div class="displaymath">
+\begin{equation*}
+\Spec(D_{\dR}(\sheaf O(\pi _1^\et(X_{\overline K})_{\QQ_p})))\text{.}
+\end{equation*}
+</div>
+<p id="p-307">\(\pi _1^\dR\) is equipped with a Hodge filtration. Just like we took the lower central series filtration on \(\pi _1^\et(X_{\overline K})_{\QQ_p}\text{.}\) do the same thing for quotients by</p>
+<div class="displaymath">
+\begin{equation*}
+\pi _1^\dR(X_{K_p})_n
+\end{equation*}
+</div>
+<p>We'll denote these as \(U_n^\dR\text{.}\) We have</p>
+<div class="displaymath">
+\begin{equation*}
+U_n^\dR = D_{cris}(U_n^\et)
+\end{equation*}
+</div>
+<p>so it is equipped with a frobenius action.</p>
+<p id="p-308">Now we have a non-abelian version of the Chabauty-Coleman diagram</p>
+<div class="displaymath">
+\begin{equation*}
+\xymatrix{
+X(K)\ar[r]\ar[d] &amp; X(K_p)\ar[d] \ar[dr] &amp; \\
+H^1_f(G_{K}, \pi _1^\et(X_{\overline K})_{\QQ_p, n}) &amp; H^1_f(G_{K_p}, U_n^\et) &amp; U_n^\dR / F^0
+}
+\end{equation*}
+</div>
+<p id="p-309">An element of</p>
+<div class="displaymath">
+\begin{equation*}
+H_f^1(G_K, U_n^\et)
+\end{equation*}
+</div>
+<p>is a scheme over \(\QQ_p\) with continuous \(G_K\)-action and \(G_K\)-equivariant action of \(U_n^\et\) making it into a \(U_n^\et\)-torsor.</p>
+<p id="p-310">Kim shows that</p>
+<div class="displaymath">
+\begin{equation*}
+H_f^1(G_K, U_n^\et) \subseteq H^1 (G_K, U_n^\et)
+\end{equation*}
+</div>
+<p>has the structure of an algebraic variety the Selmer variety \(\Sel(U_n)\text{.}\)</p>
+<p id="p-311">We refer to \(H^1_f(G_{K_p}, U_n^\et)\) as the local Selmer variety.</p>
+<article class="theorem-like" id="theorem-21"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.84</span>. <span class="title">Kim.</span>
+</h6>
+<p id="p-312">For some \(n \gt 1\) if</p>
+<div class="displaymath">
+\begin{equation*}
+\dim \Sel(U_n) \lt \dim  H^1_f(G_{K_p}, U_n^\et)
+\end{equation*}
+</div>
+<p>then \(X(K)\) is contained in the zero locus of non-trivial locally analytic function on \(X(K_p)\) so \(X(K)\) is finite.</p></article></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>
