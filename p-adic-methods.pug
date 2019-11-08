@@ -1568,7 +1568,7 @@ section#sec-chab-coleman
             | More details in Balakrishnan-Besser #[q computing local p-adic heights on hyperelliptic curves]. IMRN 2012.
         p
             | What if #[m D_1] and #[m D_2] have common support?
-            | e.g. #[m h_(D,D)].
+            | e.g. #[m h_p(D,D)].
 
         p
             | The local height at #[m P] would be
@@ -1609,7 +1609,7 @@ section#sec-chab-coleman
                 | Let #[m f(x) \in \ZZ\lb x\rb ] be monic separable polynomial of degree #[m 2g+1 \ge 3], that does not reduce to a square modulo #[m q] for any prime #[m q]. (in the paper monic is not used, this condition then restricts the reduction type)
                 | Let #[m U  = \Spec (\ZZ\lb x,y\rb  /(y^2 - f(x)))] and let #[m X] be the normalization of the proj closure of the generic fiber of #[m U].
                 | Let #[m J] be the Jacobian on #[m X] and assume #[m \rk J(\QQ) = g], choose a prime #[m p] of good ordinary reduction.
-                | Suppose that the #[m p]-adic coleman integrals
+                | Suppose that the #[m p]-adic Coleman integrals
                 me f_i(z) = \int_\infty ^z \omega _i = \int_\infty ^z \frac{x^i \diff x}{2y}
                 | then there exists  explicitly computable constants #[m \alpha _{ij} \in \QQ_p] s.t. the locally analytic function
                 me \rho (z) = \theta(z) - \sum_{0\le i \le j \le g-1 } \alpha _{ij} f_i(z) f_j(z)\text,
@@ -1626,7 +1626,7 @@ section#sec-chab-coleman
                 | Sketch:
                 | Recall the Coleman-Gross #[m p]-adic height for #[m X/\QQ] is a symmetric bilinear pairing  
                 me h \colon J(\QQ) \times J(\QQ) \to \QQ_p
-                | the global height decomposees as a sum of local heights
+                | the global height decomposes as a sum of local heights
                 me h(D_1,D_2) = \sum_{v} h_v(D_1,D_2)
                 | in particular we have
                 me h(D_1, D_2) = h_p(D_1,D_2) + \sum_{v\ne p} h_v(D_1,D_2)
@@ -1659,7 +1659,7 @@ section#sec-chab-coleman
                         me h- h_p  \in \{ \sum_{v\ne p} h_v \} = S
                     li
                         | this #[m \rho ] can be computed as a convergent power series in each residue disk.
-                        | So now pretend we are working in classical chabauty Coleman.
+                        | So now pretend we are working in classical Chabauty Coleman.
                         | Expand #[m \rho ] in each disk, set equal to each value in #[m S] solve for all #[m t \in U(\ZZ_p)] s.t. #[m \rho (z) \in Z].
                         | Take all such points call that #[m X(\ZZ_p)_2].
                     li
@@ -1738,6 +1738,7 @@ section#sec-chab-coleman
             | let #[m P=(-1,2), Q= (0,2), R= (-2,12), S = (3,62)] want to show that up to hyperelliptic involution these are the only integral points.
             | Gens for #[m J(\QQ) \otimes \QQ].
             me \left\{P_{1}=[(P)-(\infty)], P_{2}=[(S)-(w(Q))], P_{3}=[(w(S))-(R)]\right\}
+            |.
 
 
 
@@ -1823,7 +1824,7 @@ section#sec-chab-coleman
             | take #[m G_K = \absgal K]-cohomology to get a long exact sequence which leads to a short exact sequence
             me 0 \to J(K)/mJ(K) \xrightarrow{\kappa_m } H^1(G_K, J[m]) \to H^1(G_K, J)[m] \to 0
             | where #[m \kappa ] is the Kummer map.
-            | There is a canonical #[m G_K]-equivariant isomorphism 
+            | There is a canonical #[m G_K]-equivariant isomorphism
             me J[m] \simeq H_1^\et(J_{\overline K}, \ZZ/m) \simeq H_1^\et(X_{\overline K}, \ZZ/m)
             | .
             | The Kummer map gives an embedding
@@ -2008,7 +2009,7 @@ section#sec-chab-coleman
             me D_\crys(V) \xrightarrow\sim H^1_\crys (Y_{\FF_p}, \QQ_p)
             | respects frob on each side.
         p
-            | #[m D_\dR] and #[m D_\crys] commute with taking  #[m {}^\vee] so have correesponding results for homology.
+            | #[m D_\dR] and #[m D_\crys] commute with taking  #[m {}^\vee] so have corresponding results for homology.
         example
             statement: p
                 | Let #[m V= H_1^\et(X_{\overline K}, \QQ_p)] then
