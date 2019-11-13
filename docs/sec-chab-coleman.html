@@ -3115,7 +3115,217 @@ H_f^1(G_K, U_n^\et) \subseteq H^1 (G_K, U_n^\et)
 \dim \Sel(U_n) \lt \dim  H^1_f(G_{K_p}, U_n^\et)
 \end{equation*}
 </div>
-<p>then \(X(K)\) is contained in the zero locus of non-trivial locally analytic function on \(X(K_p)\) so \(X(K)\) is finite.</p></article></section></section></div></main>
+<p>then \(X(K)\) is contained in the zero locus of non-trivial locally analytic function on \(X(K_p)\) so \(X(K)\) is finite.</p></article><aside class="aside-like" id="aside-15"><p id="p-313">Lecture 1? 12/11/2019</p></aside><article class="theorem-like" id="lemma-7"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">2.85</span>.</h6>
+<p id="p-314">Let \(X\) be a smooth projective curve over an algebraically closed field \(k = \overline k\) and \(n \ge 1\) be invertible in \(k\) then</p>
+<div class="displaymath">
+\begin{equation*}
+H^0_\et(X_{\overline k} , \mu _n) = \mu _n
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+H^1_\et(X_{\overline k} , \mu _n) = \Pic^0(X_{\overline k} ) [n]\text{.}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-7"><a data-knowl="" class="id-ref" data-refid="hk-proof-7"><h6 class="heading"><span class="type">Proof.</span></h6></a></article><div id="hk-proof-7" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-315">Sketch: Recall the Kummer sequence</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \mu _n \to \GG_m \to \GG_m \to 0
+\end{equation*}
+</div>
+<p>we also have</p>
+<div class="displaymath">
+\begin{equation*}
+H^0_\et(X , \GG _m) = k^\times
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+H^1_\et(X , \GG _m) = \Pic(X)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+H^q_\et(X , \GG _m) = 0 \text{ for }q \ge 2
+\end{equation*}
+</div>
+<p>take cohomology of the Kummer sequence to get</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to H^0_\et(X_{\overline k} , \mu _n) \to k^\times \to k^\times \to 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+0 \to H^1_\et(X_{\overline k} , \mu _n) \to \Pic(X) \to H^2_\et(x, \mu _n) \to 0
+\end{equation*}
+</div>
+<p id="p-316">We also have</p>
+<div class="displaymath">
+\begin{equation*}
+0 \to \Pic^0(X) \to \Pic(X) \to \ZZ \to 0
+\end{equation*}
+</div>
+<p>and we can identify \(\Pic^0(X)\) with the group of \(k\)-rational points of \(J\) of \(X\text{.}\) Note that multiplication by  \(n\) is surjective and the kernel is \(\Pic^0\lb n\rb \text{.}\)</p></article></div>
+<p id="p-317">More generally, for any galois stable quotient \(U\) of \(U_n^\et\) we have a similar diagram \(U^\dR = D_{\cris}(U)\) and corresponding maps</p>
+<div class="displaymath">
+\begin{equation*}
+j_n^\et, j_n^\dR, \operatorname{loc}_{U,p}, j_n^\et \colon X(\QQ) \to \Sel(U)\text{.}
+\end{equation*}
+</div>
+<p>We have that \(X(\QQ)\) is contained in</p>
+<div class="displaymath">
+\begin{equation*}
+X(\QQ_p)_U = j_{U,p}^{\et,-1} (\operatorname{loc}_{U,p}(\Sel(U))) \subseteq X(\QQ_p)
+\end{equation*}
+</div>
+<p>when</p>
+<div class="displaymath">
+\begin{equation*}
+U = U_n
+\end{equation*}
+</div>
+<p>we get</p>
+<div class="displaymath">
+\begin{equation*}
+X(\QQ_p)_n = X(\QQ_p)_{U_n}
+\end{equation*}
+</div>
+<p>we have</p>
+<div class="displaymath">
+\begin{equation*}
+X(\QQ) \subseteq \cdots \subseteq X(\QQ_p )_n \subseteq \cdots \subseteq X(\QQ_p)_1 \subseteq  X(\QQ_p)\text{.}
+\end{equation*}
+</div>
+<article class="theorem-like" id="conjecture-3"><h6 class="heading">
+<span class="type">Conjecture</span> <span class="codenumber">2.86</span>. <span class="title">Kim.</span>
+</h6>
+<p id="p-318">For \(n \gg 0\) \(X(\QQ_p)_n\) is finite.</p></article><article class="remark-like" id="remark-19"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.87</span>.</h6>
+<p id="p-319">This is  implied by Beilinson-Bloch-Kato and other standard conjectures on motives.</p></article><article class="theorem-like" id="conjecture-4"><h6 class="heading">
+<span class="type">Conjecture</span> <span class="codenumber">2.88</span>. <span class="title">Kim.</span>
+</h6>
+<p id="p-320">For \(n \gg 0\) \(X(\QQ_p)_n= X(\QQ)\text{.}\)</p></article><p id="p-321">The analogue of analytic properties of \(\operatorname{AJ}_b\) (there is a non-zero functional we can construct that vanishes on \(\overline{J(\QQ)}\) with Zariski dense image, and given by a convergent \(p\)-adic power series), so there are finitely many zeroes on each residue disk of \(X(\QQ_p)\)) is the following</p>
+<article class="theorem-like" id="theorem-22"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.89</span>. <span class="title">Kim 09.</span>
+</h6>
+<p id="p-322">The map \(j_n^\dR\) has Zariski dense image and is given by convergent \(p\)-adic power series on every residue disk.</p></article><p id="p-323">The analogue of Chabauty-Coleman \(r \lt  g\) hypothesis is non-density of \(\operatorname{loc}_{U,p}\text{.}\)</p>
+<article class="theorem-like" id="theorem-23"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.90</span>. <span class="title">Kim 09.</span>
+</h6>
+<p id="p-324">Suppose \(\operatorname{loc}_{U,p} \) is  non-dominant, yhen \(X(\QQ_p)_U\) is finite.</p></article><article class="remark-like" id="remark-20"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.91</span>.</h6>
+<p id="p-325">All finiteness results come from bounding the dimension of \(\Sel(U)\text{.}\)</p></article><p id="p-326">Coates and Kim did this:</p>
+<article class="theorem-like" id="theorem-24"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.92</span>. <span class="title">Coates, Kim '10.</span>
+</h6>
+<p id="p-327">Let \(X/\QQ\) be a smooth projective curve of genus \(g \ge 2\) and suppose \(J\) is isogenous over \(\overline \QQ\) to</p>
+<div class="displaymath">
+\begin{equation*}
+J \sim \prod A_i
+\end{equation*}
+</div>
+<p>of abelian varieties with \(A_i\) having CM by \(K_i\) of degree \(2 \dim A_i\text{.}\) Then for \(n \gg 0\) have \(X(\QQ_p)_n\) is finite.</p></article><p id="p-328">Examples:</p>
+<ul class="disc">
+<li id="li-104">Fermat curves<div class="displaymath">
+\begin{equation*}
+x^m + y^m  + z^m = 0\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-105">Twisted fermat curves<div class="displaymath">
+\begin{equation*}
+ax^m + by^m  + cz^m = 0\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-106">Van Wamelen's list of genus 2 curves whose jacobians have CM and are simple.</li>
+</ul>
+<p id="p-329">Coates, John, and Minhyong Kim. “Selmer Varieties for Curves with CM Jacobians.” Kyoto Journal of Mathematics 50, no. 4 (2010): 827-52. https://doi.org/10.1215/0023608X-2010-015.</p>
+<p id="p-330">Key idea is to use multivariable Iwasawa theory to bound the dimension of the Selmer variety.</p>
+<p id="p-331">Recall \(\pi_1^\et(X_{\overline \QQ})_{\QQ_p}\) is the \(\QQ_p\)-pro-unipotent completion of \(\pi_1^\et(X_{\overline \QQ})\text{.}\) Let</p>
+<div class="displaymath">
+\begin{equation*}
+W= \pi_1^\et(X_{\overline \QQ})_{\QQ_p}/ [  \pi_1^\et(X_{\overline \QQ})_{\QQ_p}^{(2)},\pi_1^\et(X_{\overline \QQ})_{\QQ_p}^{(2)}]
+\end{equation*}
+</div>
+<p>be the quotient by the derived series</p>
+<div class="displaymath">
+\begin{equation*}
+G^{(0)} = G
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+G^{(n)} = [G^{(n-1)},G^{(n-1)}]
+\end{equation*}
+</div>
+<p>\(W\) itself has a lower central series filtration</p>
+<div class="displaymath">
+\begin{equation*}
+W =W^1 \supseteq W^2 \supseteq \cdots W^{n-1} = \lb  W,W^n\rb \supseteq \cdots
+\end{equation*}
+</div>
+<p>and associated quotients \(W_n  = W/W^{n+1}\text{.}\)</p>
+<article class="theorem-like" id="theorem-25"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.93</span>. <span class="title">Coates-Kim.</span>
+</h6>
+<p id="p-332">There is a bound \(B\) depends on \(X\) and \(T\) s.t.</p>
+<div class="displaymath">
+\begin{equation*}
+\dim \sum_{i=1}^n H^2 (G_T, W^i/W^{i+1}) \le B n^{2g-1}\text{.}
+\end{equation*}
+</div></article><p id="p-333">This is done by controlling the zeroes of an algebraic \(p\)-adic \(L\)-function (really an annihilator of an ideal class group).</p>
+<p id="p-334">A corollary of this gives a dimension bound on Selmer varieties.</p>
+<article class="theorem-like" id="corollary-5"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">2.94</span>.</h6>
+<p id="p-335">For \(n\gg 0\) have \(\dim H_f^1(G, W_n) \lt \dim W_n^\dR/F^0\text{.}\)</p></article><article class="remark-like" id="remark-21"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.95</span>.</h6>
+<p id="p-336">Structure of Selmer variety as an algebraic variety is a consequence of \(\QQ_p\)-pro-unipotent completion of \(\pi_1^\et(X_{\overline \QQ})\text{.}\)</p></article><p id="p-337">\(\QQ_p\)-pro-unipotent completion:</p>
+<p id="p-338">Given a finitely presented discrete group \(E\text{,}\) take the group algebra</p>
+<div class="displaymath">
+\begin{equation*}
+\QQ[E]
+\end{equation*}
+</div>
+<p>complete it with respect to the augmentation ideal \(K\)</p>
+<div class="displaymath">
+\begin{equation*}
+\QQ\lb \lb E\rb \rb  = \varprojlim_n \QQ\lb E\rb /K^n
+\end{equation*}
+</div>
+<p>the coproduct</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta \colon \QQ\lb E\rb \to \QQ\lb E\rb  \otimes \QQ\lb E\rb 
+\end{equation*}
+</div>
+<p>defined by \(g\mapsto g \otimes g\) takes \(K\) to the ideal</p>
+<div class="displaymath">
+\begin{equation*}
+K\otimes \QQ\lb E\rb  + \QQ\lb E\rb  \otimes K
+\end{equation*}
+</div>
+<p>then there's an induced coproduct on</p>
+<div class="displaymath">
+\begin{equation*}
+\Delta \colon \QQ\lb \lb E\rb \rb \to \QQ\lb \lb E\rb \rb \hat \otimes \QQ\lb \lb E\rb \rb \text{.}
+\end{equation*}
+</div>
+<p id="p-339">The unipotent completion</p>
+<div class="displaymath">
+\begin{equation*}
+U(E)
+\end{equation*}
+</div>
+<p>can be realized as the grouplike elements in \(\QQ\lb \lb EE\rb \rb \text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+U(E) = \{g \in \QQ \lb \lb E\rb \rb  : \Delta (g) = g\otimes g\}
+\end{equation*}
+</div>
+<p>This deeines the e \(\QQ\)-points of an pro-algebraic group over \(\QQ\text{.}\)</p>
+<p id="p-340">When \(E\) is topologically finitely presented profinite group the \(\QQ_p\)-pro-unipotent completion is defined analogously.</p></section></section></div></main>
 </div>
 <!--Start: Google Classic code-->
 <script>

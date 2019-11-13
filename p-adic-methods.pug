@@ -2154,3 +2154,160 @@ section#sec-chab-coleman
                 | then #[m X(K)] is contained in the zero locus of non-trivial locally analytic function on #[m X(K_p)] so #[m X(K)] is finite.
 
 
+        aside: p Lecture 1? 12/11/2019
+
+        lemma
+            statement: p
+                | Let #[m X] be a smooth projective curve over an algebraically closed field #[m k = \overline k] and #[m n \ge 1] be invertible in #[m k] then
+                me H^0_\et(X_{\overline k} , \mu _n) = \mu _n
+                me H^1_\et(X_{\overline k} , \mu _n) = \Pic^0(X_{\overline k} ) [n]
+                |.
+            proof
+                p
+                    | Sketch:
+                    | Recall the Kummer sequence
+                    me 0 \to \mu _n \to \GG_m \to \GG_m \to 0
+                    | we also have
+                    me H^0_\et(X , \GG _m) = k^\times
+                    me H^1_\et(X , \GG _m) = \Pic(X)
+                    me H^q_\et(X , \GG _m) = 0 \text{ for }q \ge 2
+                    | take cohomology of the Kummer sequence to get
+                    me 0 \to H^0_\et(X_{\overline k} , \mu _n) \to k^\times \to k^\times \to 0
+                    me 0 \to H^1_\et(X_{\overline k} , \mu _n) \to \Pic(X) \to H^2_\et(x, \mu _n) \to 0
+                p
+                    | We also have
+                    me 0 \to \Pic^0(X) \to \Pic(X) \to \ZZ \to 0
+                    | and we can identify #[m \Pic^0(X)] with the group of #[m k]-rational points of #[m J] of #[m X].
+                    | Note that multiplication by  #[m n] is surjective and the kernel is #[m \Pic^0\lb n\rb ].
+
+        p
+            | More generally, for any galois stable quotient #[m U] of #[m U_n^\et] we have a similar diagram #[m U^\dR = D_{\cris}(U)] and corresponding maps
+            me j_n^\et, j_n^\dR, \operatorname{loc}_{U,p}, j_n^\et \colon X(\QQ) \to \Sel(U)
+            |. We have that #[m X(\QQ)] is contained in
+            me X(\QQ_p)_U = j_{U,p}^{\et,-1} (\operatorname{loc}_{U,p}(\Sel(U))) \subseteq X(\QQ_p)
+            | when
+            me U = U_n
+            | we get
+            me X(\QQ_p)_n = X(\QQ_p)_{U_n}
+            | we have
+            me X(\QQ) \subseteq \cdots \subseteq X(\QQ_p )_n \subseteq \cdots \subseteq X(\QQ_p)_1 \subseteq  X(\QQ_p)
+            | .
+
+        conjecture
+            title Kim
+            statement: p
+                | For #[m n \gg 0] #[m X(\QQ_p)_n] is finite.
+        remark
+            p
+                | This is  implied by Beilinson-Bloch-Kato and other standard conjectures on motives.
+
+        conjecture
+            title Kim
+            statement: p
+                | For #[m n \gg 0] #[m X(\QQ_p)_n= X(\QQ)].
+
+        p
+            | The analogue of analytic properties of #[m \operatorname{AJ}_b] (there is a non-zero functional we can construct that vanishes on #[m \overline{J(\QQ)}] with Zariski dense image, and given by a convergent #[m p]-adic power series), so there are finitely many zeroes on each residue disk of #[m X(\QQ_p)]) is the following
+        theorem
+            title Kim 09
+            statement: p
+                | The map #[m j_n^\dR] has Zariski dense image and is given by convergent #[m p]-adic power series on every residue disk.
+
+        p
+            | The analogue of Chabauty-Coleman #[m r \lt  g] hypothesis is non-density of #[m \operatorname{loc}_{U,p}].
+        theorem
+            title Kim 09
+            statement: p
+                | Suppose #[m \operatorname{loc}_{U,p} ] is  non-dominant, yhen #[m X(\QQ_p)_U] is finite.
+        remark
+            p
+                | All finiteness results come from bounding the dimension of #[m \Sel(U)].
+
+        p
+            | Coates and Kim did this:
+
+        theorem
+            title Coates, Kim '10
+            statement: p
+                | Let #[m X/\QQ] be a smooth projective curve of genus #[m g \ge 2] and suppose #[m J] is isogenous over #[m \overline \QQ] to
+                me J \sim \prod A_i
+                | of abelian varieties with #[m A_i] having CM by #[m K_i] of degree #[m 2 \dim A_i].
+                | Then for #[m n \gg 0] have #[m X(\QQ_p)_n] is finite.
+
+        p
+            | Examples:
+            ul
+                li
+                    | Fermat curves
+                    me x^m + y^m  + z^m = 0
+                    | .
+                li
+                    | Twisted fermat curves
+                    me ax^m + by^m  + cz^m = 0
+                    |.
+                li
+                    | Van Wamelen's list of genus 2 curves whose jacobians have CM and are simple.
+
+
+        p
+            | Coates, John, and Minhyong Kim. “Selmer Varieties for Curves with CM Jacobians.” Kyoto Journal of Mathematics 50, no. 4 (2010): 827-52. https://doi.org/10.1215/0023608X-2010-015.
+
+        p
+            |Key idea is to use multivariable Iwasawa theory to bound the dimension of the Selmer variety.
+
+
+        p
+            | Recall #[m \pi_1^\et(X_{\overline \QQ})_{\QQ_p}] is the #[m \QQ_p]-pro-unipotent completion of #[m \pi_1^\et(X_{\overline \QQ})].
+            | Let 
+            me W= \pi_1^\et(X_{\overline \QQ})_{\QQ_p}/ [  \pi_1^\et(X_{\overline \QQ})_{\QQ_p}^{(2)},\pi_1^\et(X_{\overline \QQ})_{\QQ_p}^{(2)}]
+            | be the quotient by the derived series
+            me G^{(0)} = G
+            me G^{(n)} = [G^{(n-1)},G^{(n-1)}]
+            | #[m W] itself has a lower central series filtration
+            me W =W^1 \supseteq W^2 \supseteq \cdots W^{n-1} = \lb  W,W^n\rb \supseteq \cdots
+            | and associated quotients #[m W_n  = W/W^{n+1}].
+
+        theorem
+            title Coates-Kim
+            statement: p
+                | There is a bound #[m B] depends on #[m X] and #[m T] s.t.
+                me \dim \sum_{i=1}^n H^2 (G_T, W^i/W^{i+1}) \le B n^{2g-1}
+                | .
+
+        p
+            | This is done by controlling the zeroes of an algebraic #[m p]-adic #[m L]-function (really an annihilator of an ideal class group).
+
+        p
+            | A corollary of this gives a dimension bound on Selmer varieties.
+        corollary
+            statement: p
+                | For #[m n\gg 0] have #[m \dim H_f^1(G, W_n) \lt \dim W_n^\dR/F^0].
+
+        remark
+            p
+                | Structure of Selmer variety as an algebraic variety is a consequence of #[m \QQ_p]-pro-unipotent completion of #[m \pi_1^\et(X_{\overline \QQ})].
+
+        p
+            | #[m \QQ_p]-pro-unipotent completion:
+        p
+            | Given a finitely presented discrete group #[m E], take the group algebra
+            me \QQ[E]
+            | complete it with respect to the augmentation ideal #[m K]
+            me \QQ\lb \lb E\rb \rb  = \varprojlim_n \QQ\lb E\rb /K^n
+            | the coproduct
+            me \Delta \colon \QQ\lb E\rb \to \QQ\lb E\rb  \otimes \QQ\lb E\rb 
+            | defined by #[m g\mapsto g \otimes g] takes #[m K] to the ideal
+            me K\otimes \QQ\lb E\rb  + \QQ\lb E\rb  \otimes K
+            | then there's an induced coproduct on
+            me \Delta \colon \QQ\lb \lb E\rb \rb \to \QQ\lb \lb E\rb \rb \hat \otimes \QQ\lb \lb E\rb \rb 
+            |.
+        p
+
+            | The unipotent completion
+            me U(E)
+            | can be realized as the grouplike elements in #[m \QQ\lb \lb EE\rb \rb ].
+            me U(E) = \{g \in \QQ \lb \lb E\rb \rb  : \Delta (g) = g\otimes g\}
+            | This deeines the e #[m \QQ]-points of an pro-algebraic group over #[m \QQ].
+        p
+            | When #[m E] is topologically finitely presented profinite group the #[m \QQ_p]-pro-unipotent completion is defined analogously.
+
