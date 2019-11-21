@@ -2307,7 +2307,471 @@ section#sec-chab-coleman
             me U(E)
             | can be realized as the grouplike elements in #[m \QQ\lb \lb E\rb \rb ].
             me U(E) = \{g \in \QQ \lb \lb E\rb \rb  : \Delta (g) = g\otimes g\}
-            | This deeines the e #[m \QQ]-points of an pro-algebraic group over #[m \QQ].
+            | This defines the #[m \QQ]-points of a pro-algebraic group over #[m \QQ].
         p
             | When #[m E] is topologically finitely presented profinite group the #[m \QQ_p]-pro-unipotent completion is defined analogously.
+
+        aside: p Lecture 1? 15/11/2019
+        p
+            | Missed a lecture
+        aside: p Lecture 1? 19/11/2019
+
+
+        definition#def-filtered-phi-module
+            title Filtered #[m \phi ] modules
+            statement: p
+                | A #[term filtered <m>\phi </m>-module] is a finite dimensional #[m \QQ_p]-vector space #[m W], equipped with  an exhaustive and separated decreasing filtration #[m \Fil^i] and an automorphism #[m \phi ].
+
+        remark
+            p
+                | We have seen instances of this already, #[m V_\dR] is a filtered #[m \phi ]-module.
+        definition#def-mixed-extns
+            title Mixed extensions
+            statement
+                p
+                    | We define #[m M_{\Fil,\phi } (\QQ_p, V_\dR, \QQ_p(1))] to be the category of #[term mixed extensions] of filtered #[m \phi ]-modules, the objects are triples #[m (M, M_{\bullet}, \psi _\bullet)] where
+                    ol
+                        li
+                            | #[m M] is a filtered #[m \phi ]-module.
+                        li
+                            | #[m M_{\bullet}] is a filtration by sub-filtered #[m \phi ]-modules
+                            me M = M_0 \supseteq M_1 \supseteq M_2 \supseteq M_3= 0
+                            | .
+                        li
+                            | #[m \psi _\bullet] are isomorphisms of filtered #[m \phi ]-modules
+                            md
+                                mrow \phi _0 \amp\colon M_0/M_1\xrightarrow \sim \QQ_p
+                                mrow \phi _1 \amp\colon M_1/M_2\xrightarrow \sim V_\dR
+                                mrow \phi _2 \amp\colon M_2/M_3\xrightarrow \sim \QQ_p(1)
+                    | and the morphisms  of this category are morphisms of filtered #[m \phi ]-modules which also respect the filtrations #[m M_\bullet] and commute with the isomorphisms #[m \psi _i] and #[m \psi _i'].
+                p
+                    | Let
+                    me M_{\Fil, \phi }(\QQ_p, V_{\dR}, \QQ_p(1))
+                    | denote the set of isomorphism classes of objects in this category.
+
+        lemma#lem-fil-phi-ext
+            statement: p
+                | For any filtered #[m \phi ]-module #[m W] for which
+                me W^{\phi = 1}  = 0
+                | we have an isomorphism
+                me \Ext^1(\QQ_p, W)\simeq W/\Fil^0
+                | .
+
+        paragraphs
+            title Idea
+            p
+                | Given an extension of #[m \QQ_p] by #[m W]
+                me 0\to W \to E\to \QQ_p \to 0
+                | choose a splitting #[m s^\phi \colon \QQ_p\to E] which is #[m \phi ]-invariant.
+                | Choose a splitting #[m s^{\Fil} \colon \QQ_p\to E] which respects the filtration. #[m s] chosen earlier.
+                | #[m s^\phi ] is unique by #[m s^{\Fil}] is determined up to an element of
+                me \Fil^0W
+                | .
+                | So
+                me s^\phi  - s^{\Fil} \in W \pmod{\Fil^0W}
+                | is independent of choices.
+
+        p
+            | Recall
+            me M_{\dR} = D_{\cris}(M_{\et})
+            | . Then the structure of a mixed extension of filtered #[m \phi ]-modules on #[m M_{\dR}] allows us to define extensions
+            me E_1 = E_1(M) = M_{\dR} / \QQ_p(1)
+            me E_2 = E_2(M) = \ker(M_{\dR} \to \QQ_p)
+            | .
+        p
+            | We have
+            men#eqn-thisseq 0 \to \QQ_p(1) \to E_2/\Fil^0 \to V_{\dR}  / \Fil^0 \to 0
+            | .
+        p
+            | The image of the extension class
+            me \lb M \rb  \in H_f^1( G_{\QQ_p}, E_2) \simeq E_2/\Fil^0
+            | inside
+            me V_{\dR}/\Fil^0 \simeq H_f^1(G_{\QQ_p}, V_{\dR})
+            | is #[m \lb E_1\rb ].
+
+        p
+            | We define #[m \delta ] to be
+            me \delta \colon V_{\dR} /\Fil^0 \xrightarrow s V_{\dR} \to E_2 \to E_2 / \Fil^0
+            | where #[m s] is our fixed splitting of the Hodge filtration on #[m V_{\dR}] and
+            me V_{\dR} \to E_2
+            | is the unique frobenius equivariant splitting of
+            me 0\to\QQ_p(1) \to E_2 \to V_{\dR} \to 0
+            | by construction #[m \lb M\rb ] and #[m  \lb \delta (E_1)\rb ] have the same image in #[m V_{\dR}/ \Fil^0] so by #[xref(ref="eqn-thisseq")/] their difference defines an element of #[m \QQ_p(1)].
+
+        p
+            | Since the filtered #[m \phi ]-module 
+            me \QQ_p(1) \cong H_f^1(G_{\QQ_p}, \QQ_p(1))
+            | by #[xref(ref="lem-fil-phi-ext")/] we can think of
+            me \lb M\rb - \lb \delta (E_1)\rb  \in H_f^1(G_{\QQ_p}, \QQ_p(1))
+            | . Finally, taking the local component
+            me \chi _p \colon \QQ_p^\times \to \QQ_p
+            | of idèle class character fixed at the beginning of the discussion of Nekovář heights.
+            | This gives a map
+            me \chi _p\colon H_f^1(G_{\QQ_p}, \QQ_p(1)) \to \QQ_p
+            | and
+            me h_p (M) =     \chi _p(\lb M \rb  - \lb \delta (E_1)\rb )
+            | .
+
+
+        p
+            | For applications to rational points we need to make this more explicit.
+        p
+            | The splitting #[m s] of the Hodge filtration we fixed earlier defines idempotents
+            me s_1,\,s_2\colon V_{\dR}\to V_{\dR}
+            | projecting onto
+            me s(V_{\dR}/\Fil^0)\text{ and }\Fil^0
+            | components, respectively.
+
+        p
+            | Suppose that we are given a vector space splitting of
+            me s_0\colon \QQ_p \oplus V_{\dR} \oplus \QQ_p(1)\xrightarrow\sim M
+            | .
+        p
+            | The split mixed extension
+            me \QQ_p \oplus V_{\dR} \oplus \QQ_p(1)
+            | has the structure of a filtered #[m \phi ]-module as a direct sum.
+            | So we choose two further splittings
+            me s^\phi \colon  \QQ_p \oplus V_{\dR} \oplus \QQ_p(1) \xrightarrow\sim  M
+            me s^{\Fil} \colon  \QQ_p \oplus V_{\dR} \oplus \QQ_p(1) \xrightarrow\sim  M
+            | #[m s^\phi ] is frobenius-equivariant and #[m s^{\Fil}] respects the filtrations, #[m s^\phi ] is unique and #[m s^{\Fil}] is not.
+
+
+        p
+            | Now choose bases for #[m \QQ_p, V_{\dR}, \QQ_p(1)] such that with respect to these bases we have
+            me s_0\inv \circ s^\phi= \begin{pmatrix} 1 \amp 0\amp 0 \\ \alpha _\phi  \amp 1 \amp 0 \\ \gamma _\phi  \amp \beta _\phi ^\transpose \amp 1\end{pmatrix}
+            me s_0\inv \circ s^{\Fil}= \begin{pmatrix} 1 \amp 0\amp 0 \\ 0             \amp 1 \amp 0 \\ \gamma _{\Fil}  \amp \beta _{\Fil} ^\transpose \amp 1\end{pmatrix}
+            | then with respect to these choices
+            md
+                mrow h_p(M) \amp= \chi _p(\lb M\rb  - \lb \delta (E_1)\rb )
+                mrow        \amp= \chi _p(\gamma _\phi  - \gamma _{\Fil} - \beta _\phi ^\transpose s_1(\alpha _\phi ) - \beta ^\transpose_{\Fil} s_2(\alpha _\phi ))
+
+            | .
+
+        p
+            | Goal: Compute these components explicitly and construct #[m M] as
+            me ``A_Z(b, x)''
+            | where #[m Z] is a choice of endomorphism.
+            | Then
+            me E_1(x) = E_1(M) =  E_1(A_Z(b,x)) = \operatorname{AJ}_b(x)
+            | .
+
+        remark
+            p
+                | By work of Olsson
+                me D_\cris(A_Z(b, x)) = A_Z^\dR(b,x)
+                | .
+        p
+            me E_{2,Z}(x) = E_2(A_Z(b,x)) = E(\operatorname{AJ}_b(x)) + c
+            | .
+        p
+            | this is done by a twisting construction and some input from a quadratic Chabauty pair.
+
+
+        definition#def-quad-chab-pair
+            title Quadratic Chabauty pairs
+            statement: p
+                | Let #[m X/\QQ] be a smooth projective curve of genus #[m g].
+                | Suppose #[m \rk J(\QQ) = g] and that
+                me \overline{J(\QQ)} \subseteq J(\QQ_p)
+                | has finite index.
+                | A #[term quadratic Chabauty pair] #[m (\theta , S)] is a function
+                me \theta \colon X(\QQ_p) \to \QQ_p
+                | and a finite set #[m S] such that
+                ol
+                    li#item-quad-chab-pair-cond-1
+                        | On each residue disk of #[m X(\QQ_p)] the map
+                        me (\operatorname{AJ}_b, \theta ) \colon X(\QQ_p) \to H^0(X, \Omega ^1)^* \times \QQ_p
+                        | has Zariski dense image and is given by a convergent #[m p]-adic power series.
+                    li#item-quad-chab-pair-cond-2
+                        | There exists an endomorphism #[m E] of
+                        me H^0(X_{\QQ_p}, \Omega ^1)^*
+                        | , a functional #[m c\in H^0(X_{\QQ_p}, \Omega ^1)^*] and a bilinear form #[m B]
+                        me B\colon  H^0(X_{\QQ_p}, \Omega ^1)^* \otimes H^0(X_{\QQ_p}, \Omega ^1)^* \to \QQ_p
+                        | such that for all #[m x \in X(\QQ)], we have
+                        men#eqn-quad-chab-pair-cond \theta (x) - B(\operatorname{AJ}_b(x), E(\operatorname{AJ}_b(x)) + c)\in S
+                        |.
+
+        p
+            | This gives us a finite set of points containing #[m X(\QQ)], since #[xref(ref="item-quad-chab-pair-cond-1")/] implies that only finitely many points satisfy  #[xref(ref="eqn-quad-chab-pair-cond")/] and #[xref(ref="item-quad-chab-pair-cond-2")/] implies that all rational points satisfy  #[xref(ref="eqn-quad-chab-pair-cond")/].
+
+
+        remark
+            p
+                | We will use the Nekovář height to do this, the function #[m \theta ] will be the local height at  #[m p] and  #[m B] will be the global #[m p]-adic height.
+            p
+                | If we further add the hypothesis that #[m X] has everywhere potentially good reduction then #[m S=\{0\}].
+
+
+        p
+            | Now we describe how knowing #[m \theta ] and #[m S] gives us a method for determining a finite subset of #[m X(\QQ_p)] containing #[m X(\QQ)].
+        p
+            | For #[m \alpha \in S] define
+            me X(\QQ_p) _\alpha  = \{ x\in X(\QQ_p) : \theta (z) - B(\operatorname{AJ}_b(x), E(\operatorname{AJ}_b(x)) + c) = \alpha \}
+            | .
+        p
+            | By definition
+            me X(\QQ)\subseteq \bigsqcup_{\alpha \in S} X(\QQ_p)_{\alpha }
+            | so it suffices to describe
+            me X(\QQ_p)_{\alpha }
+            | .
+        p
+            | Let
+            me \mathcal E \colon H^0(X_{\QQ_p}, \Omega ^1) ^* \otimes H^0(X_{\QQ_p}, \Omega ^1) ^* 
+            | .
+        lemma
+            statement: p
+                | Suppose we have #[m P_1, \ldots, P_m \in X(\QQ)] s.t.
+                me \{\operatorname{AJ}_b(P_i)\otimes E(\operatorname{AJ}_b(P_i))  + c\} 
+                | forms a basis for #[m \mathcal E].
+                | Suppose
+                me \{\psi _1,\ldots, \psi _m\}
+                | forms a basis for #[m \mathcal E^*].
+
+        p
+            | Assume that #[m P_i\in X(\QQ_p)_{\alpha_i }] where #[m \alpha _i \in S].
+        p
+            | For #[m x\in X(\QQ_p)] define the matrix #[m T(x) = T_{(\theta ,S)}(x)] via
+            me T(x) = \begin{pmatrix}  \theta (z) - \alpha \amp \Psi _1(x) \amp \cdots \amp \Psi _m(x)\\ \theta (P_1) - \alpha _1\amp \Psi _1(P_1) \amp \cdots \amp \Psi _m(P_1)\\ \vdots\amp \vdots\amp\ddots \amp \vdots \\\theta (P_m) - \alpha_m \amp \Psi _1(P_m) \amp \cdots \amp \Psi _m(P_m)\end{pmatrix}
+            | .
+
+        p
+            | Where
+            me \Psi _i(x) = \psi _i(\operatorname{AJ}_b(P_i)\otimes E(\operatorname{AJ}_b(P_i))  + c)
+            | if #[m x\in X(\QQ_p)_\alpha ] then
+            me \det(T(x))= 0
+            | .
+
+        remark
+            p
+                | Computing #[m \det T(x) = 0] and finding its zeroes is what gives us our finite set of points containing #[m X(\QQ)].
+
+        p
+            | We need enough rational points so that the #[m \psi_i] forms a basis for #[m \mathcal E] and we need a base point so which means we need #[m g^2 + 1] points with this approach,
+            | It can be possible to make do with only #[m g+1] if height is taken to be equivalent with respect to some other structure.
+
+        aside: p Lecture 1? 21/11/2019
+
+        theorem
+            title B.-Dogra
+            statement: p
+                | Let #[m X/\QQ] be a smooth projective curve of genus #[m g\ge 2].
+                | Let #[m r=\rk J(\QQ)] and
+                me \rho  = \rho (J_{\QQ}) = \rk \NS(J_{\QQ})
+                | suppose #[m r \lt g + \rho  - 1]. Then
+                me X(\QQ_p)_2
+                | is finite.
+        remark
+            p
+                | This is also true for #[m X/K], with #[m K] an imaginary quadratic field.
+        p
+            | To prove this, look at Kim's diagram
+            me.
+                \xymatrix{
+                X(\QQ)\ar[r]\ar[d] &amp; X(\QQ_p)\ar[d] \ar[dr] &amp; \\
+                \Sel(U_n) \ar[r]&amp; H^1_f(G_{\QQ_p}, U_n^\et) \ar[r] &amp; U_n^\dR / F^0
+                }
+
+        p
+            | In this case take #[m n=2].
+            | One interpretation of #[m U_2] is
+            me 1 \to \coker (\QQ_p(1)\to \bigwedge^2 V) \to U_2 \to V \to 1
+            | .
+
+        p
+            | The main idea is not to work with the full #[m U_2], which is hard, but instead to usee a suitable Galois stable quotient #[m U] for which
+            me \dim \underbrace{H_f^1(G_T, U)}_{=\Sel(U)} \lt \dim H^1_f(G_{\QQ_p}, U)
+            | .
+        p
+            | Then the result follows since
+            me X(\QQ_p)_2 \subseteq X(\QQ_p)_{U}
+            | .
+
+        p
+            | We'll take #[m U] to be a quotient of #[m U_2] surjecting onto #[m V], in particular,
+            me [U,U] \cong \QQ_p(1)^m,\text{ for }n\ge 1
+            | .
+        p
+            | The reason for considering such quotients (extensions of #[m V] by #[m \QQ_p(1)^m]) is to more easily prove the necessary dimension hypotheses for Selmer varieties.
+        p
+            | Let #[m K = \QQ] or quadratic imaginary, #[m p] split prime in #[m K]
+            me H^1_f(G_{K_p}, \QQ_p(1)) \cong \ints_p^\times \otimes \QQ_p  \cong \QQ_p
+            | (Bloch-Kato)
+            me H^1_f(G_{T}, \QQ_p(1)) \cong \ints_K^\times \otimes \QQ_p  \cong 0
+            | then
+            me \dim H^1_f( G_T, \ldots) \lt \dim H_f^1(G_{K_p}, \ldots)
+            | .
+
+        lemma
+            statement: p
+                | Let #[m U] be a quotient of #[m U_2] that is an extension of #[m V] by #[m \QQ_p(1)^m], let #[m p] be a prime of good reduction for #[m X].
+                ol
+                    li: me \dim \Sel(U)\le \rk J(\QQ)
+                    li: me \dim H^1_f(G_{\QQ_p}, U) = g + m
+
+        p Then apply lemma when #[m m = \rho -1] to get the finiteness result.
+
+
+        p
+            | We want to construct this quotient #[m U] of #[m U_2], that's nonabelian but small enough to make computations practical.
+
+        p
+            | Let
+            me \tau  \colon X\times X \to X\times X
+            me (x_1,x_2) \mapsto (x_2, x_1)
+            | be the canonical involution.
+
+        definition#def-corresp
+            title Correspondences
+            statement: p
+                | A #[term correspondence] #[m Z \in \Pic(X\times X)] is symmetric if there are #[m Z_1, Z_2\in \Pic(X)] such that
+                me \tau _* Z = Z + \pi_1^* Z_1 + \pi_2^*Z_2
+                | where #[m \pi _1, \pi _2] are the canonical projections
+                me X\times X\to X
+                | .
+
+        definition#def-nice-corresp
+            title Nice correspondences
+            statement: p
+                | A #[term nice correspondence] #[m Z] is one that is non-trivial symmetric and for which the cycle class
+                me \xi _Z \in H^1(X)\otimes H^1(X) (1) \simeq \End H^1(X)
+                | has trace zero.
+
+        lemma
+            statement: p
+                | Suppose #[m J] is absolutely simple, and let #[m Z\in \Pic(X\times X)] a symmetric correspondence.
+                | Then the class associated to #[m Z] lies in the subspace
+                me \bigwedge^2 H^1(X)(1)\subseteq H^1(X)\otimes H^1(X)(1)
+                | . Moreover #[m Z] is nice iff the image of this class in #[m H^2(X)(1)] under the cup product is zero.
+
+
+        p
+            | By the lemma, if #[m Z] is a nice correspondence we get a homomorphism
+            me c_Z \colon  \QQ_p(-1) \to \ker(\bigwedge ^2 H^1_\et(X_{\QQ_p}, \QQ_p) \xrightarrow \cup H^2(X_{\overline \QQ}, \QQ_p))
+            | and using that #[m U_2] was a central extension
+            me 1 \to \coker(\QQ_p(1) \xrightarrow{\cup^*} \bigwedge^2 V)  \to U_2 \to V \to 1
+            | take the quotient #[m U_Z = U_2/\ker(c_Z^*)] and we have a short exact sequence
+            me 1\to \QQ_p(1) \to U_Z \to V \to 1
+            | .
+
+        paragraphs
+            title Twisting and  #[m p]-adic heights
+
+            p
+                | On 11/12 we defined the #[m \QQ]-pro-unipotent completion.
+                | Now say a little more about the #[m \QQ_p]-pro-unipotent completion.
+                me \ZZ_p\lb \lb \pi _1^\et (X_{\overline \QQ}, b)_{\QQ_p} \rb \rb  = \varprojlim \ZZ_p\lb \pi _1^\et(X_{\overline \QQ}, b)\rb /N
+                | where the limit is over all finite quotients of #[m p]-power order.
+            p
+                | Let #[m I] denote the augmentation ideal of
+                me \QQ_p \otimes \ZZ_p\lb \lb \pi _1^\et (X_{\overline \QQ}, b)_{\QQ_p} \rb \rb
+
+                |.
+
+            p
+                | Define the algebra
+                me A_n^\et (b) = \QQ_p \otimes \ZZ_p\lb \lb \pi _1^\et (X_{\overline \QQ}, b)_{\QQ_p} \rb \rb / I^{n+1}
+                | .
+                | Fix a correspondence #[m Z\in\Pic(X\times X)] and let #[m U_Z] denote the corresponding quotient of #[m U_2^\et].
+            definition
+                statement: p
+                    | The mixed extension #[m A_Z(b) ] is the pushout of #[m A_2^\et(b)] by
+                    me \operatorname{cl}_Z^* \colon  \coker(\QQ_p(1) \xrightarrow{\cup^*} V^{\otimes 2}) \to \QQ_p(1)
+                    | .
+
+            remark
+                p
+                    me A_Z(b) \in M_f(G_T, \QQ_p, V, \QQ_p(1))
+                    | with respect the #[m I]-adic filtration.
+
+            p
+                | Recall: #[m \Sel(U)] is defined using nonabelian cohomology, satisfying certain conditions.
+                | Our goal is to get an equation for
+                me X(\QQ_p)_U
+                | and use Nekovář's construction to define a map
+                me \Sel(U) \to \QQ_p
+                | .
+
+            p
+                | A natural analogue of Nekovář's construction is to start with the input of a cohomology class #[m \xi ] in #[m H^1(G_T, \QQ_p)] and define at all bad primes #[m v] an algebraic function
+                me H^1(G_{\QQ_v}, U) \to \QQ_p
+                | which when restricted to
+                me H^1(G_{\QQ_v}, \QQ_p(1))
+                | is the  cup product with #[m \xi ].
+                | Given a splitting of the Hodge filtration can do this.
+                | But to get equality for Selmer varieties better to have a construction with linearity properties analogous to the global height pairing.
+                | So here we describe how to embed #[m \Sel(U)] into
+                me H_{st}^1(G_T, \ldots) \subseteq H^1(G_t, \ldots)
+                | via twisting.
+                | Then apply Nekovář's construction giving local functions from
+                me \Sel(U) \to \QQ_p
+                | .
+            p
+                | For more on twisting see Serre, Galois Cohomology #[xref(ref="bib-serre-gal-coh")/].
+            p
+                | Let #[m G] be a profinite group #[m U] a #[m G]-group.
+                | Let #[m V] be a continuous representation of #[m G] with an equivariant action of #[m U].
+                | Then for any #[m G]-equivariant #[m U]-torsor #[m P] and also #[m U] acts on #[m V] on the left.
+                | We form the twist of #[m V] by #[m P] as follows, let #[m \sim] denote the equivalence.
+                me (p,v) \sim (p\cdot u, u\inv v)
+                | on #[m P\times V] for all #[m u \in U].
+                | Then the twist of #[m V] by #[m P]
+                me V^{(P)} = P\times_U V / \sim
+                | has a continuous #[m G]-representation structure.
+
+            remark
+                p
+                    | For all #[m p\in P] the map
+                    me v \mapsto pv
+                    | is a bijection of #[m V] onto #[m V^{(P)}] for this reason we say that this is the twist of #[m V] by #[m P].
+
+            p
+                | Now define maps
+                me \tau \colon  H_f^1(G_T, U_Z) \to M_f(G_T, \QQ_p, V, \QQ_p(1))
+                me P \mapsto P \times_{U_Z} A_Z(b)
+                me \tau_p \colon  H_f^1(G_T, U_Z) \to M_f(G_{\QQ_p}, \QQ_p, V, \QQ_p(1))
+                me P \mapsto P \times_{U_Z} A_Z(b)
+
+            remark
+                p
+                    | Can show that #[m \tau ] is injective.
+
+            definition
+                statement: p
+                    | Let #[m x\in X(\QQ)] and #[m P \in \pi _1^\et(X_{\overline \QQ}, b, x)] then
+                    me A_Z(b,x) = \tau (\lb P\rb )= P\times_{U_Z} A_Z(b)
+                    | .
+
+            remark
+                p
+                    | For #[m x\in X(\QQ_p)], similarly.
+                    me A_Z(b,x) = \tau _p(\lb P\rb )
+                    | is the mixed extension of #[m G_{\QQ_p}]-modules obtained by twisting #[m A_Z(b)].
+                    | Can also define #[m A_1(b,x), IA_Z(b,x)] by twisting #[m A_1^\et(b)] and #[m IA_Z(b)] respectively.
+
+            p
+                | Now we can define our quadratic Chabauty pair.
+                | We havee
+                me \theta  \colon  X(\QQ_p) \to \QQ_p
+                me x\mapsto h_p(A_Z(b,x))
+                | and using local heights at all bad #[m v \in T_0] we define
+                me S = \left\{ \sum_{v\in T_0} h_v(A_Z(b, x_v)) : (x_v) \in\prod_{v\in T_0} X(\QQ_v)\right\}
+
+            theorem
+                title Kim-Tamagawa '08
+                statement: p
+                    | The set #[m S] is finite.
+
+            lemma
+                statement: p
+                    | Let #[m X] be as before, then #[m (\theta , S)] is a quadratic Chabauty pair.
+                    | The endomorphism is that induced by the correspondence #[m Z].
+                    | The constant is
+                    me \lb IA_Z(b) \rb 
+                    | and the bilinear pairing #[m B] is the global Nekovář height.
+
+            corollary
+                statement: p
+                    | If further #[m X] has everywhere potentially good reduction, then
+                    me (\theta ,S) = (h_p(A_Z(b, \cdot),  \{0\})
+                    | is a quadratic Chabauty pair.
 

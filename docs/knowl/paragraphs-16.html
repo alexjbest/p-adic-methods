@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">Twisting and  \(p\)-adic heights.</span></h5>
+<p>On 11/12 we defined the \(\QQ\)-pro-unipotent completion. Now say a little more about the \(\QQ_p\)-pro-unipotent completion.</p>
+<div class="displaymath">
+\begin{equation*}
+\ZZ_p\lb \lb \pi _1^\et (X_{\overline \QQ}, b)_{\QQ_p} \rb \rb  = \varprojlim \ZZ_p\lb \pi _1^\et(X_{\overline \QQ}, b)\rb /N
+\end{equation*}
+</div>
+<p>where the limit is over all finite quotients of \(p\)-power order.</p>
+<p>Let \(I\) denote the augmentation ideal of</p>
+<div class="displaymath">
+\begin{equation*}
+\QQ_p \otimes \ZZ_p\lb \lb \pi _1^\et (X_{\overline \QQ}, b)_{\QQ_p} \rb \rb\text{.}
+\end{equation*}
+</div>
+<p>Define the algebra</p>
+<div class="displaymath">
+\begin{equation*}
+A_n^\et (b) = \QQ_p \otimes \ZZ_p\lb \lb \pi _1^\et (X_{\overline \QQ}, b)_{\QQ_p} \rb \rb / I^{n+1}\text{.}
+\end{equation*}
+</div>
+<p>Fix a correspondence \(Z\in\Pic(X\times X)\) and let \(U_Z\) denote the corresponding quotient of \(U_2^\et\text{.}\)</p>
+<article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.111</span>.</h6>
+<p>The mixed extension \(A_Z(b) \) is the pushout of \(A_2^\et(b)\) by</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{cl}_Z^* \colon  \coker(\QQ_p(1) \xrightarrow{\cup^*} V^{\otimes 2}) \to \QQ_p(1)\text{.}
+\end{equation*}
+</div></article><article class="remark-like"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.112</span>.</h6>
+<div class="displaymath">
+\begin{equation*}
+A_Z(b) \in M_f(G_T, \QQ_p, V, \QQ_p(1))
+\end{equation*}
+</div>
+<p>with respect the \(I\)-adic filtration.</p></article><p>Recall: \(\Sel(U)\) is defined using nonabelian cohomology, satisfying certain conditions. Our goal is to get an equation for</p>
+<div class="displaymath">
+\begin{equation*}
+X(\QQ_p)_U
+\end{equation*}
+</div>
+<p>and use Nekovář's construction to define a map</p>
+<div class="displaymath">
+\begin{equation*}
+\Sel(U) \to \QQ_p\text{.}
+\end{equation*}
+</div>
+<p>A natural analogue of Nekovář's construction is to start with the input of a cohomology class \(\xi \) in \(H^1(G_T, \QQ_p)\) and define at all bad primes \(v\) an algebraic function</p>
+<div class="displaymath">
+\begin{equation*}
+H^1(G_{\QQ_v}, U) \to \QQ_p
+\end{equation*}
+</div>
+<p>which when restricted to</p>
+<div class="displaymath">
+\begin{equation*}
+H^1(G_{\QQ_v}, \QQ_p(1))
+\end{equation*}
+</div>
+<p>is the  cup product with \(\xi \text{.}\) Given a splitting of the Hodge filtration can do this. But to get equality for Selmer varieties better to have a construction with linearity properties analogous to the global height pairing. So here we describe how to embed \(\Sel(U)\) into</p>
+<div class="displaymath">
+\begin{equation*}
+H_{st}^1(G_T, \ldots) \subseteq H^1(G_t, \ldots)
+\end{equation*}
+</div>
+<p>via twisting. Then apply Nekovář's construction giving local functions from</p>
+<div class="displaymath">
+\begin{equation*}
+\Sel(U) \to \QQ_p\text{.}
+\end{equation*}
+</div>
+<p>For more on twisting see Serre, Galois Cohomology <a data-knowl="./knowl/bib-serre-gal-coh.html" title="Bibliographic Entry 79: Galois cohomology">[79]</a>.</p>
+<p>Let \(G\) be a profinite group \(U\) a \(G\)-group. Let \(V\) be a continuous representation of \(G\) with an equivariant action of \(U\text{.}\) Then for any \(G\)-equivariant \(U\)-torsor \(P\) and also \(U\) acts on \(V\) on the left. We form the twist of \(V\) by \(P\) as follows, let \(\sim\) denote the equivalence.</p>
+<div class="displaymath">
+\begin{equation*}
+(p,v) \sim (p\cdot u, u\inv v)
+\end{equation*}
+</div>
+<p>on \(P\times V\) for all \(u \in U\text{.}\) Then the twist of \(V\) by \(P\)</p>
+<div class="displaymath">
+\begin{equation*}
+V^{(P)} = P\times_U V / \sim
+\end{equation*}
+</div>
+<p>has a continuous \(G\)-representation structure.</p>
+<article class="remark-like"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.113</span>.</h6>
+<p>For all \(p\in P\) the map</p>
+<div class="displaymath">
+\begin{equation*}
+v \mapsto pv
+\end{equation*}
+</div>
+<p>is a bijection of \(V\) onto \(V^{(P)}\) for this reason we say that this is the twist of \(V\) by \(P\text{.}\)</p></article><p>Now define maps</p>
+<div class="displaymath">
+\begin{equation*}
+\tau \colon  H_f^1(G_T, U_Z) \to M_f(G_T, \QQ_p, V, \QQ_p(1))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P \mapsto P \times_{U_Z} A_Z(b)
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\tau_p \colon  H_f^1(G_T, U_Z) \to M_f(G_{\QQ_p}, \QQ_p, V, \QQ_p(1))
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+P \mapsto P \times_{U_Z} A_Z(b)
+\end{equation*}
+</div>
+<article class="remark-like"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.114</span>.</h6>
+<p>Can show that \(\tau \) is injective.</p></article><article class="definition-like"><h6 class="heading">
+<span class="type">Definition</span> <span class="codenumber">2.115</span>.</h6>
+<p>Let \(x\in X(\QQ)\) and \(P \in \pi _1^\et(X_{\overline \QQ}, b, x)\) then</p>
+<div class="displaymath">
+\begin{equation*}
+A_Z(b,x) = \tau (\lb P\rb )= P\times_{U_Z} A_Z(b)\text{.}
+\end{equation*}
+</div></article><article class="remark-like"><h6 class="heading">
+<span class="type">Remark</span> <span class="codenumber">2.116</span>.</h6>
+<p>For \(x\in X(\QQ_p)\text{,}\) similarly.</p>
+<div class="displaymath">
+\begin{equation*}
+A_Z(b,x) = \tau _p(\lb P\rb )
+\end{equation*}
+</div>
+<p>is the mixed extension of \(G_{\QQ_p}\)-modules obtained by twisting \(A_Z(b)\text{.}\) Can also define \(A_1(b,x), IA_Z(b,x)\) by twisting \(A_1^\et(b)\) and \(IA_Z(b)\) respectively.</p></article><p>Now we can define our quadratic Chabauty pair. We havee</p>
+<div class="displaymath">
+\begin{equation*}
+\theta  \colon  X(\QQ_p) \to \QQ_p
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+x\mapsto h_p(A_Z(b,x))
+\end{equation*}
+</div>
+<p>and using local heights at all bad \(v \in T_0\) we define</p>
+<div class="displaymath">
+\begin{equation*}
+S = \left\{ \sum_{v\in T_0} h_v(A_Z(b, x_v)) : (x_v) \in\prod_{v\in T_0} X(\QQ_v)\right\}
+\end{equation*}
+</div>
+<article class="theorem-like"><h6 class="heading">
+<span class="type">Theorem</span> <span class="codenumber">2.117</span>. <span class="title">Kim-Tamagawa '08.</span>
+</h6>
+<p>The set \(S\) is finite.</p></article><article class="theorem-like"><h6 class="heading">
+<span class="type">Lemma</span> <span class="codenumber">2.118</span>.</h6>
+<p>Let \(X\) be as before, then \((\theta , S)\) is a quadratic Chabauty pair. The endomorphism is that induced by the correspondence \(Z\text{.}\) The constant is</p>
+<div class="displaymath">
+\begin{equation*}
+\lb IA_Z(b) \rb 
+\end{equation*}
+</div>
+<p>and the bilinear pairing \(B\) is the global Nekovář height.</p></article><article class="theorem-like"><h6 class="heading">
+<span class="type">Corollary</span> <span class="codenumber">2.119</span>.</h6>
+<p>If further \(X\) has everywhere potentially good reduction, then</p>
+<div class="displaymath">
+\begin{equation*}
+(\theta ,S) = (h_p(A_Z(b, \cdot),  \{0\})
+\end{equation*}
+</div>
+<p>is a quadratic Chabauty pair.</p></article></article><span class="incontext"><a href="sec-chab-coleman.html#paragraphs-16">in-context</a></span>
+</body>
+</html>
