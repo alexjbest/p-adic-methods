@@ -866,7 +866,7 @@ section#sec-chab-coleman
                 li Choose a lift of Frobenius that sends  #[m x] to #[m x^p]. Compute #[m y] via Hensel lifting.
                 li Compute the action of Frobenius on differentials, reduce in cohomology, using Lauders fibration algorithm.
 
-            | Then for a basis #[m \{\omega _i\}] of #[m H_\dR^1(X)] Tuitman's algorithm computes:
+            | Then for a basis #[m \{\omega _i\}] of #[m H_{\dR}^1(X)] Tuitman's algorithm computes:
             me \phi ^* \omega _i = \diff f_i + \sum_j M_{ji} \omega _j
             | and as before this can be used to give an algorithm for Coleman integration #[xref(ref="bib-balakrishnan-tuitman")/].
 
@@ -1486,7 +1486,7 @@ section#sec-chab-coleman
                 | and
                 me \Psi(\omega _D)\in W
                 | recall we fixed
-                me H^1_\dR(X) = H^0(X, \Omega _X^1) \oplus W
+                me H^1_{\dR}(X) = H^0(X, \Omega _X^1) \oplus W
                 | .
 
         definition
@@ -1556,7 +1556,7 @@ section#sec-chab-coleman
                     li
                         | Let #[m \omega ] be a differential in #[m T(K)] with #[m \Res(\omega ) = D_1].
                     li
-                        | Compute #[m \Psi (\omega ) = \sum_{i=0}^{2g-1} a_i\omega _i \in H^1_\dR(X)].
+                        | Compute #[m \Psi (\omega ) = \sum_{i=0}^{2g-1} a_i\omega _i \in H^1_{\dR}(X)].
                         | Then
                         me \Psi (\omega ) - \sum_{i=0}^{g-1} a_i\omega _i  \in W
                         | let #[m \omega _{D_1} = \omega  - \sum_{i=0}^{g-1} a_i \omega _i].
@@ -1631,7 +1631,7 @@ section#sec-chab-coleman
                 | in particular we have
                 me h(D_1, D_2) = h_p(D_1,D_2) + \sum_{v\ne p} h_v(D_1,D_2)
                 me   =\int_{D_2} \omega _{D_1} + \sum_{v\ne p} h_v(D_1,D_2)
-                | where #[m \omega _{D_1}] is a normalized differential of the 3rd kind (depends on a splitting of the Hodge filtration on #[m H^1_\dR(X/\QQ_p)]) and for #[m v\ne p]
+                | where #[m \omega _{D_1}] is a normalized differential of the 3rd kind (depends on a splitting of the Hodge filtration on #[m H^1_{\dR}(X/\QQ_p)]) and for #[m v\ne p]
                 me h_v(D_1,D_2) = m_v \log_p v,\,m_v\in \QQ
                 | computed using arithmetic intersection theory.
                 | See Muller and:
@@ -1687,7 +1687,7 @@ section#sec-chab-coleman
                         ol
                             li
                                 | Compute splitting of
-                                me H^1_\dR(X/\QQ_p) = H^0(X, \Omega ^1_X) \oplus W
+                                me H^1_{\dR}(X/\QQ_p) = H^0(X, \Omega ^1_X) \oplus W
                                 |, where #[m W] is the unit root eigenspace of frob,
                                 | recall that modulo #[m p^n] a basis for #[m W] is
                                 me \{(\phi ^*)^n \omega _g, \ldots, (\phi ^*)^n\omega _{2g-1}\}
@@ -1958,15 +1958,15 @@ section#sec-chab-coleman
                 me \gr(M)  = \bigoplus _i \gr^i(M),\,\gr^i(M) = F^iM/F{i+1}M
                 | .
         p
-            | Recall the Hodge filtration on de Rham cohomology, this is a decreasing filtration #[m F^i] on #[m H^1_\dR(J_{K_p})] with 
-            me 0 = F^2 \subseteq F^1 = H^0(J_{K_p}, \Omega ^1) \subseteq F^0 = H^1_\dR
+            | Recall the Hodge filtration on de Rham cohomology, this is a decreasing filtration #[m F^i] on #[m H^1_{\dR}(J_{K_p})] with 
+            me 0 = F^2 \subseteq F^1 = H^0(J_{K_p}, \Omega ^1) \subseteq F^0 = H^1_{\dR}
             | .
 
         p
-            | The de Rham cohomology #[m H^1_\dR(J_{K_p})]  is the dual of #[m H_1^\dR(J_{K_p})] and has a decreasing hodge filtration dual to that of #[m H^1_\dR(J_{K_p})], defined as
-            me H^i H_1^\dR(J_{K_p}) = \Ann ( F^{-i + 1} H^1_\dR(J_{K_p}))].
+            | The de Rham cohomology #[m H^1_{\dR}(J_{K_p})]  is the dual of #[m H_1^\dR(J_{K_p})] and has a decreasing hodge filtration dual to that of #[m H^1_{\dR}(J_{K_p})], defined as
+            me H^i H_1^\dR(J_{K_p}) = \Ann ( F^{-i + 1} H^1_{\dR}(J_{K_p}))].
         p
-            me H^0(X, \Omega ^1)^\vee \simeq H^0(J, \Omega ^1) ^\vee = (\gr^1 H^1_\dR(J_{K_p}))^\vee = \gr^{-1} H_1^\dR( J_{K_p})
+            me H^0(X, \Omega ^1)^\vee \simeq H^0(J, \Omega ^1) ^\vee = (\gr^1 H^1_{\dR}(J_{K_p}))^\vee = \gr^{-1} H_1^\dR( J_{K_p})
             me \gr^{-1} H_1^\dR(J_{K_p}) = H_1^\dR(J_{K_p}) / F^0H_1^\dR(J_{K_p}) \simeq H_1^\dR(X_{K_p}) / F^0H_1^\dR(X_{K_p})
             | this is our intrinsic definition of #[m H^0(X, \Omega ^1)^\vee].
         p
@@ -1992,28 +1992,28 @@ section#sec-chab-coleman
         p
             | For a continuous #[m p]-adic representation #[m V] of #[m G_{\QQ_p}].
             | We define
-            me D_\dR(V) = (B_{\dR} \otimes V)^{G_{K_p}}
-            me D^+_\dR(V) = (B^+_{\dR} \otimes V)^{G_{K_p}}
-            | the filtration on #[m B_{\dR}] induces one on #[m D_\dR(V)].
+            me D_{\dR}(V) = (B_{\dR} \otimes V)^{G_{K_p}}
+            me D^+_{\dR}(V) = (B^+_{\dR} \otimes V)^{G_{K_p}}
+            | the filtration on #[m B_{\dR}] induces one on #[m D_{\dR}(V)].
         p
             | If #[m Y] is a smooth variety over #[m \QQ_p] then #[m p]-adic height gives for
             me V = H^i_\et(Y_{\overline \QQ_p}, \QQ_p)
             | that
-            me D_\dR(V) \xrightarrow\sim H^i_\dR(Y)
+            me D_{\dR}(V) \xrightarrow\sim H^i_{\dR}(Y)
             | .
             | Respecting the Hodge filtration on either side.
-            | Also #[m D_\dR^+(V)] is naturally identified with #[m F^0 D_\dR(V)].
-            me F^m D_\dR(V) = (F^{m} B_\dR \otimes V)^{G_{K_v}}
+            | Also #[m D_{\dR}^+(V)] is naturally identified with #[m F^0 D_{\dR}(V)].
+            me F^m D_{\dR}(V) = (F^{m} B_{\dR} \otimes V)^{G_{K_v}}
             | Frobenius on #[m B_\crys] induces a Frobenius map on #[m D_\crys (V) ] and #[m V = H^i_\et(Y_{\overline \QQ_p}, \QQ_p)] and #[m Y] good reduction with special fibre #[m Y_{\FF_p}].
             | Then there's a natural isomorphism
             me D_\crys(V) \xrightarrow\sim H^1_\crys (Y_{\FF_p}, \QQ_p)
             | respects frob on each side.
         p
-            | #[m D_\dR] and #[m D_\crys] commute with taking  #[m {}^\vee] so have corresponding results for homology.
+            | #[m D_{\dR}] and #[m D_\crys] commute with taking  #[m {}^\vee] so have corresponding results for homology.
         example
             statement: p
                 | Let #[m V= H_1^\et(X_{\overline K}, \QQ_p)] then
-                me H_1^\dR(X_{K_p})  \simeq D_\dR(V) \simeq D_\crys(V)]
+                me H_1^\dR(X_{K_p})  \simeq D_{\dR}(V) \simeq D_\crys(V)]
                 | compat with hodge 
 
         aside: p Lecture 1? 7/11/2019
@@ -2027,11 +2027,11 @@ section#sec-chab-coleman
         p
             | Bloch-Kato 1990
             | give a short exact sequence
-            me 0\to \QQ_p\xrightarrow\alpha B_{cris}^{\phi =1} \oplus B_{\dR}^+ \xrightarrow\beta  B_\dR \to 0
+            me 0\to \QQ_p\xrightarrow\alpha B_{cris}^{\phi =1} \oplus B_{\dR}^+ \xrightarrow\beta  B_{\dR} \to 0
             | ,
             | where #[m \alpha (x) = (x,x),\beta (x,y) = x-y].
             | Tensor with #[m V] and take Galois cohomology to get
-            me 0 \to V^{G_{K_p}} \to D_{cris}(V) ^{\phi =1} \oplus D_\dR^+(V) \to D_\dR(V)\to H^1(G_{K_p}, V)  \to H^1(G_{K_p},V\otimes B_{cris}^{\phi =1}) \to \cdots
+            me 0 \to V^{G_{K_p}} \to D_{cris}(V) ^{\phi =1} \oplus D_{\dR}^+(V) \to D_{\dR}(V)\to H^1(G_{K_p}, V)  \to H^1(G_{K_p},V\otimes B_{cris}^{\phi =1}) \to \cdots
             | Bloch-Kato show that
             me H^1_e(G_{K_p}, V) = \ker(H^1(G_{K_p}, V) \to  H^1(G_{K_p},V\otimes B_{cris}^{\phi =1}))
             | is equal to
@@ -2039,7 +2039,7 @@ section#sec-chab-coleman
             | .
         p
             | This gives a surjection
-            me D_\dR(V) / D_\dR^+(V) \to H_f^1(G_{K_p}, V)
+            me D_{\dR}(V) / D_{\dR}^+(V) \to H_f^1(G_{K_p}, V)
             | this is the Bloch-Kato exponential map.
             | (coincides with usual #[m \exp] in the case of a #[m p]-adic formal lie group).
             | The kernel of this map is
@@ -2047,7 +2047,7 @@ section#sec-chab-coleman
             | this is trivial since #[m V] is the Tate module of an abelian variety (true because of the Weil conjecture, and what we know about eigenvalues of frobenius).
         p
             | So in this case the Bloch-Kato exponential map has an inverse, our Bloch-Kato logarithm.
-            me \log_{BK} \colon H^1_f(G_{K_p}, V) \xrightarrow\sim D_\dR(V)/D_\dR^+ (V) \simeq H_1^\dR (X)/F^0
+            me \log_{BK} \colon H^1_f(G_{K_p}, V) \xrightarrow\sim D_{\dR}(V)/D_{\dR}^+ (V) \simeq H_1^\dR (X)/F^0
         p
             | Kim's generalization.
             | Let #[m G] be a group (resp. topological group).
@@ -2324,12 +2324,12 @@ section#sec-chab-coleman
 
         remark
             p
-                | We have seen instances of this already, #[m V_\dR] is a filtered #[m \phi ]-module.
+                | We have seen instances of this already, #[m V_{\dR}] is a filtered #[m \phi ]-module.
         definition#def-mixed-extns
             title Mixed extensions
             statement
                 p
-                    | We define #[m M_{\Fil,\phi } (\QQ_p, V_\dR, \QQ_p(1))] to be the category of #[term mixed extensions] of filtered #[m \phi ]-modules, the objects are triples #[m (M, M_{\bullet}, \psi _\bullet)] where
+                    | We define #[m M_{\Fil,\phi } (\QQ_p, V_{\dR}, \QQ_p(1))] to be the category of #[term mixed extensions] of filtered #[m \phi ]-modules, the objects are triples #[m (M, M_{\bullet}, \psi _\bullet)] where
                     ol
                         li
                             | #[m M] is a filtered #[m \phi ]-module.
@@ -2341,7 +2341,7 @@ section#sec-chab-coleman
                             | #[m \psi _\bullet] are isomorphisms of filtered #[m \phi ]-modules
                             md
                                 mrow \phi _0 \amp\colon M_0/M_1\xrightarrow \sim \QQ_p
-                                mrow \phi _1 \amp\colon M_1/M_2\xrightarrow \sim V_\dR
+                                mrow \phi _1 \amp\colon M_1/M_2\xrightarrow \sim V_{\dR}
                                 mrow \phi _2 \amp\colon M_2/M_3\xrightarrow \sim \QQ_p(1)
                     | and the morphisms  of this category are morphisms of filtered #[m \phi ]-modules which also respect the filtrations #[m M_\bullet] and commute with the isomorphisms #[m \psi _i] and #[m \psi _i'].
                 p
@@ -2775,3 +2775,387 @@ section#sec-chab-coleman
                     me (\theta ,S) = (h_p(A_Z(b, \cdot),  \{0\})
                     | is a quadratic Chabauty pair.
 
+        aside: p Lecture 1? 26/11/2019
+
+        p
+            | Recall: #[m X/\QQ] smooth projective curve genus #[m g \ge 2].
+            me r = \rk J(\QQ) = g
+            me \rho  = \rk \NS (J_\QQ) \ge 2
+            me \overline{J(\QQ)} \subseteq J(\QQ_p)
+            | finite index with #[m p] good for #[m X].
+            | #[m X] has everywhere potential good reduction.
+        p
+            | Then
+            me (h_p(A_Z(b,\cdot)), \{0\})
+            | is a quadratic Chabauty pair.
+        remark
+            p
+                | Hypotheses may seem rather restrictive.
+                | Nevertheless there are some interesting examples
+                ol
+                    li
+                        | #[m X = X_s(13)] the #[q split Cartan] modular curve of level #[m 13].
+                    li
+                        | #[m X = X_0(p)^+ = X_0(p)/w_p] the atkin-lhner quotient. For #[m p] prime.
+
+        p
+            | To compute #[m X(\QQ_p)_U] we need to compute #[m h_p(A_Z(b,x))] so we need to choose a nice correspondence #[m Z] and write the locally analytic function
+            me \theta \colon X(\QQ_p) \to \QQ_p
+            me x \mapsto h_p(A_Z(b,x))
+            | as a power series on every residue disk of #[m X(\QQ_p)].
+        p
+            | By our formula
+            me h_p(A_Z(b,x)) = \chi _p(\gamma _\phi -\gamma _{\Fil} - \beta _\phi ^\transpose \cdot s_1(\alpha _\phi ) - \beta _{\Fil}^\transpose s_2(\alpha _\phi ))
+            | , we see that we want to compute an explicit description of #[m A_Z(b,x)] as a filtered #[m \phi ]-module.
+            | This we do in two parts:
+            | The Hodge filtration (today) and Frobenius structure (vis solving #[m p]-adic differential equation using Tuitmans algorithm, see later), of certain universal objects #[m A_Z^\dR].
+
+        remark: p
+            | Unlike the Frobenius structure which is #[m p]-adic, the Hodge filtration has a global meaning and can be computed over #[m \QQ].
+
+        p
+            | Let #[m X/\QQ] be a smooth projective curve of genus #[m g \ge 2].
+            | And #[m Y\subseteq X] an affine open, let #[m b \in Y(\QQ_p)] be integral at #[m p].
+
+            | Suppose
+            me \# (X\smallsetminus Y)(\overline QQ) = d
+            | and let  #[m L/\QQ] be a finite extension over which all points of #[m D = X\smallsetminus Y] are defined.
+
+        p
+            | Choose a set #[m \omega _0, \ldots, \omega _{2g + d -2} \in H^0(Y_{\QQ}, \Omega ^1)] s.t.
+            ol
+                li
+                    | The differentials #[m \omega _0, \ldots, \omega _{2g-1}] are of the second kind on #[m X] and form  a symplectic basis for #[m H^1_{\dR}(X_\QQ)] s.t. the cup product is the standard symplectic form with respect to this basis.
+                li
+                    | The differentials
+                    me \omega _{2g}, \ldots, \omega _{2g + d- 2}
+                    | are of the third kind on #[m X] (i.e. all poles are of order 1).
+            | Let #[m V_{\dR}(Y) = H^1_{\dR}(Y)^*] and
+            me T_0, \ldots, T_{2g +d-2}
+            | be the dual basis.
+            | Let
+            me A_n^\dR = A_n^\dR(b)
+            | be the universal #[m n]-step unipotent object associated to #[m \pi _1^\dR(X, b)]-representation #[m A_n^\dR(b)] this vector bundle carries a Hodge filtration.
+            | For our applications to computing #[m p]-adic heights, take #[m n=2] and let #[m A_Z = A_Z(b)] be a certain quotient of #[m A_2^\dR].
+            | We will compute the Hodge filtration on #[m A_Z] via characterization of the Hodge filtration universal property by Hadian.
+        definition
+            statement: p
+                | A filtered connection #[m (V, \nabla)] is a connection on #[m X] together with an exhaustive, descending filtration 
+                // ??????? TODO separated?
+                me \cdots \supseteq \Fil^i V \supseteq \Fil^{i+1}V\supseteq \cdots
+                | satisfying, Griffiths transversality
+                me \nabla (\Fil^iV) \subseteq \Fil^{i-1} V \otimes \Omega ^1
+                |.
+        theorem
+            title Hadian '11
+            statement: p
+                | For all #[m n \gt 0] the Hodge filtration on #[m A_n^\dR] is the #[em unique] filtration s.t.
+                ol
+                    li
+                        | #[m \Fil^\bullet] makes #[m (A_n^\dR, \nabla)] into a filtered connection.
+                    li
+                        | The natural maps induce a sequence of filtered connections
+                        me V_{\dR}^{\otimes n }\otimes \sheaf O_X \to A_n^\dR \to A_{n-1} \to 0
+                        | .
+                    li
+                        | the identity element of #[m A_n^\dR(b)] lies in #[m \Fil^0 A_n^\dR(b)].
+        remark: p
+            | The important part of this theorem is the uniqueness of the Hodge filtration satisfying the above properties, in what we do the sub-bundle  #[m \Fil^0] of #[m A_Z] is determined in an explicit trivialization on #[m Y], by writing down a general form for a basis, solving for coefficients using the fact that it extends uniquely to #[m X] and satisfies the 3 conditions.
+
+        p
+            | We choose a trivialization
+            me s_0 (b, \cdot) \colon  (\QQ \oplus V_{\dR} \oplus \QQ(1))\otimes \sheaf O_Y \xrightarrow \sim A_Z(b)|_Y
+            | s.t. the connection #[m \nabla] on #[m A_Z] via this trivialization is given by
+            me s_0\inv  \nabla s_0 = \diff + \Lambda 
+            | where
+            me \Lambda  = \begin{pmatrix} 0 \amp 0 \amp 0 \\ \omega  \amp 0 \amp 0 \\ \eta \amp \omega ^\transpose Z \amp 0 \end{pmatrix}
+            | for some #[m \eta] of the third kind on #[m X] in space spanned by
+            me \{ \omega _{2g}, \ldots, \omega _{2g+d-2}\}
+            me \omega  = \{ \omega _0 , \ldots, \omega _{2g-1}\}
+            | .
+            | #[m Z] is the matrix of the Tate class with respect to
+            me H^1_{\dR} (X) \otimes H^1_{\dR}(X)
+            | (associated to the correspondence #[m Z]).
+            | Fix a basis
+            me \{1,T_0, \ldots, T_{2g-1}, S\}
+            | to write down #[m s_0].
+
+        p
+            | The trivialization allows us to describe the connection on #[m Y]; to keep track of the fact that it extends to #[m X], introduce the gauge transformation at all
+            me x \in D
+            | .
+        p
+            | Recall : all points #[m x] are defined over #[m L/\QQ] finite.
+            | In a formal neighborhood of such a point #[m x] with local coordinate #[m t_x] we can find a trivialization of #[m A_Z]
+            me s_x \colon ( (\QQ \oplus V_{\dR} \oplus \QQ(1))\otimes L\lb \lb t_x\rb \rb , \diff) \xrightarrow \sim(A_Z|_{L\lb \lb t_x\lb \rb },\nabla)
+            | since #[m A_Z] is unipotent and any unipotent connection on a formal disk is trivial.
+
+        p
+            | We have  a gauge transformation
+            me C_x = s_x\inv s_0
+            | this is unipotent and satisfies
+            me C_x\inv  \diff C_x = \Lambda 
+            | .
+        p
+            | Expanding out this equation we get that #[m C_x] is of the following form:
+            me C_x = \begin{pmatrix} 1\amp 0 \amp 0\amp \Omega _x \amp 1 \amp 0 \\ g_x \amp \Omega _x^\transpose Z \amp 1 \end{pmatrix}
+            | .
+            | Where 
+            me \diff \Omega _x = - \omega 
+            me \diff g_x = \Omega _x^\transpose Z\diff \Omega _x - \eta
+            | .
+
+        lemma
+            statement: P
+                | The differential #[m \eta] in #[m \Lambda ] is the unique differential satisfying
+                ol
+                    li
+                        | #[m \eta] is in the space spanned by
+                        me \{ \omega _{2g}, \ldots, \omega _{2g+d-2}\}
+                        | .
+
+                    li
+                        | The connection #[m \nabla] extends to a holomorphic connection on the whole of #[m X].
+            proof
+                p
+                    | The defining equations of the gauge transformation #[m C_x] imply that
+                    me \Res(\Omega _x^\transpose Z\diff \Omega _x - \eta) = 0
+                    | for all #[m x\in D].
+                    | Since the kernel of
+                    me H^1_{\dR}(Y_\QQ) \to L^d
+                    | given by the residues at all #[m d] points #[m x\in D] is precisely #[m H^1_{\dR}(X)], so the first condition implies that #[m \eta] is unique.
+
+
+        p
+            | Now we can describe the Hodge filtration on #[m A_Z] with respect to our chosen trivialization, #[m s_0] i.e. an explicit isomorphism
+            me s^{\Fil} \colon ( (\QQ \oplus V_{\dR} \oplus \QQ(1))\otimes \sheaf O_Y) \xrightarrow \sim A_Z
+            | that respects the Hodge filtration on both sides, where the LHS is given by
+            me \Fil^{-1}  = (\QQ \oplus V_{\dR} \oplus \QQ(1)) \otimes \sheaf O_Y
+            me \Fil^0  = (\QQ \oplus \Fil^0V_{\dR}) \otimes \sheaf O_Y
+            me \Fil^1  = 0
+            | .
+
+        p
+            | So just need to describe #[m \Fil^0]
+            | define
+            me \gamma _{\Fil} \in \sheaf O_Y
+            me b_{\Fil} = (b_g, \ldots, b_{2g-1})^\transpose\in \QQ^g
+            | by the requirement that
+            me \gamma _{\Fil} (b) = 0
+            | and for all #[m x\in D]:
+            me g_x + \gamma _{\Fil} - b_{\Fil}^\transpose N^\transpose \Omega _x - \Omega _x^\transpose Z N N^\transpose \Omega _x \in L \lb \lb  t_x\rb \rb 
+            me N = (0_g, 1_g)^\transpose M_{2g \times g}(\QQ)
+            | .
+
+        p
+            | Then a basis for #[m \Fil^0 A_Z] w.r.t. #[m s_0] is given by
+            me \{1+ \gamma _{\Fil} S, T_g + b_g S, \ldots, T_{2g-1} + b_{2g-1} S\}
+            | .
+            | That is we may choose #[m s^{\Fil}] s.t. the restriction of
+            me s_0\inv s^{\Fil}
+            | #[m (\QQ\oplus \Fil^0V_{\dR}) \otimes \sheaf O_Y] given by the #[m (2g+2) \times (g+1)] matrix
+            me \begin{pmatrix} 1 \amp 0 \\ 0 \amp N \\ \gamma _{\Fil} \amp b_{\Fil}^\transpose \end{pmatrix}
+            | .
+
+        p
+            | Algorithm for Hodge filtration
+            ol
+                li
+                    | Compute local coordinates at each #[m x \in D]
+                li
+                    | For each #[m x \in D] compute Laurent series expansions  #[m \omega ] at #[m x] to large precision, 
+                li
+                    | Compute #[m \Omega _x] defined by
+                    me \diff \Omega _x = -\omega _x
+                li
+                    | solve for #[m \eta] as the unique
+                    me \omega _{2g}, \ldots, \omega _{2g + d-2}
+                    | s.t.
+                    me \diff \Omega 
+                    | has residue zero at all #[m x\in D].
+                li
+                    | Solve the system of equations for #[m g_x].
+
+        remark: p
+            | For hyperelliptic curves #[m \beta _{\Fil}] and #[m \gamma _{\Fil}] are both zero.
+
+        aside: p Lecture 1? 3/12/2019
+
+        p
+            | Recall:
+        p
+            | Goal is to compute #[m h_p(A_Z(b,x))]:
+        p
+            | Consider certain rank #[m 2g+2] vector bundle
+            me \mathcal A_Z
+            | our working quotient of
+            me \mathcal A_2
+            | .
+        p
+
+            me \mathcal A_Z
+            | has the structure of a filtered connection which we computed last time.
+
+        p
+            | The importance of #[m \mathcal A_Z] having filtered connection is that the base change of #[m \mathcal A_Z] to #[m \QQ_p] has a Frobenius structure and then we have an isomorphism of filtered #[m \phi ]-modules
+            me x^* \mathcal A_Z = D_\cris (\mathcal A_Z(b,x)) \text{ for all } x\in X(\QQ_p)
+            | .
+        p
+
+            | Today: describe frobenius structure on isocrystal
+            me A_Z^{rig}(\bar b)
+            | and compute this using universal properties.
+
+        p
+            | What is an isocrystal?
+
+        p
+            | (for now affine story, for more details on the rigid picture, see Appendix to B.-Dogra-Müller-Tuitman-Vonk)
+        p
+            | Let #[m A] be an affinoid algebra and #[m A^\dagger] its weak completion.
+            | Let #[m \bar A = A^\dagger / \pi ].
+            | The idea behind isocrystals and its relation to iterated Coleman integrals is that the iterated Coleman integral can be thought of as a solution to a certain #[m p]-adic differential equation (with certain additional structure).
+
+        p
+            | The iterated Coleman integral
+            me \int \omega _n\omega _{n-1} \omega _1
+            | is the #[m y_n] coordinate of a solution to the following system of differential equations:
+            me \diff y = \Omega  y,\,\Omega  = \begin{pmatrix} 0 \amp 0 \amp \cdots \amp 0 \\ \omega _1 \amp 0 \amp \cdots \amp 0\\0\amp \omega _2 \amp \cdots \amp 0 \\ \vdots \amp \vdots \amp \ddots \amp \vdots \\ 0 \amp 0 \amp \cdots \amp 0\\ 0 \amp 0 \amp \cdots \omega _n \amp 0    \end{pmatrix}
+            | .
+            | With #[m y_0 = 1].
+            | This is a unipotent differential equation
+            me y= \begin{pmatrix} y_0\\\vdots\\y_n \end{pmatrix}
+            | .
+        definition
+            statement: p
+                | A #[term unipotent isocrystal] on #[m \bar A] is a #[m A^\dagger]-module #[m M] together with an (integrable) connection.
+                me \nabla \colon   \to M \otimes _{A^\dagger} \Omega ^1 (\otimes K)
+                | that is an iterated extension of trivial connections where a trivial connection is
+                me \mathbf 1 = (A^\dagger, \diff)
+                | .
+                | A morphism of unipotent isocrystals is a map of #[m A^\dagger]-modules, that is horizontal, i.e. commutes with connection.
+                | We denote the category of unipotent isocrystals as #[m Un(\bar A)].
+                | By Berthelot it only depends on #[m \bar A] as the notation suggests (in particular it doesn't depend on #[m A^\dagger].
+        example
+            statement: p
+                | Let #[m M \in Un(\bar A)] be rank 2 then it sits in
+                me 0 \to \mathbf 1 \to M \to \mathbf 1 \to 0
+                | which is non-canonically split.
+                | Its isomorphic to the object having underlying module
+                me (A^\dagger)^2
+                | and connection
+                me \nabla = \diff - \begin{pmatrix} 0 \amp 0 \\ \omega  \amp 0\end{pmatrix}
+                | we have
+                me \Ext^1(\mathbf 1,\mathbf 1) \simeq H^1_{MW} (\bar A)
+                | .
+
+        p
+            | For more see Besser's Heidelberg lectures on Coleman integration.
+        p
+            | There is an analogous category of unipotent isocrystals via rigid triples (see Appendix of BDMTV).
+            | Let #[m \mathcal C^{rig} (\mathcal  X_{\FF_p})] be the category of (rigid) unipotent isocrystals on the special fibre of #[m X].
+
+
+        p
+            | There is an action of frobenius on path torsors
+            me \pi _1^{rig}(\mathcal X_{\FF_p}, \bar b, x)
+            | of #[m {\pi_1^{rig}}], and #[m n]-step unipotent quotients of #[m \pi _1^\rig].
+            me \phi _n \colon  A_n(\bar b, \bar x) \to A_n(\bar b, \bar x)
+            | there is a frobenius structure on #[m \mathcal A_n ^\rig(\bar b)] the universal #[m n]-step object.
+
+            | The frobenius structure is an isomorphism
+            me \Phi _n \colon \phi ^* \mathcal A_n^\rig(\bar b) \xrightarrow \sim \mathcal A_n^\rig(b)
+            | of overconvergent unipotent isocrystals.
+            | There is a corresponding de Rham realization, the pull back of frobenius to #[m \mathcal X_{\FF_p}] gives frobenius on
+            me \pi _1^\dR(X_{\QQ_p}, b, x)
+            | and a frobenius operator on the #[m n]-step unipotent quotients
+            me \phi _n(b,x) \colon  A_n^\dR (b, x) \to A_n^\dR(b,x)
+            | .
+        p
+            |Chiarellotto, B., &amp; Le Stum, B. (1999). #[m F]-isocristaux unipotents. Compositio Mathematica, 116(1), 81-110. doi:10.1023/A:1000602824628
+
+        theorem
+            title Chiarellotto-Le Stum 99
+            statement: p
+                | There is an equivalence of categories
+                me \mathcal C^\dR(X_{\QQ_p}) \xrightarrow \sim \mathcal C^\rig(\mathcal X_{\FF_p})
+                | given by the analytification functor #[m (\cdot)^\an].
+                | For any  #[m x \in X(\QQ_p)] with reduction #[m \bar x] we have a canonical isomorphism of fibre functors
+                me i_x\colon \bar x^* \circ (\cdot)^\an \simeq x^*
+                | such that if #[m x,y] belong to the same residue disks the canonical isomorphism #[m \tau _{x,y} = i_x\circ i_y\inv ] is given by parallel transport along the connection.
+
+        p
+            | Now let #[m b_0 ] and #[m x_0] be Teichmuller representatives of #[m b,x] respectively.
+
+        p
+            | This is how we relate our frobenius operator #[m \phi _n(b,x)] to the isocrystal #[m A_n^\rig(\bar b)] we have
+            me \phi _n(b,x) = \tau_{b,x} \circ \phi _n(b_0, x_0) \circ \tau \inv _{b,x}] where #[m \tau _{b,x}] is from Chiarellotto-Le Stum.
+        p
+            | We can describe #[m \tau _{b,x}] on #[m A_n^\dR(b,x)] is a quotient of #[m A_n^\dR(Y)(b,x)] so suffices to describe parallel transport here.
+        p
+            | Recall we've fixed #[m s_0]
+            me s_0(b,x) \colon \bigoplus_{i=0}^n V_{\dR}(Y)^{\otimes i} \xrightarrow \sim A_n ^\dR(b,x)
+            | for any #[m x_1, x_2 \in X(\QQ_p)] that lie in the same residue disk.
+            | Define
+            me I(x_1, x_2) = 1 + \sum_x \int _{x_1}^{x_2} w(\omega _0, \ldots, \omega _{2g + d - 2}
+            | in
+            me \bigoplus_{i=0}^n V_{\dR}(Y)^{\otimes i}
+            | where the sum is over all words in #[m \{T_0,\ldots, T_{2g + d - 2}\}] of length at most #[m n] make the substitution with #[m \omega _i ] for #[m T_i].
+
+        p
+            | Here the integrals are given by formally integrating power series (since #[m x_1, x_2] are in the same residue disk).
+            | Then #[m \tau _{b,x}] when considered on #[m \mathcal A_n^\dR(Y)] via #[m s_0].
+
+        p
+            me \tau _{b,x} \colon \bigoplus_{i=0}^n V_{\dR}(Y)^{\otimes i} \xrightarrow \sim\bigoplus_{i=0}^n V_{\dR}(Y)^{\otimes i}
+            me v \mapsto I(x_0, x) \vee I(b,b_0)
+            | then by Besser's theory of Coleman integration on unipotent connections, we have that for any
+            me b,b_0, x,x_0 \in Y(\QQ_p)
+            | the same formula describes the unique frobenius equivariant isomorphism
+            me A_n^\dR(b,b_0) \xrightarrow \sim A_n^\dR(x,x_0)
+            | if the above is interpreted via Coleman integration.
+
+        p
+            | Finally by taing quotient of the various #]m A_2 ^*] by our nice correspondence #[m Z] we get frobenius operators
+            me \phi _Z(b,x) \colon  A_Z^\dR(b,x) \to  A_Z^\dR(b,x) 
+            | and a quotient #[m A_Z^\rig(\bar b)] of the universal 2-step object.
+        p
+            | Chiarellotto-Le Stum give us an isomorphism
+            me \Phi _Z\colon \phi ^* A_Z^\rig(\bar b)\to A_Z^\rig(\bar b)
+            | we have the following equalities.
+
+        p
+            me \phi _Z(b_0, x_0) = x_0^* \Phi _Z
+            me \phi _Z(b,x) = \tau _{b,x} \circ \phi _Z(b_0, x_0) \circ \tau _{b,x}\inv 
+            | .
+        p
+            | The connections on
+            me A_Z^\dR(b)^\an|_Y
+            | and
+            me \phi ^* A_Z^\dR(b)^\an|_Y
+            | are described with respect to #[m s_0] and are equal to #[m \diff + \Lambda ] (as before) and #[m \diff +\Lambda _\phi ], where
+            me \Lambda _\phi  = -\begin{pmatrix} 0 \amp 0 \amp 0 \\ \phi ^* \omega \amp 0\amp 0 \\ \phi ^* \eta \amp \phi ^* \omega^* Z\amp 0\end{pmatrix}
+            | so to make the frobenius structure explicit we must compute #[m G] s.t.
+            me \Lambda _\phi  G + \diff G = G\Lambda
+            | where #[m G = \Phi \inv _Z] (inverse of frobenius structure).
+        proposition
+            statement: p
+                | Can take #[m G] as folllows
+                me G = \begin{pmatrix} 1 \amp 0 \amp 0 \\ f \amp F\amp 0 \\ h  \amp g^\transpose\amp p\end{pmatrix}
+                | where
+                me \begin{cases} \phi ^* \omega  = F\omega  + \diff f\\ f(b_0) = 0 \\ \diff g ^ \transpose = \diff f\transpose Z F \\ \diff h = \omega  F Z f + \diff f ^\transpose Z f - g \omega  + \phi ^8 \eta -p\eta\\ h(b_0) = 0 \end{cases}
+
+        p
+            | Here is the algorithm for frobenius structure on #[m A_Z]
+            ol
+                li
+                    | Use Tuitman's  algorithm to compute matrix of frobenius #[m F] and overconvergent functions #[m f] s.t.
+                    me \phi ^* \omega  = F\omega  + \diff f
+                    | .
+                li
+                    | Compute the matrix
+                    me A = I(x,x_0) ^+ I(b_0, b)^-
+                    | where we define for any pair #[m x_1, x_2 \in X(\QQ_p)] parallel transport matrices
+                    me I^\pm (x_1, x_2) = \begin{pmatrix} 1 \amp 0 \amp 0 \\ \int_{x_1}^{x_2} \omega  \amp 1 \amp 0 \\ \int_{x_1}^{x_2} \eta + \int_{x_1}^{x_2} \omega^\transpose \omega Z\omega  \amp1 \end{pmatrix}
+
+                    | solve p-adic differential equation.
