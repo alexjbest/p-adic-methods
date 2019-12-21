@@ -12,7 +12,7 @@ p-adic-methods.tex:	p-adic-methods-pretty.xml p-adic-methods-latex.xsl filter.xs
 
 docs/p-adic-methods.pdf:	p-adic-methods.tex
 	mkdir -p docs
-	cd docs && latexmk -pdf -shell-escape -pdflatex="pdflatex -shell-escape -interaction=nonstopmode"  ../p-adic-methods.tex
+	cd docs && latexmk -pdf -shell-escape -pdflatex="pdflatex -shell-escape -interaction=batchmode"  ../p-adic-methods.tex
 
 docs/images/:	docs p-adic-methods-wrapper.xml
 	mkdir -p docs/images

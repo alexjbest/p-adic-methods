@@ -12,27 +12,24 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Algorithm for Hodge filtration</p>
-<ol class="decimal">
-<li>Compute local coordinates at each \(x \in D\)</li>
-<li>For each \(x \in D\) compute Laurent series expansions  \(\omega \) at \(x\) to large precision,</li>
-<li>Compute \(\Omega _x\) defined by<div class="displaymath">
+<p>Then a basis for \(\Fil^0 A_Z\) w.r.t. \(s_0\) is given by</p>
+<div class="displaymath">
 \begin{equation*}
-\diff \Omega _x = -\omega _x
+\{1+ \gamma _{\Fil} S, T_g + b_g S, \ldots, T_{2g-1} + b_{2g-1} S\}\text{.}
 \end{equation*}
 </div>
-</li>
-<li>solve for \(\eta\) as the unique<div class="displaymath">
+<p>That is we may choose \(s^{\Fil}\) s.t. the restriction of</p>
+<div class="displaymath">
 \begin{equation*}
-\omega _{2g}, \ldots, \omega _{2g + d-2}
+s_0\inv s^{\Fil}
 \end{equation*}
-</div>s.t.<div class="displaymath">
+</div>
+<p>\((\QQ\oplus \Fil^0V_{\dR}) \otimes \sheaf O_Y\) given by the \((2g+2) \times (g+1)\) matrix</p>
+<div class="displaymath">
 \begin{equation*}
-\diff \Omega 
+\begin{pmatrix} 1 \amp 0 \\ 0 \amp N \\ \gamma _{\Fil} \amp b_{\Fil}^\transpose \end{pmatrix}\text{.}
 \end{equation*}
-</div>has residue zero at all \(x\in D\text{.}\)</li>
-<li>Solve the system of equations for \(g_x\text{.}\)</li>
-</ol>
+</div>
 <span class="incontext"><a href="sec-chab-coleman.html#p-435">in-context</a></span>
 </body>
 </html>

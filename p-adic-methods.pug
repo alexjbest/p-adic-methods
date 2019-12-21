@@ -1573,7 +1573,7 @@ section#sec-chab-coleman
         p
             | The local height at #[m P] would be
             me h_p(D,D) = \int_D \omega _D
-            | ideal of Gross #[q local heights on curves] Arithmetic Geometry '86.
+            | idea of Gross #[q local heights on curves] Arithmetic Geometry '86.
 
         p
             | At each point #[m x] in the common support of your divisors, choose a basis #[m t,t_x] for the tangent space.
@@ -2778,11 +2778,12 @@ section#sec-chab-coleman
         aside: p Lecture 1? 26/11/2019
 
         p
-            | Recall: #[m X/\QQ] smooth projective curve genus #[m g \ge 2].
+            | Recall: if #[m X/\QQ] is a smooth projective curve of genus #[m g \ge 2] then we assume
             me r = \rk J(\QQ) = g
             me \rho  = \rk \NS (J_\QQ) \ge 2
+            | and
             me \overline{J(\QQ)} \subseteq J(\QQ_p)
-            | finite index with #[m p] good for #[m X].
+            | is finite index with #[m p] good for #[m X].
             | #[m X] has everywhere potential good reduction.
         p
             | Then
@@ -2796,19 +2797,20 @@ section#sec-chab-coleman
                     li
                         | #[m X = X_s(13)] the #[q split Cartan] modular curve of level #[m 13].
                     li
-                        | #[m X = X_0(p)^+ = X_0(p)/w_p] the atkin-lhner quotient. For #[m p] prime.
+                        | #[m X = X_0(p)^+ = X_0(p)/w_p] the Atkin-Lehner quotient. For #[m p] prime.
 
         p
             | To compute #[m X(\QQ_p)_U] we need to compute #[m h_p(A_Z(b,x))] so we need to choose a nice correspondence #[m Z] and write the locally analytic function
-            me \theta \colon X(\QQ_p) \to \QQ_p
-            me x \mapsto h_p(A_Z(b,x))
+            md
+                mrow \theta \colon X(\QQ_p) \amp\to \QQ_p
+                mrow x \amp\mapsto h_p(A_Z(b,x))
             | as a power series on every residue disk of #[m X(\QQ_p)].
         p
             | By our formula
             me h_p(A_Z(b,x)) = \chi _p(\gamma _\phi -\gamma _{\Fil} - \beta _\phi ^\transpose \cdot s_1(\alpha _\phi ) - \beta _{\Fil}^\transpose s_2(\alpha _\phi ))
             | , we see that we want to compute an explicit description of #[m A_Z(b,x)] as a filtered #[m \phi ]-module.
             | This we do in two parts:
-            | The Hodge filtration (today) and Frobenius structure (vis solving #[m p]-adic differential equation using Tuitmans algorithm, see later), of certain universal objects #[m A_Z^\dR].
+            | The Hodge filtration (today) and Frobenius structure (via solving a #[m p]-adic differential equation using Tuitman's algorithm, see later), of certain universal objects #[m A_Z^\dR].
 
         remark: p
             | Unlike the Frobenius structure which is #[m p]-adic, the Hodge filtration has a global meaning and can be computed over #[m \QQ].
@@ -2818,7 +2820,7 @@ section#sec-chab-coleman
             | And #[m Y\subseteq X] an affine open, let #[m b \in Y(\QQ_p)] be integral at #[m p].
 
             | Suppose
-            me \# (X\smallsetminus Y)(\overline QQ) = d
+            me \# (X\smallsetminus Y)(\overline \QQ) = d
             | and let  #[m L/\QQ] be a finite extension over which all points of #[m D = X\smallsetminus Y] are defined.
 
         p
@@ -2838,12 +2840,12 @@ section#sec-chab-coleman
             | be the universal #[m n]-step unipotent object associated to #[m \pi _1^\dR(X, b)]-representation #[m A_n^\dR(b)] this vector bundle carries a Hodge filtration.
             | For our applications to computing #[m p]-adic heights, take #[m n=2] and let #[m A_Z = A_Z(b)] be a certain quotient of #[m A_2^\dR].
             | We will compute the Hodge filtration on #[m A_Z] via characterization of the Hodge filtration universal property by Hadian.
-        definition
+        definition#def-filtered-connection
+            title Filtered connections
             statement: p
-                | A filtered connection #[m (V, \nabla)] is a connection on #[m X] together with an exhaustive, descending filtration 
-                // ??????? TODO separated?
+                | A #[term filtered connection] #[m (V, \nabla)] is a connection on #[m X] together with an exhaustive, descending filtration 
                 me \cdots \supseteq \Fil^i V \supseteq \Fil^{i+1}V\supseteq \cdots
-                | satisfying, Griffiths transversality
+                | satisfying Griffiths transversality
                 me \nabla (\Fil^iV) \subseteq \Fil^{i-1} V \otimes \Omega ^1
                 |.
         theorem
@@ -2860,7 +2862,7 @@ section#sec-chab-coleman
                     li
                         | the identity element of #[m A_n^\dR(b)] lies in #[m \Fil^0 A_n^\dR(b)].
         remark: p
-            | The important part of this theorem is the uniqueness of the Hodge filtration satisfying the above properties, in what we do the sub-bundle  #[m \Fil^0] of #[m A_Z] is determined in an explicit trivialization on #[m Y], by writing down a general form for a basis, solving for coefficients using the fact that it extends uniquely to #[m X] and satisfies the 3 conditions.
+            | The important part of this theorem is the uniqueness of the Hodge filtration satisfying the above properties, in what we do the sub-bundle  #[m \Fil^0] of #[m A_Z] is determined in an explicit trivialization on #[m Y], by writing down a general form for a basis, solving for the coefficients using the fact that it extends uniquely to #[m X] and satisfies the 3 conditions.
 
         p
             | We choose a trivialization
@@ -2868,7 +2870,7 @@ section#sec-chab-coleman
             | s.t. the connection #[m \nabla] on #[m A_Z] via this trivialization is given by
             me s_0\inv  \nabla s_0 = \diff + \Lambda 
             | where
-            me \Lambda  = \begin{pmatrix} 0 \amp 0 \amp 0 \\ \omega  \amp 0 \amp 0 \\ \eta \amp \omega ^\transpose Z \amp 0 \end{pmatrix}
+            me \Lambda  =-\begin{pmatrix} 0 \amp 0 \amp 0 \\ \omega  \amp 0 \amp 0 \\ \eta \amp \omega ^\transpose Z \amp 0 \end{pmatrix}
             | for some #[m \eta] of the third kind on #[m X] in space spanned by
             me \{ \omega _{2g}, \ldots, \omega _{2g+d-2}\}
             me \omega  = \{ \omega _0 , \ldots, \omega _{2g-1}\}
@@ -2884,11 +2886,13 @@ section#sec-chab-coleman
             | The trivialization allows us to describe the connection on #[m Y]; to keep track of the fact that it extends to #[m X], introduce the gauge transformation at all
             me x \in D
             | .
-        p
-            | Recall : all points #[m x] are defined over #[m L/\QQ] finite.
-            | In a formal neighborhood of such a point #[m x] with local coordinate #[m t_x] we can find a trivialization of #[m A_Z]
-            me s_x \colon ( (\QQ \oplus V_{\dR} \oplus \QQ(1))\otimes L\lb \lb t_x\rb \rb , \diff) \xrightarrow \sim(A_Z|_{L\lb \lb t_x\lb \rb },\nabla)
-            | since #[m A_Z] is unipotent and any unipotent connection on a formal disk is trivial.
+        paragraphs
+            title Recall
+            p
+                | all points #[m x] are defined over #[m L/\QQ] finite.
+                | In a formal neighborhood of such a point #[m x] with local coordinate #[m t_x] we can find a trivialization of #[m A_Z]
+                me s_x \colon ( (\QQ \oplus V_{\dR} \oplus \QQ(1))\otimes L\lb \lb t_x\rb \rb , \diff) \xrightarrow \sim(A_Z|_{L\lb \lb t_x\rb \rb },\nabla)
+                | since #[m A_Z] is unipotent and any unipotent connection on a formal disk is trivial.
 
         p
             | We have  a gauge transformation
@@ -2898,7 +2902,7 @@ section#sec-chab-coleman
             | .
         p
             | Expanding out this equation we get that #[m C_x] is of the following form:
-            me C_x = \begin{pmatrix} 1\amp 0 \amp 0\amp \Omega _x \amp 1 \amp 0 \\ g_x \amp \Omega _x^\transpose Z \amp 1 \end{pmatrix}
+            me C_x = \begin{pmatrix} 1\amp 0 \amp 0\\ \Omega _x \amp 1 \amp 0 \\ g_x \amp \Omega _x^\transpose Z \amp 1 \end{pmatrix}
             | .
             | Where 
             me \diff \Omega _x = - \omega 
@@ -2906,7 +2910,8 @@ section#sec-chab-coleman
             | .
 
         lemma
-            statement: P
+            title BDMTV 4.10
+            statement: p
                 | The differential #[m \eta] in #[m \Lambda ] is the unique differential satisfying
                 ol
                     li
@@ -2930,13 +2935,14 @@ section#sec-chab-coleman
             | Now we can describe the Hodge filtration on #[m A_Z] with respect to our chosen trivialization, #[m s_0] i.e. an explicit isomorphism
             me s^{\Fil} \colon ( (\QQ \oplus V_{\dR} \oplus \QQ(1))\otimes \sheaf O_Y) \xrightarrow \sim A_Z
             | that respects the Hodge filtration on both sides, where the LHS is given by
-            me \Fil^{-1}  = (\QQ \oplus V_{\dR} \oplus \QQ(1)) \otimes \sheaf O_Y
-            me \Fil^0  = (\QQ \oplus \Fil^0V_{\dR}) \otimes \sheaf O_Y
-            me \Fil^1  = 0
+            md
+                mrow \Fil^{-1}\amp  = (\QQ \oplus V_{\dR} \oplus \QQ(1)) \otimes \sheaf O_Y
+                mrow \Fil^0 \amp = (\QQ \oplus \Fil^0V_{\dR}) \otimes \sheaf O_Y
+                mrow \Fil^1 \amp = 0
             | .
 
         p
-            | So just need to describe #[m \Fil^0]
+            | So we just need to describe #[m \Fil^0], 
             | define
             me \gamma _{\Fil} \in \sheaf O_Y
             me b_{\Fil} = (b_g, \ldots, b_{2g-1})^\transpose\in \QQ^g
@@ -2944,6 +2950,7 @@ section#sec-chab-coleman
             me \gamma _{\Fil} (b) = 0
             | and for all #[m x\in D]:
             me g_x + \gamma _{\Fil} - b_{\Fil}^\transpose N^\transpose \Omega _x - \Omega _x^\transpose Z N N^\transpose \Omega _x \in L \lb \lb  t_x\rb \rb 
+            | where 
             me N = (0_g, 1_g)^\transpose M_{2g \times g}(\QQ)
             | .
 
@@ -3089,7 +3096,8 @@ section#sec-chab-coleman
 
         p
             | This is how we relate our frobenius operator #[m \phi _n(b,x)] to the isocrystal #[m A_n^\rig(\bar b)] we have
-            me \phi _n(b,x) = \tau_{b,x} \circ \phi _n(b_0, x_0) \circ \tau \inv _{b,x}] where #[m \tau _{b,x}] is from Chiarellotto-Le Stum.
+            me \phi _n(b,x) = \tau_{b,x} \circ \phi _n(b_0, x_0) \circ \tau \inv _{b,x}
+            | where #[m \tau _{b,x}] is from Chiarellotto-Le Stum.
         p
             | We can describe #[m \tau _{b,x}] on #[m A_n^\dR(b,x)] is a quotient of #[m A_n^\dR(Y)(b,x)] so suffices to describe parallel transport here.
         p
@@ -3116,7 +3124,7 @@ section#sec-chab-coleman
             | if the above is interpreted via Coleman integration.
 
         p
-            | Finally by taing quotient of the various #]m A_2 ^*] by our nice correspondence #[m Z] we get frobenius operators
+            | Finally by taking quotient of the various #[m A_2 ^*] by our nice correspondence #[m Z] we get frobenius operators
             me \phi _Z(b,x) \colon  A_Z^\dR(b,x) \to  A_Z^\dR(b,x) 
             | and a quotient #[m A_Z^\rig(\bar b)] of the universal 2-step object.
         p
@@ -3140,7 +3148,7 @@ section#sec-chab-coleman
             | where #[m G = \Phi \inv _Z] (inverse of frobenius structure).
         proposition
             statement: p
-                | Can take #[m G] as folllows
+                | Can take #[m G] as follows
                 me G = \begin{pmatrix} 1 \amp 0 \amp 0 \\ f \amp F\amp 0 \\ h  \amp g^\transpose\amp p\end{pmatrix}
                 | where
                 me \begin{cases} \phi ^* \omega  = F\omega  + \diff f\\ f(b_0) = 0 \\ \diff g ^ \transpose = \diff f\transpose Z F \\ \diff h = \omega  F Z f + \diff f ^\transpose Z f - g \omega  + \phi ^8 \eta -p\eta\\ h(b_0) = 0 \end{cases}
