@@ -3025,7 +3025,7 @@ section#sec-chab-coleman
 
         p
             | The iterated Coleman integral
-            me \int \omega _n\omega _{n-1} \omega _1
+            me \int \omega _n\omega _{n-1} \cdots \omega _1
             | is the #[m y_n] coordinate of a solution to the following system of differential equations:
             me \diff y = \Omega  y,\,\Omega  = \begin{pmatrix} 0 \amp 0 \amp \cdots \amp 0 \\ \omega _1 \amp 0 \amp \cdots \amp 0\\0\amp \omega _2 \amp \cdots \amp 0 \\ \vdots \amp \vdots \amp \ddots \amp \vdots \\ 0 \amp 0 \amp \cdots \amp 0\\ 0 \amp 0 \amp \cdots \omega _n \amp 0    \end{pmatrix}
             | .
@@ -3151,7 +3151,7 @@ section#sec-chab-coleman
                 | Can take #[m G] as follows
                 me G = \begin{pmatrix} 1 \amp 0 \amp 0 \\ f \amp F\amp 0 \\ h  \amp g^\transpose\amp p\end{pmatrix}
                 | where
-                me \begin{cases} \phi ^* \omega  = F\omega  + \diff f\\ f(b_0) = 0 \\ \diff g ^ \transpose = \diff f\transpose Z F \\ \diff h = \omega  F Z f + \diff f ^\transpose Z f - g \omega  + \phi ^8 \eta -p\eta\\ h(b_0) = 0 \end{cases}
+                me \begin{cases} \phi ^* \omega  = F\omega  + \diff f\\ f(b_0) = 0 \\ \diff g ^ \transpose = \diff f^\transpose Z F \\ \diff h = \omega  F Z f + \diff f ^\transpose Z f - g \omega  + \phi ^* \eta -p\eta\\ h(b_0) = 0 \end{cases}
 
         p
             | Here is the algorithm for frobenius structure on #[m A_Z]
@@ -3164,6 +3164,6 @@ section#sec-chab-coleman
                     | Compute the matrix
                     me A = I(x,x_0) ^+ I(b_0, b)^-
                     | where we define for any pair #[m x_1, x_2 \in X(\QQ_p)] parallel transport matrices
-                    me I^\pm (x_1, x_2) = \begin{pmatrix} 1 \amp 0 \amp 0 \\ \int_{x_1}^{x_2} \omega  \amp 1 \amp 0 \\ \int_{x_1}^{x_2} \eta + \int_{x_1}^{x_2} \omega^\transpose \omega Z\omega  \amp1 \end{pmatrix}
+                    me I^\pm (x_1, x_2) = \begin{pmatrix} 1 \amp 0 \amp 0 \\ \int_{x_1}^{x_2} \omega  \amp 1 \amp 0 \\ \int_{x_1}^{x_2} \eta + \int_{x_1}^{x_2} \omega^\transpose \omega Z\omega \amp0 \amp1 \end{pmatrix}
 
                     | solve p-adic differential equation.
